@@ -1463,24 +1463,31 @@ p {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   background: var(--green-tint);
-  border: 1px solid var(--green-light);
+  border: 1px solid #c9e6cf;
   border-radius: var(--radius);
   overflow: hidden;
 }
 .metric-card {
-  padding: 40px 28px;
+  padding: 44px 28px;
   text-align: center;
-  border-left: 1px solid var(--green-light);
+  border-left: 1px solid #c9e6cf;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .metric-card:first-child {
   border-left: none;
 }
 .metric-num {
-  font-size: clamp(2.4rem, 4vw, 3.2rem);
+  font-size: clamp(2.2rem, 3.6vw, 3rem);
   font-weight: 800;
-  line-height: 1;
+  line-height: 1.05;
   letter-spacing: -0.02em;
   color: var(--black);
+  min-height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .metric-label {
   font-size: 0.95rem;
@@ -1497,12 +1504,14 @@ p {
 @media (max-width: 768px) {
   .metric-band { grid-template-columns: repeat(2, 1fr); }
   /* reset desktop dividers, apply grid-friendly ones */
-  .metric-card { border-left: 1px solid var(--green-light); }
+  .metric-card { border-left: 1px solid #c9e6cf; padding: 36px 20px; }
   .metric-card:nth-child(odd) { border-left: none; }
-  .metric-card:nth-child(n+3) { border-top: 1px solid var(--green-light); }
+  .metric-card:nth-child(n+3) { border-top: 1px solid #c9e6cf; }
+  .metric-num { min-height: 48px; }
 }
 @media (max-width: 480px) {
   .metric-band { grid-template-columns: 1fr; }
-  .metric-card { border-left: none; border-top: 1px solid var(--green-light); }
+  .metric-card { border-left: none; border-top: 1px solid #c9e6cf; }
   .metric-card:first-child { border-top: none; }
+  .metric-num { min-height: 0; }
 }
