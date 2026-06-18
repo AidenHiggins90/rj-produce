@@ -1458,6 +1458,18 @@ p {
   .btn-nav-cta { display: inline-block; text-align: center; }
 }
 
+/* ─── Metric Summary (Why Us prose) ──────────────────────────────────────────── */
+.metric-summary {
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: center;
+}
+.metric-summary p {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: var(--gray-dark);
+}
+
 /* ─── Metric Band (Why Us stats) ─────────────────────────────────────────────── */
 .metric-band {
   display: grid;
