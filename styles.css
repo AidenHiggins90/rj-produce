@@ -1457,3 +1457,42 @@ p {
   .nav-links li:last-child { padding: 8px 24px 0; }
   .btn-nav-cta { display: inline-block; text-align: center; }
 }
+
+/* ─── Metric Band (Why Us stats) ─────────────────────────────────────────────── */
+.metric-band {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+.metric-card {
+  background: var(--green-tint);
+  border: 1px solid var(--green-light);
+  border-radius: var(--radius);
+  padding: 36px 24px;
+  text-align: center;
+}
+.metric-num {
+  font-size: clamp(2.4rem, 4vw, 3.2rem);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--black);
+}
+.metric-label {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--green-dark);
+  margin: 12px 0 10px;
+}
+.metric-desc {
+  font-size: 0.9rem;
+  color: var(--gray);
+  line-height: 1.55;
+  margin: 0;
+}
+@media (max-width: 768px) {
+  .metric-band { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 480px) {
+  .metric-band { grid-template-columns: 1fr; }
+}
