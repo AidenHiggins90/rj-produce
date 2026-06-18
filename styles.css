@@ -1462,14 +1462,18 @@ p {
 .metric-band {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-}
-.metric-card {
   background: var(--green-tint);
   border: 1px solid var(--green-light);
   border-radius: var(--radius);
-  padding: 36px 24px;
+  overflow: hidden;
+}
+.metric-card {
+  padding: 40px 28px;
   text-align: center;
+  border-left: 1px solid var(--green-light);
+}
+.metric-card:first-child {
+  border-left: none;
 }
 .metric-num {
   font-size: clamp(2.4rem, 4vw, 3.2rem);
@@ -1492,7 +1496,13 @@ p {
 }
 @media (max-width: 768px) {
   .metric-band { grid-template-columns: repeat(2, 1fr); }
+  /* reset desktop dividers, apply grid-friendly ones */
+  .metric-card { border-left: 1px solid var(--green-light); }
+  .metric-card:nth-child(odd) { border-left: none; }
+  .metric-card:nth-child(n+3) { border-top: 1px solid var(--green-light); }
 }
 @media (max-width: 480px) {
   .metric-band { grid-template-columns: 1fr; }
+  .metric-card { border-left: none; border-top: 1px solid var(--green-light); }
+  .metric-card:first-child { border-top: none; }
 }
