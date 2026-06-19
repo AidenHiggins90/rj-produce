@@ -1458,6 +1458,33 @@ p {
   .btn-nav-cta { display: inline-block; text-align: center; }
 }
 
+/* ─── Summary Panel (contained header + prose) ───────────────────────────────── */
+.summary-panel {
+  max-width: 720px;
+  margin: 0 auto;
+  background: var(--white);
+  border: 1px solid #c9e6cf;
+  border-radius: var(--radius);
+  padding: 48px 48px 52px;
+  text-align: center;
+  box-shadow: var(--shadow);
+}
+.summary-panel .section-label {
+  margin-bottom: 16px;
+}
+.summary-panel h2 {
+  margin-bottom: 20px;
+}
+.summary-panel p {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--gray);
+  margin: 0;
+}
+@media (max-width: 600px) {
+  .summary-panel { padding: 32px 24px 36px; }
+}
+
 /* ─── Metric Summary (Why Us prose) ──────────────────────────────────────────── */
 .metric-summary {
   max-width: 640px;
