@@ -1462,12 +1462,7 @@ p {
 .summary-panel {
   max-width: 720px;
   margin: 0 auto;
-  background: var(--white);
-  border: 1px solid #c9e6cf;
-  border-radius: var(--radius);
-  padding: 48px 48px 52px;
   text-align: center;
-  box-shadow: var(--shadow);
 }
 .summary-panel .section-label {
   margin-bottom: 16px;
@@ -1480,9 +1475,6 @@ p {
   line-height: 1.75;
   color: var(--gray);
   margin: 0;
-}
-@media (max-width: 600px) {
-  .summary-panel { padding: 32px 24px 36px; }
 }
 
 /* ─── Metric Summary (Why Us prose) ──────────────────────────────────────────── */
