@@ -3,131 +3,97 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="RJ Produce supplies premium fruits, vegetables, and specialty produce year-round to retailers, foodservice operators, and distributors." />
   <title>Products — RJ Produce</title>
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=3" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="theme.css?v=1" />
+  <style>
+    .filters{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:44px}
+    .fbtn{font-family:inherit;font-size:.92rem;font-weight:600;padding:10px 22px;border-radius:100px;border:1.5px solid var(--line);background:#fff;color:var(--gray);cursor:pointer;transition:all .25s var(--ease)}
+    .fbtn:hover{border-color:var(--green-bright);color:var(--ink)}
+    .fbtn.active{background:var(--ink);color:#fff;border-color:var(--ink)}
+    .pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+    .pitem{position:relative;border-radius:var(--r-lg);overflow:hidden;aspect-ratio:3/2;box-shadow:var(--shadow);transition:transform .4s var(--ease),box-shadow .4s}
+    .pitem:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg)}
+    .pitem img{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease)}
+    .pitem:hover img{transform:scale(1.07)}
+    .pitem span{position:absolute;left:0;right:0;bottom:0;padding:22px 20px 16px;color:#fff;font-weight:700;font-size:1.15rem;background:linear-gradient(180deg,transparent,rgba(7,18,12,.82))}
+    .pitem.hide{display:none}
+    @media(max-width:980px){.pgrid{grid-template-columns:1fr 1fr}}
+    @media(max-width:680px){.pgrid{grid-template-columns:1fr}}
+  </style>
 </head>
 <body>
-  <nav class="nav">
-    <div class="nav-inner">
-      <a href="index.html" class="nav-logo"><span class="nav-logo-rj">RJ</span> Produce</a>
-      <button class="nav-hamburger" id="nav-hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
-      <ul class="nav-links">
-        <li class="nav-item has-dropdown">
-          <a href="about.html" class="nav-parent" onclick="return false;" style="cursor:default;">About <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></a>
-          <div class="nav-dropdown"><a href="about.html#our-story">Our Story</a><a href="why-us.html">Why Choose Us</a></div>
-        </li>
-        <li class="nav-item has-dropdown">
-          <a href="services.html" class="nav-parent" onclick="return false;" style="cursor:default;">Services <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></a>
-          <div class="nav-dropdown"><a href="wholesale.html">Wholesale Distribution</a><a href="cross-border.html">Cross-Border Sourcing</a><a href="private-label.html">Private Label</a><a href="how-it-works.html">How It Works</a></div>
-        </li>
-        <li class="nav-item has-dropdown">
-          <a href="products.html" class="nav-parent" onclick="return false;" style="cursor:default;">Products <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></a>
-          <div class="nav-dropdown"><a href="products.html?filter=vegetables">Vegetables</a><a href="products.html?filter=fruits">Fruits</a><a href="products.html?filter=specialty">Specialty</a><a href="products.html">View All</a></div>
-        </li>
-        <li class="nav-item has-dropdown">
-          <a href="sourcing.html" class="nav-parent" onclick="return false;" style="cursor:default;">Sourcing <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></a>
-          <div class="nav-dropdown"><a href="sourcing.html">U.S. &amp; Mexico</a><a href="sustainability.html">Sustainability</a><a href="service-area.html">Service Area</a></div>
-        </li>
-        <li><a href="contact.html" class="btn-nav-cta">Contact Us</a></li>
-      </ul>
-    </div>
-  </nav>
+  <nav class="nav" id="nav"><div class="nav-inner">
+    <a href="index.html" class="nav-logo"><span class="rj">RJ</span> Produce</a>
+    <button class="nav-burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+    <ul class="nav-links" id="navlinks">
+      <li class="nav-item has-dropdown"><span class="nav-parent">About <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span><div class="nav-dropdown"><a href="about.html#our-story">Our Story</a><a href="why-us.html">Why RJ Produce</a></div></li>
+      <li class="nav-item has-dropdown"><span class="nav-parent">Capabilities <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span><div class="nav-dropdown"><a href="wholesale.html">Wholesale Distribution</a><a href="cross-border.html">Cross-Border Sourcing</a><a href="private-label.html">Private Label</a><a href="how-it-works.html">How It Works</a></div></li>
+      <li class="nav-item has-dropdown"><span class="nav-parent">Products <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span><div class="nav-dropdown"><a href="products.html?filter=vegetables">Vegetables</a><a href="products.html?filter=fruits">Fruits</a><a href="products.html?filter=specialty">Specialty</a><a href="products.html">View All</a></div></li>
+      <li class="nav-item has-dropdown"><span class="nav-parent">Network <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span><div class="nav-dropdown"><a href="sourcing.html">U.S. &amp; Mexico Sourcing</a><a href="service-area.html">Distribution &amp; Service Area</a><a href="sustainability.html">Sustainability</a></div></li>
+      <li><a href="contact.html" class="nav-cta">Request a Quote</a></li>
+    </ul>
+  </div></nav>
 
-  <div class="page-hero">
-    <div class="container">
-      <div class="section-label label-light">Our Products</div>
-      <h1>Fresh From the Field</h1>
-      <p>Year-round supply of premium fruits and vegetables from the best domestic and Mexican growers.</p>
+  <header class="phero">
+    <div class="phero-grid"></div><div class="phero-orb"></div>
+    <div class="phero-inner">
+      <span class="eyebrow reveal in">Products</span>
+      <h1 class="reveal in" data-d="1">Fresh from the field, year-round</h1>
+      <p class="reveal in" data-d="2">A broad, dependable catalog spanning everyday staples and hard-to-source specialty items.</p>
     </div>
-  </div>
+  </header>
 
-  <section class="section section-tint">
-    <div class="container">
-      <div class="product-filters">
-        <button class="filter-btn active" data-filter="all">All</button>
-        <button class="filter-btn" data-filter="vegetables">Vegetables</button>
-        <button class="filter-btn" data-filter="fruits">Fruits</button>
-        <button class="filter-btn" data-filter="specialty">Specialty</button>
+  <section class="sec">
+    <div class="wrap">
+      <div class="filters reveal">
+        <button class="fbtn active" data-filter="all">All</button>
+        <button class="fbtn" data-filter="vegetables">Vegetables</button>
+        <button class="fbtn" data-filter="fruits">Fruits</button>
+        <button class="fbtn" data-filter="specialty">Specialty</button>
       </div>
-      <div class="products-grid">
-        <div class="product-item" data-category="vegetables">
-          <img src="https://images.unsplash.com/photo-1582284540020-8acbe03f4924?w=300&h=200&fit=crop&auto=format" alt="Tomatoes" />
-          <span>Tomatoes</span>
-        </div>
-        <div class="product-item" data-category="specialty">
-          <img src="https://images.unsplash.com/photo-1519162808019-7de1683fa2ad?w=300&h=200&fit=crop&auto=format" alt="Avocados" />
-          <span>Avocados</span>
-        </div>
-        <div class="product-item" data-category="vegetables">
-          <img src="https://images.unsplash.com/photo-1563565375-f3fdfdbefa83?w=300&h=200&fit=crop&auto=format" alt="Peppers" />
-          <span>Peppers</span>
-        </div>
-        <div class="product-item" data-category="vegetables">
-          <img src="https://images.unsplash.com/photo-1449300079323-02e209d9d3a6?w=300&h=200&fit=crop&auto=format" alt="Cucumbers" />
-          <span>Cucumbers</span>
-        </div>
-        <div class="product-item" data-category="vegetables">
-          <img src="https://images.unsplash.com/photo-1551754655-cd27e38d2076?w=300&h=200&fit=crop&auto=format" alt="Corn" />
-          <span>Corn</span>
-        </div>
-        <div class="product-item" data-category="fruits">
-          <img src="https://images.unsplash.com/photo-1578855691621-8a08ea00d1fb?w=300&h=200&fit=crop&auto=format" alt="Citrus" />
-          <span>Citrus</span>
-        </div>
+      <div class="pgrid reveal" data-d="1">
+        <div class="pitem" data-cat="vegetables"><img src="https://images.unsplash.com/photo-1582284540020-8acbe03f4924?w=500&h=340&fit=crop&auto=format" alt="Tomatoes" loading="lazy"><span>Tomatoes</span></div>
+        <div class="pitem" data-cat="specialty"><img src="https://images.unsplash.com/photo-1519162808019-7de1683fa2ad?w=500&h=340&fit=crop&auto=format" alt="Avocados" loading="lazy"><span>Avocados</span></div>
+        <div class="pitem" data-cat="vegetables"><img src="https://images.unsplash.com/photo-1563565375-f3fdfdbefa83?w=500&h=340&fit=crop&auto=format" alt="Peppers" loading="lazy"><span>Peppers</span></div>
+        <div class="pitem" data-cat="vegetables"><img src="https://images.unsplash.com/photo-1449300079323-02e209d9d3a6?w=500&h=340&fit=crop&auto=format" alt="Cucumbers" loading="lazy"><span>Cucumbers</span></div>
+        <div class="pitem" data-cat="vegetables"><img src="https://images.unsplash.com/photo-1551754655-cd27e38d2076?w=500&h=340&fit=crop&auto=format" alt="Corn" loading="lazy"><span>Corn</span></div>
+        <div class="pitem" data-cat="fruits"><img src="https://images.unsplash.com/photo-1578855691621-8a08ea00d1fb?w=500&h=340&fit=crop&auto=format" alt="Citrus" loading="lazy"><span>Citrus</span></div>
       </div>
     </div>
   </section>
 
-  <section class="section">
-    <div class="container" style="text-align:center; max-width:600px;">
-      <div class="section-label">Bulk Orders Welcome</div>
-      <h2>Need Custom Quantities?</h2>
-      <p>We supply to retailers, foodservice operators, and distributors of all sizes. Contact our team to discuss volume pricing and availability.</p>
-      <div style="margin-top:32px;">
-        <a href="contact.html" class="btn btn-primary btn-lg">Request a Quote</a>
-      </div>
-    </div>
-  </section>
+  <section class="sec sec-tint"><div class="wrap"><div class="cta reveal"><div class="cta-grid"></div>
+    <h2>Need custom quantities?</h2>
+    <p>We supply retailers, foodservice operators, and distributors of all sizes. Let's talk volume pricing and availability.</p>
+    <div class="cta-actions"><a href="contact.html" class="btn btn-primary">Request a Quote</a></div>
+  </div></div></section>
 
-  <footer class="footer">
-    <div class="container footer-inner">
-      <div class="footer-brand">
-        <div class="logo footer-logo"><span class="logo-rj">RJ</span><span class="logo-produce"> Produce</span></div>
-        <p>Premium produce wholesale serving the U.S. and Mexico from Pharr, Texas.</p>
-      </div>
-      <div class="footer-links">
-        <div class="footer-col"><strong>Company</strong><a href="about.html">About</a><a href="why-us.html">Why Choose Us</a><a href="index.html#certifications">Certifications</a></div>
-        <div class="footer-col"><strong>Services</strong><a href="wholesale.html">Wholesale</a><a href="cross-border.html">Cross-Border</a><a href="how-it-works.html">How It Works</a></div>
-        <div class="footer-col"><strong>Sourcing</strong><a href="sourcing.html">U.S. &amp; Mexico</a><a href="sustainability.html">Sustainability</a><a href="service-area.html">Service Area</a></div>
-      </div>
+  <footer class="footer"><div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand"><div class="flogo"><span class="rj">RJ</span> Produce</div><p>The supply chain behind fresh produce — serving the U.S. and Mexico from Pharr, Texas since 2004. A GrubMarket company.</p></div>
+      <div class="footer-col"><h4>Company</h4><a href="about.html#our-story">Our Story</a><a href="why-us.html">Why RJ Produce</a><a href="sustainability.html">Sustainability</a></div>
+      <div class="footer-col"><h4>Capabilities</h4><a href="wholesale.html">Wholesale</a><a href="cross-border.html">Cross-Border</a><a href="private-label.html">Private Label</a><a href="how-it-works.html">How It Works</a></div>
+      <div class="footer-col"><h4>Network</h4><a href="sourcing.html">U.S. &amp; Mexico</a><a href="service-area.html">Service Area</a><a href="products.html">Products</a><a href="contact.html">Request a Quote</a></div>
     </div>
-    <div class="footer-bottom"><div class="container footer-bottom-inner"><p>© 2026 RJ Produce. All rights reserved.</p></div></div>
-  </footer>
+    <div class="footer-bot"><span>© 2026 RJ Produce. All rights reserved.</span><span>9005 Travis Drive, Pharr, TX 78577 · (956) 781-4000</span></div>
+  </div></footer>
 
   <script>
-    window.addEventListener('scroll', () => {
-      document.querySelector('.nav').classList.toggle('nav-scrolled', window.scrollY > 20);
-    });
-    const hamburger = document.getElementById('nav-hamburger');
-    const navLinks = document.querySelector('.nav-links');
-    if (hamburger) {
-      hamburger.addEventListener('click', () => {
-        hamburger.classList.toggle('open');
-        navLinks.classList.toggle('open');
-      });
-      document.querySelectorAll('.nav-item.has-dropdown > .nav-parent').forEach(btn => {
-        btn.addEventListener('click', e => {
-          if (window.innerWidth <= 768) {
-            e.preventDefault();
-            btn.closest('.nav-item').classList.toggle('open');
-          }
-        });
-      });
-    }
+    const nav=document.getElementById('nav');const os=()=>nav.classList.toggle('scrolled',scrollY>30);os();addEventListener('scroll',os,{passive:true});
+    const b=document.getElementById('burger'),nl=document.getElementById('navlinks');b.addEventListener('click',()=>{b.classList.toggle('open');nl.classList.toggle('open')});
+    document.querySelectorAll('.nav-item.has-dropdown > .nav-parent').forEach(p=>p.addEventListener('click',()=>{if(innerWidth<=680)p.closest('.nav-item').classList.toggle('open')}));
+    const io=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+    document.querySelectorAll('.reveal:not(.in)').forEach(el=>io.observe(el));
+    // filter
+    const btns=document.querySelectorAll('.fbtn'),items=document.querySelectorAll('.pitem');
+    function apply(f){items.forEach(i=>i.classList.toggle('hide',f!=='all'&&i.dataset.cat!==f));btns.forEach(b=>b.classList.toggle('active',b.dataset.filter===f))}
+    btns.forEach(b=>b.addEventListener('click',()=>apply(b.dataset.filter)));
+    const p=new URLSearchParams(location.search).get('filter');if(p)apply(p);
   </script>
 </body>
 </html>

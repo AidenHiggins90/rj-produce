@@ -3,122 +3,82 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Bulk wholesale produce supply from Pharr, TX — fresh fruits and vegetables for retailers, foodservice operators, and distributors at competitive prices." />
-  <title>Wholesale Produce Distribution — RJ Produce, Pharr TX</title>
+  <meta name="description" content="Bulk wholesale produce distribution from Pharr, TX — fresh fruits and vegetables for retailers, foodservice operators, and distributors at competitive prices." />
+  <title>Wholesale Distribution — RJ Produce</title>
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=3" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="theme.css?v=1" />
 </head>
 <body>
-  <nav class="nav">
-    <div class="nav-inner">
-      <a href="index.html" class="nav-logo"><span class="nav-logo-rj">RJ</span> Produce</a>
-      <button class="nav-hamburger" id="nav-hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
-      <ul class="nav-links">
-        <li class="nav-item has-dropdown">
-          <a href="about.html" class="nav-parent" onclick="return false;" style="cursor:default;">About <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></a>
-          <div class="nav-dropdown"><a href="about.html#our-story">Our Story</a><a href="why-us.html">Why Choose Us</a></div>
-        </li>
-        <li class="nav-item has-dropdown">
-          <a href="services.html" class="nav-parent" onclick="return false;" style="cursor:default;">Services <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></a>
-          <div class="nav-dropdown"><a href="wholesale.html">Wholesale Distribution</a><a href="cross-border.html">Cross-Border Sourcing</a><a href="private-label.html">Private Label</a><a href="how-it-works.html">How It Works</a></div>
-        </li>
-        <li class="nav-item has-dropdown">
-          <a href="products.html" class="nav-parent" onclick="return false;" style="cursor:default;">Products <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></a>
-          <div class="nav-dropdown"><a href="products.html?filter=vegetables">Vegetables</a><a href="products.html?filter=fruits">Fruits</a><a href="products.html?filter=specialty">Specialty</a><a href="products.html">View All</a></div>
-        </li>
-        <li class="nav-item has-dropdown">
-          <a href="sourcing.html" class="nav-parent" onclick="return false;" style="cursor:default;">Sourcing <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></a>
-          <div class="nav-dropdown"><a href="sourcing.html">U.S. &amp; Mexico</a><a href="sustainability.html">Sustainability</a><a href="service-area.html">Service Area</a></div>
-        </li>
-        <li><a href="contact.html" class="btn-nav-cta">Contact Us</a></li>
-      </ul>
-    </div>
-  </nav>
+  <nav class="nav" id="nav"><div class="nav-inner">
+    <a href="index.html" class="nav-logo"><span class="rj">RJ</span> Produce</a>
+    <button class="nav-burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+    <ul class="nav-links" id="navlinks">
+      <li class="nav-item has-dropdown"><span class="nav-parent">About <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span><div class="nav-dropdown"><a href="about.html#our-story">Our Story</a><a href="why-us.html">Why RJ Produce</a></div></li>
+      <li class="nav-item has-dropdown"><span class="nav-parent">Capabilities <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span><div class="nav-dropdown"><a href="wholesale.html">Wholesale Distribution</a><a href="cross-border.html">Cross-Border Sourcing</a><a href="private-label.html">Private Label</a><a href="how-it-works.html">How It Works</a></div></li>
+      <li class="nav-item has-dropdown"><span class="nav-parent">Products <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span><div class="nav-dropdown"><a href="products.html?filter=vegetables">Vegetables</a><a href="products.html?filter=fruits">Fruits</a><a href="products.html?filter=specialty">Specialty</a><a href="products.html">View All</a></div></li>
+      <li class="nav-item has-dropdown"><span class="nav-parent">Network <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span><div class="nav-dropdown"><a href="sourcing.html">U.S. &amp; Mexico Sourcing</a><a href="service-area.html">Distribution &amp; Service Area</a><a href="sustainability.html">Sustainability</a></div></li>
+      <li><a href="contact.html" class="nav-cta">Request a Quote</a></li>
+    </ul>
+  </div></nav>
 
-  <div class="page-hero">
-    <div class="container">
-      <div class="section-label label-light">Services</div>
-      <h1>Wholesale Distribution</h1>
-      <p>Reliable bulk supply of fresh fruits and vegetables — direct from grower to your dock.</p>
+  <header class="phero">
+    <div class="phero-grid"></div><div class="phero-orb"></div>
+    <div class="phero-inner">
+      <span class="eyebrow reveal in">Capabilities</span>
+      <h1 class="reveal in" data-d="1">Wholesale Distribution</h1>
+      <p class="reveal in" data-d="2">Reliable bulk supply of fresh fruits and vegetables — direct from grower to your dock.</p>
     </div>
-  </div>
+  </header>
 
-  <section class="section section-tint">
-    <div class="container split">
-      <div class="split-text">
-        <div class="section-label">What We Do</div>
-        <h2>High-Volume Supply You Can Count On</h2>
-        <p>RJ Produce is a full-service wholesale distributor of fresh fruits and vegetables, supplying retailers, foodservice operators, and regional distributors across the U.S. and Mexico. Operating from our Pharr, Texas facility — minutes from the U.S.–Mexico border — we move high volumes of produce quickly and efficiently, maintaining cold-chain integrity from the moment product leaves the field.</p>
-        <p>Our buying power, border-region location, and long-standing grower relationships allow us to offer competitive pricing on a consistent, year-round supply — even on seasonal and specialty items that are harder to source elsewhere.</p>
-        <a href="contact.html" class="btn btn-primary">Request a Quote</a>
+  <section class="sec">
+    <div class="wrap split">
+      <div class="split-text reveal">
+        <span class="eyebrow">What we do</span>
+        <h2>High-volume supply you can count on</h2>
+        <p>RJ Produce is a full-service wholesale distributor of fresh fruits and vegetables, supplying retailers, foodservice operators, and regional distributors across the U.S. and Mexico. Operating from our Pharr, Texas facility — minutes from the border — we move high volumes quickly and efficiently, maintaining cold-chain integrity from the moment product leaves the field.</p>
+        <p>Our buying power, border-region location, and long-standing grower relationships let us offer competitive pricing on a consistent, year-round supply — even on seasonal and specialty items that are harder to source elsewhere.</p>
+        <a href="contact.html" class="btn btn-dark">Request a Quote</a>
       </div>
-      <div class="split-visual">
-        <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?w=700&h=500&fit=crop&auto=format" alt="Wholesale produce warehouse" class="about-single-img" />
+      <div class="split-media reveal" data-d="1">
+        <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?w=800&h=600&fit=crop&auto=format" alt="Wholesale produce warehouse" loading="lazy">
       </div>
     </div>
   </section>
 
-  <section class="section">
-    <div class="container">
-      <div class="section-header">
-        <div class="section-label">What's Included</div>
-        <h2>Full-Service Distribution</h2>
-      </div>
-      <div class="metric-summary" style="margin-top:8px;">
+  <section class="sec sec-tint">
+    <div class="wrap">
+      <div class="sec-head reveal"><span class="eyebrow">What's included</span><h2>Full-service distribution</h2></div>
+      <div class="prose reveal" data-d="1">
         <p>Most customers come to us tired of juggling separate suppliers, schedules, and paperwork. We fold all of it into one relationship: a single point of contact who knows your account, deliveries timed to your receiving dock rather than our convenience, and a check on every load before it leaves the building so nothing shows up that you'd have to turn away. Reorders, standing orders, and your full purchase history live in one online dashboard, so a buyer can run the whole account in the few minutes between everything else on their plate.</p>
       </div>
     </div>
   </section>
 
-  <section class="section section-tint">
-    <div class="container" style="text-align:center; max-width:600px;">
-      <div class="section-label">Get Started</div>
-      <h2>Ready to Set Up an Account?</h2>
-      <p>Whether you're a national retailer, regional grocery chain, or foodservice operator, our team will build a supply program around your volume and schedule.</p>
-      <div style="margin-top:32px; display:flex; gap:16px; justify-content:center;">
-        <a href="contact.html" class="btn btn-primary btn-lg">Contact Us</a>
-        <a href="products.html" class="btn btn-outline btn-lg">View Products</a>
-      </div>
-    </div>
-  </section>
+  <section class="sec"><div class="wrap"><div class="cta reveal"><div class="cta-grid"></div>
+    <h2>Ready to set up an account?</h2>
+    <p>National retailer, regional grocer, foodservice, or distributor — we'll build supply around your volume and schedule.</p>
+    <div class="cta-actions"><a href="contact.html" class="btn btn-primary">Request a Quote</a><a href="products.html" class="btn btn-ghost">View Products</a></div>
+  </div></div></section>
 
-  <footer class="footer">
-    <div class="container footer-inner">
-      <div class="footer-brand">
-        <div class="logo footer-logo"><span class="logo-rj">RJ</span><span class="logo-produce"> Produce</span></div>
-        <p>Premium produce wholesale serving the U.S. and Mexico from Pharr, Texas.</p>
-      </div>
-      <div class="footer-links">
-        <div class="footer-col"><strong>Company</strong><a href="about.html">About</a><a href="why-us.html">Why Choose Us</a><a href="index.html#certifications">Certifications</a></div>
-        <div class="footer-col"><strong>Services</strong><a href="wholesale.html">Wholesale</a><a href="cross-border.html">Cross-Border</a><a href="how-it-works.html">How It Works</a></div>
-        <div class="footer-col"><strong>Sourcing</strong><a href="sourcing.html">U.S. &amp; Mexico</a><a href="sustainability.html">Sustainability</a><a href="service-area.html">Service Area</a></div>
-      </div>
+  <footer class="footer"><div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand"><div class="flogo"><span class="rj">RJ</span> Produce</div><p>The supply chain behind fresh produce — serving the U.S. and Mexico from Pharr, Texas since 2004. A GrubMarket company.</p></div>
+      <div class="footer-col"><h4>Company</h4><a href="about.html#our-story">Our Story</a><a href="why-us.html">Why RJ Produce</a><a href="sustainability.html">Sustainability</a></div>
+      <div class="footer-col"><h4>Capabilities</h4><a href="wholesale.html">Wholesale</a><a href="cross-border.html">Cross-Border</a><a href="private-label.html">Private Label</a><a href="how-it-works.html">How It Works</a></div>
+      <div class="footer-col"><h4>Network</h4><a href="sourcing.html">U.S. &amp; Mexico</a><a href="service-area.html">Service Area</a><a href="products.html">Products</a><a href="contact.html">Request a Quote</a></div>
     </div>
-    <div class="footer-bottom"><div class="container footer-bottom-inner"><p>© 2026 RJ Produce. All rights reserved.</p></div></div>
-  </footer>
+    <div class="footer-bot"><span>© 2026 RJ Produce. All rights reserved.</span><span>9005 Travis Drive, Pharr, TX 78577 · (956) 781-4000</span></div>
+  </div></footer>
+
   <script>
-    window.addEventListener('scroll', () => {
-      document.querySelector('.nav').classList.toggle('nav-scrolled', window.scrollY > 20);
-    });
-    const hamburger = document.getElementById('nav-hamburger');
-    const navLinks = document.querySelector('.nav-links');
-    if (hamburger) {
-      hamburger.addEventListener('click', () => {
-        hamburger.classList.toggle('open');
-        navLinks.classList.toggle('open');
-      });
-      document.querySelectorAll('.nav-item.has-dropdown > .nav-parent').forEach(btn => {
-        btn.addEventListener('click', e => {
-          if (window.innerWidth <= 768) {
-            e.preventDefault();
-            btn.closest('.nav-item').classList.toggle('open');
-          }
-        });
-      });
-    }
+    const nav=document.getElementById('nav');const os=()=>nav.classList.toggle('scrolled',scrollY>30);os();addEventListener('scroll',os,{passive:true});
+    const b=document.getElementById('burger'),nl=document.getElementById('navlinks');b.addEventListener('click',()=>{b.classList.toggle('open');nl.classList.toggle('open')});
+    document.querySelectorAll('.nav-item.has-dropdown > .nav-parent').forEach(p=>p.addEventListener('click',()=>{if(innerWidth<=680)p.closest('.nav-item').classList.toggle('open')}));
+    const io=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+    document.querySelectorAll('.reveal:not(.in)').forEach(el=>io.observe(el));
   </script>
 </body>
 </html>
