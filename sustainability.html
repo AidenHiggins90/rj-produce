@@ -3,110 +3,76 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="RJ Produce practices responsible sourcing — seasonal growing cycles, direct grower relationships, and reduced food waste across our distribution network." />
-  <title>Sustainable Produce Sourcing — RJ Produce</title>
+  <meta name="description" content="RJ Produce practices responsible sourcing — seasonal growing cycles, direct grower relationships, and reduced food waste across the supply chain." />
+  <title>Sustainability — RJ Produce</title>
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=3" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="theme.css?v=1" />
 </head>
 <body>
-  <nav class="nav">
-    <div class="nav-inner">
-      <a href="index.html" class="nav-logo"><span class="nav-logo-rj">RJ</span> Produce</a>
-      <button class="nav-hamburger" id="nav-hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
-      <ul class="nav-links">
-        <li class="nav-item has-dropdown">
-          <a href="about.html" class="nav-parent" onclick="return false;" style="cursor:default;">About <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></a>
-          <div class="nav-dropdown"><a href="about.html#our-story">Our Story</a><a href="why-us.html">Why Choose Us</a></div>
-        </li>
-        <li class="nav-item has-dropdown">
-          <a href="services.html" class="nav-parent" onclick="return false;" style="cursor:default;">Services <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></a>
-          <div class="nav-dropdown"><a href="wholesale.html">Wholesale Distribution</a><a href="cross-border.html">Cross-Border Sourcing</a><a href="private-label.html">Private Label</a><a href="how-it-works.html">How It Works</a></div>
-        </li>
-        <li class="nav-item has-dropdown">
-          <a href="products.html" class="nav-parent" onclick="return false;" style="cursor:default;">Products <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></a>
-          <div class="nav-dropdown"><a href="products.html?filter=vegetables">Vegetables</a><a href="products.html?filter=fruits">Fruits</a><a href="products.html?filter=specialty">Specialty</a><a href="products.html">View All</a></div>
-        </li>
-        <li class="nav-item has-dropdown">
-          <a href="sourcing.html" class="nav-parent" onclick="return false;" style="cursor:default;">Sourcing <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></a>
-          <div class="nav-dropdown"><a href="sourcing.html">U.S. &amp; Mexico</a><a href="sustainability.html">Sustainability</a><a href="service-area.html">Service Area</a></div>
-        </li>
-        <li><a href="contact.html" class="btn-nav-cta">Contact Us</a></li>
-      </ul>
-    </div>
-  </nav>
+  <nav class="nav" id="nav"><div class="nav-inner">
+    <a href="index.html" class="nav-logo"><span class="rj">RJ</span> Produce</a>
+    <button class="nav-burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+    <ul class="nav-links" id="navlinks">
+      <li class="nav-item has-dropdown"><span class="nav-parent">About <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span><div class="nav-dropdown"><a href="about.html#our-story">Our Story</a><a href="why-us.html">Why RJ Produce</a></div></li>
+      <li class="nav-item has-dropdown"><span class="nav-parent">Capabilities <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span><div class="nav-dropdown"><a href="wholesale.html">Wholesale Distribution</a><a href="cross-border.html">Cross-Border Sourcing</a><a href="private-label.html">Private Label</a><a href="how-it-works.html">How It Works</a></div></li>
+      <li class="nav-item has-dropdown"><span class="nav-parent">Products <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span><div class="nav-dropdown"><a href="products.html?filter=vegetables">Vegetables</a><a href="products.html?filter=fruits">Fruits</a><a href="products.html?filter=specialty">Specialty</a><a href="products.html">View All</a></div></li>
+      <li class="nav-item has-dropdown"><span class="nav-parent">Network <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span><div class="nav-dropdown"><a href="sourcing.html">U.S. &amp; Mexico Sourcing</a><a href="service-area.html">Distribution &amp; Service Area</a><a href="sustainability.html">Sustainability</a></div></li>
+      <li><a href="contact.html" class="nav-cta">Request a Quote</a></li>
+    </ul>
+  </div></nav>
 
-  <div class="page-hero">
-    <div class="container">
-      <div class="section-label label-light">Sustainability</div>
-      <h1>Responsible Sourcing, Every Season</h1>
-      <p>We believe great produce and responsible practices go hand in hand.</p>
+  <header class="phero">
+    <div class="phero-grid"></div><div class="phero-orb"></div>
+    <div class="phero-inner">
+      <span class="eyebrow reveal in">Sustainability</span>
+      <h1 class="reveal in" data-d="1">Responsible sourcing, every season</h1>
+      <p class="reveal in" data-d="2">We believe great produce and responsible practices go hand in hand.</p>
     </div>
-  </div>
+  </header>
 
-  <section class="section section-tint">
-    <div class="container">
-      <div class="section-header">
-        <div class="section-label">Our Approach</div>
-        <h2>Working With Nature, Not Against It</h2>
-      </div>
-      <div class="metric-summary" style="margin-top:8px;">
+  <section class="sec sec-tint">
+    <div class="wrap">
+      <div class="sec-head reveal"><span class="eyebrow">Our approach</span><h2>Working with nature, not against it</h2></div>
+      <div class="prose reveal" data-d="1">
         <p>For us, responsible practice is mostly a matter of not fighting nature. We buy what's ready when it's ready, following each region's natural growing calendar instead of pushing farms to force a crop out of season. Because we deal with growers directly, the money stays in the farming communities on both sides of the border, season after season, rather than thinning out across a chain of intermediaries. And the shorter that chain runs, the less produce is handled, jostled, and left waiting — which is the simplest way we know to keep good food from ending up as waste.</p>
       </div>
     </div>
   </section>
 
-  <section class="section">
-    <div class="container split">
-      <div class="split-text">
-        <div class="section-label">Our Commitment</div>
-        <h2>Building for the Long Term</h2>
+  <section class="sec">
+    <div class="wrap split rev">
+      <div class="split-text reveal" data-d="1">
+        <span class="eyebrow">Our commitment</span>
+        <h2>Building for the long term</h2>
         <p>Sustainability at RJ Produce isn't a marketing campaign — it's how we've operated since 2004. Our direct grower model means shorter supply chains, less fuel, less packaging, and less waste. When we build relationships with farms, we build them to last.</p>
         <p>As a GrubMarket company, we continue to invest in technology and processes that make fresh produce distribution more efficient and more responsible for everyone in the chain.</p>
-        <a href="contact.html" class="btn btn-primary">Work With Us</a>
+        <a href="contact.html" class="btn btn-dark">Work With Us</a>
       </div>
-      <div class="split-visual">
-        <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=700&h=500&fit=crop&auto=format" alt="Sustainable farming fields" class="about-single-img" />
+      <div class="split-media reveal">
+        <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=800&h=600&fit=crop&auto=format" alt="Sustainable farming fields" loading="lazy">
       </div>
     </div>
   </section>
 
-  <footer class="footer">
-    <div class="container footer-inner">
-      <div class="footer-brand">
-        <div class="logo footer-logo"><span class="logo-rj">RJ</span><span class="logo-produce"> Produce</span></div>
-        <p>Premium produce wholesale serving the U.S. and Mexico from Pharr, Texas.</p>
-      </div>
-      <div class="footer-links">
-        <div class="footer-col"><strong>Company</strong><a href="about.html">About</a><a href="why-us.html">Why Choose Us</a><a href="index.html#certifications">Certifications</a></div>
-        <div class="footer-col"><strong>Services</strong><a href="wholesale.html">Wholesale</a><a href="cross-border.html">Cross-Border</a><a href="how-it-works.html">How It Works</a></div>
-        <div class="footer-col"><strong>Sourcing</strong><a href="sourcing.html">U.S. &amp; Mexico</a><a href="sustainability.html">Sustainability</a><a href="service-area.html">Service Area</a></div>
-      </div>
+  <footer class="footer"><div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand"><div class="flogo"><span class="rj">RJ</span> Produce</div><p>The supply chain behind fresh produce — serving the U.S. and Mexico from Pharr, Texas since 2004. A GrubMarket company.</p></div>
+      <div class="footer-col"><h4>Company</h4><a href="about.html#our-story">Our Story</a><a href="why-us.html">Why RJ Produce</a><a href="sustainability.html">Sustainability</a></div>
+      <div class="footer-col"><h4>Capabilities</h4><a href="wholesale.html">Wholesale</a><a href="cross-border.html">Cross-Border</a><a href="private-label.html">Private Label</a><a href="how-it-works.html">How It Works</a></div>
+      <div class="footer-col"><h4>Network</h4><a href="sourcing.html">U.S. &amp; Mexico</a><a href="service-area.html">Service Area</a><a href="products.html">Products</a><a href="contact.html">Request a Quote</a></div>
     </div>
-    <div class="footer-bottom"><div class="container footer-bottom-inner"><p>© 2026 RJ Produce. All rights reserved.</p></div></div>
-  </footer>
+    <div class="footer-bot"><span>© 2026 RJ Produce. All rights reserved.</span><span>9005 Travis Drive, Pharr, TX 78577 · (956) 781-4000</span></div>
+  </div></footer>
+
   <script>
-    window.addEventListener('scroll', () => {
-      document.querySelector('.nav').classList.toggle('nav-scrolled', window.scrollY > 20);
-    });
-    const hamburger = document.getElementById('nav-hamburger');
-    const navLinks = document.querySelector('.nav-links');
-    if (hamburger) {
-      hamburger.addEventListener('click', () => {
-        hamburger.classList.toggle('open');
-        navLinks.classList.toggle('open');
-      });
-      document.querySelectorAll('.nav-item.has-dropdown > .nav-parent').forEach(btn => {
-        btn.addEventListener('click', e => {
-          if (window.innerWidth <= 768) {
-            e.preventDefault();
-            btn.closest('.nav-item').classList.toggle('open');
-          }
-        });
-      });
-    }
+    const nav=document.getElementById('nav');const os=()=>nav.classList.toggle('scrolled',scrollY>30);os();addEventListener('scroll',os,{passive:true});
+    const b=document.getElementById('burger'),nl=document.getElementById('navlinks');b.addEventListener('click',()=>{b.classList.toggle('open');nl.classList.toggle('open')});
+    document.querySelectorAll('.nav-item.has-dropdown > .nav-parent').forEach(p=>p.addEventListener('click',()=>{if(innerWidth<=680)p.closest('.nav-item').classList.toggle('open')}));
+    const io=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+    document.querySelectorAll('.reveal:not(.in)').forEach(el=>io.observe(el));
   </script>
 </body>
 </html>
