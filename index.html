@@ -55,32 +55,19 @@
     .btn-outline:hover{border-color:var(--ink);transform:translateY(-2px)}
     .btn svg{width:16px;height:16px}
 
-    /* ── Nav ── */
-    .nav{position:fixed;top:0;left:0;right:0;z-index:100;transition:background .3s var(--ease),box-shadow .3s var(--ease),border-color .3s}
-    .nav-inner{max-width:var(--maxw);margin:0 auto;padding:0 32px;height:72px;display:flex;align-items:center;justify-content:space-between}
-    .nav-logo{font-size:1.3rem;font-weight:800;letter-spacing:-.03em;color:#fff;transition:color .3s}
-    .nav-logo .rj{color:var(--green-glow)}
-    .nav-links{list-style:none;display:flex;align-items:center;gap:6px}
-    .nav-item{position:relative}
-    .nav-parent,.nav-links>li>a{display:flex;align-items:center;gap:5px;color:rgba(255,255,255,.82);font-size:.92rem;font-weight:500;padding:9px 14px;border-radius:100px;transition:color .25s,background .25s;cursor:default}
-    .nav-links a:hover{color:#fff;background:rgba(255,255,255,.1)}
-    .nav-parent svg{width:11px;height:11px;transition:transform .25s}
-    .nav-item.has-dropdown:hover .nav-parent svg{transform:rotate(180deg)}
-    .nav-dropdown{position:absolute;top:100%;left:50%;transform:translateX(-50%) translateY(-6px);background:var(--white);border-radius:var(--r);box-shadow:var(--shadow-lg);border:1px solid var(--line);padding:14px 8px 8px;min-width:220px;display:flex;flex-direction:column;gap:2px;opacity:0;visibility:hidden;pointer-events:none;transition:all .22s var(--ease);z-index:200}
-    .nav-item.has-dropdown:hover .nav-dropdown{opacity:1;visibility:visible;pointer-events:auto;transform:translateX(-50%) translateY(0)}
-    .nav-dropdown a{color:var(--ink)!important;font-size:.9rem;font-weight:500;padding:10px 14px;border-radius:9px;background:none!important;cursor:pointer}
-    .nav-dropdown a:hover{background:var(--mist-2)!important;color:var(--green-dark)!important}
-    .nav-cta{background:var(--green-bright);color:#04130a!important;font-weight:700;padding:10px 20px;border-radius:100px;transition:all .25s}
-    .nav-cta:hover{background:var(--green-glow)!important;transform:translateY(-1px)}
-    /* scrolled state */
-    .nav.scrolled{background:rgba(255,255,255,.85);backdrop-filter:blur(16px);box-shadow:0 1px 0 var(--line),0 10px 30px -20px rgba(0,0,0,.3)}
-    .nav.scrolled .nav-logo{color:var(--ink)}
-    .nav.scrolled .nav-parent,.nav.scrolled .nav-links>li>a{color:var(--ink)}
-    .nav.scrolled .nav-links a:hover{background:var(--mist-2);color:var(--green-dark)}
-    .nav.scrolled .nav-cta{color:#04130a!important}
+    /* ── Nav (solid white, flat) ── */
+    .nav{position:fixed;top:0;left:0;right:0;z-index:100;background:#fff;border-bottom:1px solid var(--line);transition:box-shadow .3s var(--ease)}
+    .nav.scrolled{box-shadow:0 8px 30px -20px rgba(0,0,0,.35)}
+    .nav-inner{max-width:var(--maxw);margin:0 auto;padding:0 32px;height:74px;display:flex;align-items:center;justify-content:space-between}
+    .nav-logo{font-size:1.35rem;font-weight:800;letter-spacing:-.03em;color:var(--ink)}
+    .nav-logo .rj{color:var(--green)}
+    .nav-links{list-style:none;display:flex;align-items:center;gap:10px}
+    .nav-links>li>a{display:inline-flex;align-items:center;font-size:1rem;font-weight:600;color:var(--ink);padding:10px 16px;border-radius:100px;transition:color .2s,background .2s}
+    .nav-links>li>a:hover{color:var(--green)}
+    .nav-cta{background:var(--green-bright);color:#04130a!important;font-weight:700;padding:11px 22px!important;border-radius:100px;transition:all .25s}
+    .nav-cta:hover{background:var(--green-glow)!important;color:#04130a!important;transform:translateY(-1px)}
     .nav-burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px;z-index:300}
-    .nav-burger span{width:24px;height:2px;background:#fff;border-radius:2px;transition:.25s}
-    .nav.scrolled .nav-burger span{background:var(--ink)}
+    .nav-burger span{width:24px;height:2px;background:var(--ink);border-radius:2px;transition:.25s}
     .nav-burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
     .nav-burger.open span:nth-child(2){opacity:0}
     .nav-burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
@@ -214,14 +201,10 @@
     }
     @media(max-width:680px){
       .nav-burger{display:flex}
-      .nav-links{position:fixed;top:72px;left:0;right:0;background:var(--ink);flex-direction:column;align-items:stretch;gap:0;padding:14px 0 24px;display:none;border-top:1px solid rgba(255,255,255,.1)}
+      .nav-links{position:fixed;top:74px;left:0;right:0;background:#fff;flex-direction:column;align-items:stretch;gap:0;padding:10px 0 22px;display:none;border-top:1px solid var(--line);box-shadow:0 20px 40px -20px rgba(0,0,0,.25)}
       .nav-links.open{display:flex}
-      .nav-parent,.nav-links>li>a{color:#fff;padding:13px 32px;border-radius:0;justify-content:space-between}
-      .nav-item.has-dropdown .nav-dropdown{position:static;transform:none;opacity:1;visibility:visible;pointer-events:auto;display:none;box-shadow:none;border:none;background:rgba(255,255,255,.04);border-radius:0;padding:4px 0 8px 20px;min-width:0}
-      .nav-item.has-dropdown.open .nav-dropdown{display:flex}
-      .nav-dropdown a{color:rgba(255,255,255,.8)!important}
-      .nav-dropdown a:hover{background:rgba(255,255,255,.08)!important;color:#fff!important}
-      .nav-cta{margin:10px 32px 0;text-align:center;justify-content:center}
+      .nav-links>li>a{color:var(--ink);padding:14px 32px;border-radius:0;width:100%}
+      .nav-cta{margin:12px 32px 0;text-align:center;justify-content:center}
       .hero{padding:130px 0 80px}
       .hero-stats{grid-template-columns:1fr 1fr;gap:12px}
       .pillars,.feat-grid,.cat-grid,.cert-row,.ind-grid{grid-template-columns:1fr}
@@ -240,22 +223,10 @@
       <a href="index.html" class="nav-logo"><span class="rj">RJ</span> Produce</a>
       <button class="nav-burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
       <ul class="nav-links" id="navlinks">
-        <li class="nav-item has-dropdown">
-          <span class="nav-parent">About <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
-          <div class="nav-dropdown"><a href="about.html#our-story">Our Story</a><a href="why-us.html">Why RJ Produce</a></div>
-        </li>
-        <li class="nav-item has-dropdown">
-          <span class="nav-parent">Capabilities <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
-          <div class="nav-dropdown"><a href="wholesale.html">Wholesale Distribution</a><a href="cross-border.html">Cross-Border Sourcing</a><a href="private-label.html">Private Label</a><a href="how-it-works.html">How It Works</a></div>
-        </li>
-        <li class="nav-item has-dropdown">
-          <span class="nav-parent">Products <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
-          <div class="nav-dropdown"><a href="products.html?filter=vegetables">Vegetables</a><a href="products.html?filter=fruits">Fruits</a><a href="products.html?filter=specialty">Specialty</a><a href="products.html">View All</a></div>
-        </li>
-        <li class="nav-item has-dropdown">
-          <span class="nav-parent">Network <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
-          <div class="nav-dropdown"><a href="sourcing.html">U.S. &amp; Mexico Sourcing</a><a href="service-area.html">Distribution &amp; Service Area</a><a href="sustainability.html">Sustainability</a></div>
-        </li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Capabilities</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="sourcing.html">Network</a></li>
         <li><a href="contact.html" class="nav-cta">Request a Quote</a></li>
       </ul>
     </div>
@@ -439,20 +410,20 @@
         <div class="footer-col">
           <h4>Company</h4>
           <a href="about.html#our-story">Our Story</a>
-          <a href="why-us.html">Why RJ Produce</a>
-          <a href="sustainability.html">Sustainability</a>
+          <a href="about.html#why">Why RJ Produce</a>
+          <a href="sourcing.html#sustainability">Sustainability</a>
         </div>
         <div class="footer-col">
           <h4>Capabilities</h4>
-          <a href="wholesale.html">Wholesale</a>
-          <a href="cross-border.html">Cross-Border</a>
-          <a href="private-label.html">Private Label</a>
-          <a href="how-it-works.html">How It Works</a>
+          <a href="services.html#wholesale">Wholesale</a>
+          <a href="services.html#cross-border">Cross-Border</a>
+          <a href="services.html#private-label">Private Label</a>
+          <a href="services.html#how-it-works">How It Works</a>
         </div>
         <div class="footer-col">
           <h4>Network</h4>
           <a href="sourcing.html">U.S. &amp; Mexico</a>
-          <a href="service-area.html">Service Area</a>
+          <a href="sourcing.html#service-area">Service Area</a>
           <a href="products.html">Products</a>
           <a href="contact.html">Request a Quote</a>
         </div>

@@ -3,23 +3,29 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="RJ Produce sources directly from growing regions across the U.S. and Mexico. Our Pharr, TX border location delivers speed, freshness, and year-round supply." />
-  <title>U.S. &amp; Mexico Sourcing — RJ Produce</title>
+  <meta name="description" content="RJ Produce's network — direct sourcing across the U.S. and Mexico, a wide distribution footprint, and a commitment to responsible, sustainable practices." />
+  <title>Network — RJ Produce</title>
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="theme.css?v=1" />
+  <link rel="stylesheet" href="theme.css?v=2" />
+  <style>
+    .map-card{max-width:920px;margin:48px auto 0;border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow-lg);border:1px solid var(--line)}
+    .map-card iframe{width:100%;height:440px;display:block;border:none}
+    .map-foot{background:var(--white);padding:18px 22px;display:flex;flex-direction:column;gap:2px}
+    .map-foot strong{font-size:1rem}.map-foot span{font-size:.9rem;color:var(--gray)}
+  </style>
 </head>
 <body>
   <nav class="nav" id="nav"><div class="nav-inner">
     <a href="index.html" class="nav-logo"><span class="rj">RJ</span> Produce</a>
     <button class="nav-burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
     <ul class="nav-links" id="navlinks">
-      <li class="nav-item has-dropdown"><span class="nav-parent">About <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span><div class="nav-dropdown"><a href="about.html#our-story">Our Story</a><a href="why-us.html">Why RJ Produce</a></div></li>
-      <li class="nav-item has-dropdown"><span class="nav-parent">Capabilities <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span><div class="nav-dropdown"><a href="wholesale.html">Wholesale Distribution</a><a href="cross-border.html">Cross-Border Sourcing</a><a href="private-label.html">Private Label</a><a href="how-it-works.html">How It Works</a></div></li>
-      <li class="nav-item has-dropdown"><span class="nav-parent">Products <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span><div class="nav-dropdown"><a href="products.html?filter=vegetables">Vegetables</a><a href="products.html?filter=fruits">Fruits</a><a href="products.html?filter=specialty">Specialty</a><a href="products.html">View All</a></div></li>
-      <li class="nav-item has-dropdown"><span class="nav-parent">Network <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span><div class="nav-dropdown"><a href="sourcing.html">U.S. &amp; Mexico Sourcing</a><a href="service-area.html">Distribution &amp; Service Area</a><a href="sustainability.html">Sustainability</a></div></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Capabilities</a></li>
+      <li><a href="products.html">Products</a></li>
+      <li><a href="sourcing.html">Network</a></li>
       <li><a href="contact.html" class="nav-cta">Request a Quote</a></li>
     </ul>
   </div></nav>
@@ -27,19 +33,20 @@
   <header class="phero">
     <div class="phero-grid"></div><div class="phero-orb"></div>
     <div class="phero-inner">
-      <span class="eyebrow reveal in">Sourcing Network</span>
-      <h1 class="reveal in" data-d="1">Sourced from the United States and Mexico</h1>
-      <p class="reveal in" data-d="2">Direct grower access on both sides of the U.S.–Mexico border, delivering year-round freshness.</p>
+      <span class="eyebrow reveal in">Network</span>
+      <h1 class="reveal in" data-d="1">Sourced from the U.S. and Mexico, delivered everywhere</h1>
+      <p class="reveal in" data-d="2">Direct grower access, a wide distribution footprint, and responsible practices — the network behind every shipment.</p>
     </div>
   </header>
 
-  <section class="sec">
+  <!-- SOURCING -->
+  <section class="sec" id="sourcing">
     <div class="wrap split">
       <div class="split-text reveal">
-        <span class="eyebrow">The best of both countries</span>
+        <span class="eyebrow">U.S. &amp; Mexico Sourcing</span>
         <h2>Rooted in two of the world's most productive regions</h2>
-        <p>RJ Produce sources directly from growing regions across the United States and Mexico. Our border-region location in Pharr, Texas gives us a natural advantage — positioned at the intersection of two of the world's most productive agricultural nations, we tap both markets at once and move product faster than any distributor operating from a single country.</p>
-        <p>U.S. farms provide reliable domestic supply for buyers who require it. Mexican agriculture brings an unmatched depth of seasonal variety, volume, and value. Together, they give our partners year-round access to a broader product range than either country alone could support.</p>
+        <p>RJ Produce sources directly from growing regions across the United States and Mexico. Our border-region location in Pharr, Texas puts us at the intersection of two of the world's most productive agricultural nations — we tap both markets at once and move product faster than any distributor operating from a single country.</p>
+        <p>U.S. farms provide reliable domestic supply; Mexican agriculture brings an unmatched depth of seasonal variety, volume, and value. Together they give partners year-round access to a broader product range than either country alone could support. Produce picked in northern Mexico can reach our facility the same day it crosses — and every hour saved early shows up as extra shelf life at the far end.</p>
         <a href="contact.html" class="btn btn-dark">Check Availability</a>
       </div>
       <div class="split-media reveal" data-d="1">
@@ -49,27 +56,57 @@
     </div>
   </section>
 
-  <section class="sec sec-ink">
+  <!-- SERVICE AREA -->
+  <section class="sec sec-tint" id="service-area">
+    <div class="wrap split rev">
+      <div class="split-text reveal" data-d="1">
+        <span class="eyebrow">Distribution &amp; Service Area</span>
+        <h2>Wide coverage, local expertise</h2>
+        <p>From our facility in Pharr, Texas, RJ Produce distributes fresh produce to customers across the United States and into Mexico. Our border-region location gives us a logistical advantage no inland distributor can match.</p>
+        <ul class="check-list">
+          <li><span class="ck"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span> Texas &amp; the Southwest United States</li>
+          <li><span class="ck"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span> National retail chains (Costco, Restaurant Depot)</li>
+          <li><span class="ck"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span> Northern Mexico distribution</li>
+          <li><span class="ck"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span> Foodservice &amp; regional grocery distributors</li>
+        </ul>
+        <a href="contact.html" class="btn btn-dark">Check Your Area</a>
+      </div>
+      <div class="split-media reveal"><img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&h=600&fit=crop&auto=format" alt="Distribution trucks on highway" loading="lazy"></div>
+    </div>
+  </section>
+
+  <section class="sec">
     <div class="wrap">
-      <div class="sec-head reveal"><span class="eyebrow">Why our location matters</span><h2>Geography does a lot of the work</h2></div>
+      <div class="sec-head reveal"><span class="eyebrow">Our hub</span><h2>Find us in Pharr, Texas</h2><p>Minutes from the U.S.–Mexico border at the heart of the Rio Grande Valley.</p></div>
+      <div class="map-card reveal" data-d="1">
+        <iframe src="https://maps.google.com/maps?q=9005+Travis+Drive,+Pharr,+TX+78577&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="RJ Produce Location"></iframe>
+        <div class="map-foot"><strong>RJ Produce, Inc.</strong><span>9005 Travis Drive · Pharr, TX 78577 · (956) 781-4000</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SUSTAINABILITY -->
+  <section class="sec sec-ink" id="sustainability">
+    <div class="wrap">
+      <div class="sec-head reveal"><span class="eyebrow">Sustainability</span><h2>Working with nature, not against it</h2></div>
       <div class="prose reveal" data-d="1">
-        <p>Produce picked in northern Mexico can reach our Pharr facility the same day it crosses, and be on a customer's truck before a distributor sourcing from the coasts has even cleared inspection — and every hour saved early shows up as extra shelf life at the far end. Time isn't the only payoff. Twenty years rooted in one spot have earned us a place at the front of the line when a grower's supply runs short — the kind of standing that can't be bought, only built season after season.</p>
+        <p>For us, responsible practice is mostly a matter of not fighting nature. We buy what's ready when it's ready, following each region's natural growing calendar instead of pushing farms to force a crop out of season. Because we deal with growers directly, the money stays in the farming communities on both sides of the border, rather than thinning out across a chain of intermediaries. And the shorter that chain runs, the less produce is handled, jostled, and left waiting — the simplest way we know to keep good food from ending up as waste. Sustainability at RJ Produce isn't a campaign; it's how we've operated since 2004.</p>
       </div>
     </div>
   </section>
 
   <section class="sec"><div class="wrap"><div class="cta reveal"><div class="cta-grid"></div>
-    <h2>Tap a sourcing network built over two decades</h2>
-    <p>Tell us what you need and when — we'll source it.</p>
-    <div class="cta-actions"><a href="contact.html" class="btn btn-primary">Request a Quote</a><a href="service-area.html" class="btn btn-ghost">Service Area</a></div>
+    <h2>Tap a network built over two decades</h2>
+    <p>Tell us what you need and when — we'll source it and deliver it.</p>
+    <div class="cta-actions"><a href="contact.html" class="btn btn-primary">Request a Quote</a><a href="products.html" class="btn btn-ghost">View Products</a></div>
   </div></div></section>
 
   <footer class="footer"><div class="wrap">
     <div class="footer-top">
       <div class="footer-brand"><div class="flogo"><span class="rj">RJ</span> Produce</div><p>The supply chain behind fresh produce — serving the U.S. and Mexico from Pharr, Texas since 2004. A GrubMarket company.</p></div>
-      <div class="footer-col"><h4>Company</h4><a href="about.html#our-story">Our Story</a><a href="why-us.html">Why RJ Produce</a><a href="sustainability.html">Sustainability</a></div>
-      <div class="footer-col"><h4>Capabilities</h4><a href="wholesale.html">Wholesale</a><a href="cross-border.html">Cross-Border</a><a href="private-label.html">Private Label</a><a href="how-it-works.html">How It Works</a></div>
-      <div class="footer-col"><h4>Network</h4><a href="sourcing.html">U.S. &amp; Mexico</a><a href="service-area.html">Service Area</a><a href="products.html">Products</a><a href="contact.html">Request a Quote</a></div>
+      <div class="footer-col"><h4>About</h4><a href="about.html#our-story">Our Story</a><a href="about.html#why">Why RJ Produce</a></div>
+      <div class="footer-col"><h4>Capabilities</h4><a href="services.html#wholesale">Wholesale</a><a href="services.html#cross-border">Cross-Border</a><a href="services.html#private-label">Private Label</a><a href="services.html#how-it-works">How It Works</a></div>
+      <div class="footer-col"><h4>Network</h4><a href="sourcing.html#sourcing">U.S. &amp; Mexico</a><a href="sourcing.html#service-area">Service Area</a><a href="sourcing.html#sustainability">Sustainability</a><a href="contact.html">Request a Quote</a></div>
     </div>
     <div class="footer-bot"><span>© 2026 RJ Produce. All rights reserved.</span><span>9005 Travis Drive, Pharr, TX 78577 · (956) 781-4000</span></div>
   </div></footer>
@@ -77,7 +114,6 @@
   <script>
     const nav=document.getElementById('nav');const os=()=>nav.classList.toggle('scrolled',scrollY>30);os();addEventListener('scroll',os,{passive:true});
     const b=document.getElementById('burger'),nl=document.getElementById('navlinks');b.addEventListener('click',()=>{b.classList.toggle('open');nl.classList.toggle('open')});
-    document.querySelectorAll('.nav-item.has-dropdown > .nav-parent').forEach(p=>p.addEventListener('click',()=>{if(innerWidth<=680)p.closest('.nav-item').classList.toggle('open')}));
     const io=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),{threshold:.12,rootMargin:'0px 0px -40px 0px'});
     document.querySelectorAll('.reveal:not(.in)').forEach(el=>io.observe(el));
   </script>
