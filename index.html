@@ -3,467 +3,483 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="RJ Produce is a premier wholesale produce distributor based in Pharr, Texas. Supplying fresh fruits and vegetables across the U.S. and Mexico since 2004." />
-  <title>RJ Produce — Premium Produce Wholesale</title>
+  <meta name="description" content="RJ Produce is the supply chain behind America's fresh produce — sourcing premium fruits and vegetables across the U.S. and Mexico with two decades of grower relationships, border-region logistics, and modern supply-chain technology." />
+  <title>RJ Produce — The Supply Chain Behind Fresh Produce</title>
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=3" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --ink:#0a1410;          /* near-black green */
+      --ink-2:#12231b;
+      --green:#2d7a3a;
+      --green-bright:#3fae54;
+      --green-glow:#6fe08a;
+      --green-dark:#1e5528;
+      --mist:#f4f9f5;
+      --mist-2:#eef6f0;
+      --line:#e4ece6;
+      --gray:#5d6b63;
+      --gray-2:#8a978f;
+      --white:#fff;
+      --r-lg:24px;--r:16px;--r-sm:12px;
+      --shadow:0 10px 40px -12px rgba(10,20,16,.18);
+      --shadow-lg:0 30px 80px -24px rgba(10,20,16,.28);
+      --ring:1px solid rgba(255,255,255,.08);
+      --maxw:1240px;
+      --ease:cubic-bezier(.22,1,.36,1);
+    }
+    html{scroll-behavior:smooth}
+    body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;color:var(--ink);background:var(--white);line-height:1.6;-webkit-font-smoothing:antialiased}
+    img{display:block;max-width:100%}
+    a{text-decoration:none;color:inherit}
+    .wrap{max-width:var(--maxw);margin:0 auto;padding:0 32px}
+
+    /* ── Reveal animation ── */
+    .reveal{opacity:0;transform:translateY(28px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+    .reveal.in{opacity:1;transform:none}
+    .reveal[data-d="1"]{transition-delay:.08s}.reveal[data-d="2"]{transition-delay:.16s}
+    .reveal[data-d="3"]{transition-delay:.24s}.reveal[data-d="4"]{transition-delay:.32s}
+
+    /* ── Buttons ── */
+    .btn{display:inline-flex;align-items:center;gap:9px;font-family:inherit;font-weight:600;font-size:.95rem;padding:14px 26px;border-radius:100px;border:1.5px solid transparent;cursor:pointer;transition:all .25s var(--ease);white-space:nowrap}
+    .btn-primary{background:var(--green-bright);color:#04130a;border-color:var(--green-bright);box-shadow:0 8px 30px -8px rgba(63,174,84,.6)}
+    .btn-primary:hover{background:var(--green-glow);box-shadow:0 12px 40px -8px rgba(63,174,84,.8);transform:translateY(-2px)}
+    .btn-ghost{background:rgba(255,255,255,.06);color:#fff;border-color:rgba(255,255,255,.22);backdrop-filter:blur(8px)}
+    .btn-ghost:hover{background:rgba(255,255,255,.14);transform:translateY(-2px)}
+    .btn-dark{background:var(--ink);color:#fff;border-color:var(--ink)}
+    .btn-dark:hover{background:var(--ink-2);transform:translateY(-2px)}
+    .btn-outline{background:transparent;color:var(--ink);border-color:var(--line)}
+    .btn-outline:hover{border-color:var(--ink);transform:translateY(-2px)}
+    .btn svg{width:16px;height:16px}
+
+    /* ── Nav ── */
+    .nav{position:fixed;top:0;left:0;right:0;z-index:100;transition:background .3s var(--ease),box-shadow .3s var(--ease),border-color .3s}
+    .nav-inner{max-width:var(--maxw);margin:0 auto;padding:0 32px;height:72px;display:flex;align-items:center;justify-content:space-between}
+    .nav-logo{font-size:1.3rem;font-weight:800;letter-spacing:-.03em;color:#fff;transition:color .3s}
+    .nav-logo .rj{color:var(--green-glow)}
+    .nav-links{list-style:none;display:flex;align-items:center;gap:6px}
+    .nav-item{position:relative}
+    .nav-parent,.nav-links>li>a{display:flex;align-items:center;gap:5px;color:rgba(255,255,255,.82);font-size:.92rem;font-weight:500;padding:9px 14px;border-radius:100px;transition:color .25s,background .25s;cursor:default}
+    .nav-links a:hover{color:#fff;background:rgba(255,255,255,.1)}
+    .nav-parent svg{width:11px;height:11px;transition:transform .25s}
+    .nav-item.has-dropdown:hover .nav-parent svg{transform:rotate(180deg)}
+    .nav-dropdown{position:absolute;top:100%;left:50%;transform:translateX(-50%) translateY(-6px);background:var(--white);border-radius:var(--r);box-shadow:var(--shadow-lg);border:1px solid var(--line);padding:14px 8px 8px;min-width:220px;display:flex;flex-direction:column;gap:2px;opacity:0;visibility:hidden;pointer-events:none;transition:all .22s var(--ease);z-index:200}
+    .nav-item.has-dropdown:hover .nav-dropdown{opacity:1;visibility:visible;pointer-events:auto;transform:translateX(-50%) translateY(0)}
+    .nav-dropdown a{color:var(--ink)!important;font-size:.9rem;font-weight:500;padding:10px 14px;border-radius:9px;background:none!important;cursor:pointer}
+    .nav-dropdown a:hover{background:var(--mist-2)!important;color:var(--green-dark)!important}
+    .nav-cta{background:var(--green-bright);color:#04130a!important;font-weight:700;padding:10px 20px;border-radius:100px;transition:all .25s}
+    .nav-cta:hover{background:var(--green-glow)!important;transform:translateY(-1px)}
+    /* scrolled state */
+    .nav.scrolled{background:rgba(255,255,255,.85);backdrop-filter:blur(16px);box-shadow:0 1px 0 var(--line),0 10px 30px -20px rgba(0,0,0,.3)}
+    .nav.scrolled .nav-logo{color:var(--ink)}
+    .nav.scrolled .nav-parent,.nav.scrolled .nav-links>li>a{color:var(--ink)}
+    .nav.scrolled .nav-links a:hover{background:var(--mist-2);color:var(--green-dark)}
+    .nav.scrolled .nav-cta{color:#04130a!important}
+    .nav-burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px;z-index:300}
+    .nav-burger span{width:24px;height:2px;background:#fff;border-radius:2px;transition:.25s}
+    .nav.scrolled .nav-burger span{background:var(--ink)}
+    .nav-burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+    .nav-burger.open span:nth-child(2){opacity:0}
+    .nav-burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+    /* ── Hero ── */
+    .hero{position:relative;background:radial-gradient(120% 120% at 80% -10%,#1c4a30 0%,var(--ink) 55%);color:#fff;overflow:hidden;padding:160px 0 110px}
+    .hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(111,224,138,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(111,224,138,.07) 1px,transparent 1px);background-size:54px 54px;mask-image:radial-gradient(100% 80% at 70% 0%,#000 30%,transparent 80%)}
+    .hero-orb{position:absolute;border-radius:50%;filter:blur(90px);opacity:.5;pointer-events:none}
+    .hero-orb.a{width:520px;height:520px;background:#2d7a3a;top:-160px;right:-120px}
+    .hero-orb.b{width:420px;height:420px;background:#0c5a2e;bottom:-180px;left:-100px}
+    .hero-inner{position:relative;z-index:2;max-width:var(--maxw);margin:0 auto;padding:0 32px}
+    .hero-eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:.78rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--green-glow);background:rgba(111,224,138,.1);border:1px solid rgba(111,224,138,.2);padding:7px 16px;border-radius:100px;margin-bottom:28px}
+    .hero-eyebrow .dot{width:7px;height:7px;border-radius:50%;background:var(--green-glow);box-shadow:0 0 10px var(--green-glow)}
+    .hero h1{font-size:clamp(2.6rem,6vw,4.6rem);font-weight:800;line-height:1.04;letter-spacing:-.03em;max-width:16ch}
+    .hero h1 .accent{background:linear-gradient(120deg,var(--green-glow),#bff5cb);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+    .hero p.lead{margin:26px 0 38px;font-size:clamp(1.05rem,1.6vw,1.28rem);color:rgba(255,255,255,.75);max-width:60ch;line-height:1.65}
+    .hero-actions{display:flex;gap:14px;flex-wrap:wrap}
+    /* floating stat cards */
+    .hero-stats{position:relative;z-index:2;max-width:var(--maxw);margin:72px auto 0;padding:0 32px;display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+    .stat-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:var(--r);padding:26px 24px;backdrop-filter:blur(10px);transition:transform .4s var(--ease),background .4s}
+    .stat-card:hover{transform:translateY(-6px);background:rgba(255,255,255,.09)}
+    .stat-card .n{font-size:2.4rem;font-weight:800;letter-spacing:-.02em;line-height:1;background:linear-gradient(120deg,#fff,var(--green-glow));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+    .stat-card .l{margin-top:10px;font-size:.86rem;color:rgba(255,255,255,.62);line-height:1.45}
+
+    /* ── Trust strip ── */
+    .trust{background:var(--white);padding:46px 0;border-bottom:1px solid var(--line)}
+    .trust-label{text-align:center;font-size:.78rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--gray-2);margin-bottom:24px}
+    .trust-row{display:flex;align-items:center;justify-content:center;gap:56px;flex-wrap:wrap}
+    .trust-row span{font-size:1.5rem;font-weight:800;letter-spacing:-.02em;color:#b9c4bd}
+
+    /* ── Section scaffolding ── */
+    .sec{padding:110px 0}
+    .sec-tint{background:var(--mist)}
+    .sec-ink{background:var(--ink);color:#fff}
+    .eyebrow{display:inline-block;font-size:.78rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--green);background:var(--mist-2);padding:6px 14px;border-radius:100px;margin-bottom:18px}
+    .sec-ink .eyebrow{color:var(--green-glow);background:rgba(111,224,138,.1)}
+    .sec-head{max-width:680px;margin:0 auto 64px;text-align:center}
+    .sec-head h2{font-size:clamp(2rem,3.6vw,2.9rem);font-weight:800;letter-spacing:-.025em;line-height:1.1}
+    .sec-head p{margin-top:18px;font-size:1.08rem;color:var(--gray);line-height:1.7}
+    .sec-ink .sec-head p{color:rgba(255,255,255,.7)}
+    h2.lead-h{font-size:clamp(2rem,3.6vw,2.9rem);font-weight:800;letter-spacing:-.025em;line-height:1.12}
+
+    /* ── Pillars ── */
+    .pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+    .pillar{background:var(--white);border:1px solid var(--line);border-radius:var(--r-lg);padding:38px 32px;transition:transform .4s var(--ease),box-shadow .4s,border-color .4s;position:relative;overflow:hidden}
+    .pillar:hover{transform:translateY(-8px);box-shadow:var(--shadow-lg);border-color:transparent}
+    .pillar-ic{width:54px;height:54px;border-radius:14px;background:linear-gradient(135deg,var(--green-bright),var(--green-dark));display:flex;align-items:center;justify-content:center;margin-bottom:22px}
+    .pillar-ic svg{width:26px;height:26px;stroke:#fff;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+    .pillar h3{font-size:1.25rem;font-weight:700;letter-spacing:-.01em;margin-bottom:10px}
+    .pillar p{font-size:.97rem;color:var(--gray);line-height:1.65}
+
+    /* ── Split blocks ── */
+    .split{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
+    .split.rev .split-media{order:-1}
+    .split-text h2{font-size:clamp(1.9rem,3.2vw,2.6rem);font-weight:800;letter-spacing:-.025em;line-height:1.12;margin-bottom:20px}
+    .split-text p{font-size:1.04rem;color:var(--gray);line-height:1.75;margin-bottom:16px}
+    .sec-ink .split-text p{color:rgba(255,255,255,.72)}
+    .split-media{position:relative}
+    .split-media img{width:100%;border-radius:var(--r-lg);box-shadow:var(--shadow-lg)}
+    .media-badge{position:absolute;bottom:22px;left:22px;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border-radius:var(--r);padding:14px 18px;box-shadow:var(--shadow)}
+    .media-badge strong{display:block;font-size:.95rem;color:var(--ink)}
+    .media-badge span{font-size:.82rem;color:var(--gray)}
+    .check-list{list-style:none;margin:8px 0 28px;display:flex;flex-direction:column;gap:14px}
+    .check-list li{display:flex;gap:12px;align-items:flex-start;font-size:1rem;font-weight:500}
+    .sec-ink .check-list li{color:rgba(255,255,255,.85)}
+    .check-list .ck{flex-shrink:0;width:24px;height:24px;border-radius:50%;background:rgba(63,174,84,.15);display:flex;align-items:center;justify-content:center;margin-top:1px}
+    .check-list .ck svg{width:13px;height:13px;stroke:var(--green-bright);fill:none;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+
+    /* ── Feature grid (capabilities) ── */
+    .feat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .feat{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:var(--r);padding:30px 28px;transition:transform .4s var(--ease),background .4s}
+    .feat:hover{transform:translateY(-6px);background:rgba(255,255,255,.08)}
+    .feat-ic{width:46px;height:46px;border-radius:12px;background:rgba(111,224,138,.12);display:flex;align-items:center;justify-content:center;margin-bottom:18px}
+    .feat-ic svg{width:22px;height:22px;stroke:var(--green-glow);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+    .feat h3{font-size:1.1rem;font-weight:700;margin-bottom:8px}
+    .feat p{font-size:.92rem;color:rgba(255,255,255,.65);line-height:1.6}
+
+    /* ── Product categories ── */
+    .cat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+    .cat{position:relative;border-radius:var(--r-lg);overflow:hidden;aspect-ratio:4/3;box-shadow:var(--shadow)}
+    .cat img{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease)}
+    .cat:hover img{transform:scale(1.06)}
+    .cat-ov{position:absolute;inset:0;background:linear-gradient(180deg,transparent 35%,rgba(7,18,12,.82));display:flex;flex-direction:column;justify-content:flex-end;padding:26px}
+    .cat-ov h3{color:#fff;font-size:1.35rem;font-weight:700}
+    .cat-ov span{color:rgba(255,255,255,.78);font-size:.9rem;margin-top:4px}
+
+    /* ── Certifications ── */
+    .cert-row{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+    .cert{background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:30px 24px;text-align:center;transition:transform .4s var(--ease),box-shadow .4s}
+    .cert:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+    .cert-ic{width:50px;height:50px;margin:0 auto 16px;border-radius:13px;background:var(--mist-2);display:flex;align-items:center;justify-content:center}
+    .cert-ic svg{width:24px;height:24px;stroke:var(--green);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+    .cert h3{font-size:1rem;font-weight:700;margin-bottom:6px}
+    .cert p{font-size:.86rem;color:var(--gray);line-height:1.55}
+
+    /* ── Industries ── */
+    .ind-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+    .ind{background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:28px 24px;transition:transform .4s var(--ease),border-color .4s}
+    .ind:hover{transform:translateY(-5px);border-color:var(--green-bright)}
+    .ind-ic{width:44px;height:44px;border-radius:11px;background:var(--mist-2);display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+    .ind-ic svg{width:22px;height:22px;stroke:var(--green-dark);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+    .ind h3{font-size:1.05rem;font-weight:700;margin-bottom:6px}
+    .ind p{font-size:.9rem;color:var(--gray);line-height:1.55}
+
+    /* ── CTA ── */
+    .cta{position:relative;background:radial-gradient(120% 140% at 20% 0%,#1c4a30,var(--ink));color:#fff;border-radius:32px;padding:80px 56px;text-align:center;overflow:hidden}
+    .cta .hero-grid{mask-image:radial-gradient(80% 80% at 50% 0%,#000,transparent)}
+    .cta h2{position:relative;z-index:2;font-size:clamp(2rem,4vw,3rem);font-weight:800;letter-spacing:-.025em;line-height:1.1;max-width:18ch;margin:0 auto}
+    .cta p{position:relative;z-index:2;margin:20px auto 36px;color:rgba(255,255,255,.75);font-size:1.1rem;max-width:52ch}
+    .cta-actions{position:relative;z-index:2;display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+
+    /* ── Footer ── */
+    .footer{background:var(--ink);color:rgba(255,255,255,.62);padding:72px 0 32px}
+    .footer-top{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:40px;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,.1)}
+    .footer-brand .flogo{font-size:1.4rem;font-weight:800;color:#fff;letter-spacing:-.03em}
+    .footer-brand .flogo .rj{color:var(--green-glow)}
+    .footer-brand p{margin-top:14px;font-size:.92rem;line-height:1.6;max-width:34ch}
+    .footer-col h4{color:#fff;font-size:.82rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:16px}
+    .footer-col a{display:block;font-size:.92rem;padding:5px 0;transition:color .2s}
+    .footer-col a:hover{color:var(--green-glow)}
+    .footer-bot{display:flex;justify-content:space-between;align-items:center;padding-top:28px;font-size:.85rem;flex-wrap:wrap;gap:10px}
+
+    /* ── Responsive ── */
+    @media(max-width:980px){
+      .hero-stats{grid-template-columns:repeat(2,1fr)}
+      .pillars,.feat-grid,.cat-grid{grid-template-columns:1fr 1fr}
+      .cert-row,.ind-grid{grid-template-columns:1fr 1fr}
+      .split{grid-template-columns:1fr;gap:40px}
+      .split.rev .split-media{order:0}
+      .footer-top{grid-template-columns:1fr 1fr}
+    }
+    @media(max-width:680px){
+      .nav-burger{display:flex}
+      .nav-links{position:fixed;top:72px;left:0;right:0;background:var(--ink);flex-direction:column;align-items:stretch;gap:0;padding:14px 0 24px;display:none;border-top:1px solid rgba(255,255,255,.1)}
+      .nav-links.open{display:flex}
+      .nav-parent,.nav-links>li>a{color:#fff;padding:13px 32px;border-radius:0;justify-content:space-between}
+      .nav-item.has-dropdown .nav-dropdown{position:static;transform:none;opacity:1;visibility:visible;pointer-events:auto;display:none;box-shadow:none;border:none;background:rgba(255,255,255,.04);border-radius:0;padding:4px 0 8px 20px;min-width:0}
+      .nav-item.has-dropdown.open .nav-dropdown{display:flex}
+      .nav-dropdown a{color:rgba(255,255,255,.8)!important}
+      .nav-dropdown a:hover{background:rgba(255,255,255,.08)!important;color:#fff!important}
+      .nav-cta{margin:10px 32px 0;text-align:center;justify-content:center}
+      .hero{padding:130px 0 80px}
+      .hero-stats{grid-template-columns:1fr 1fr;gap:12px}
+      .pillars,.feat-grid,.cat-grid,.cert-row,.ind-grid{grid-template-columns:1fr}
+      .sec{padding:76px 0}
+      .cta{padding:56px 24px;border-radius:24px}
+      .trust-row{gap:28px}
+      .footer-top{grid-template-columns:1fr;gap:28px}
+    }
+  </style>
 </head>
 <body>
 
   <!-- NAV -->
-  <nav class="nav">
+  <nav class="nav" id="nav">
     <div class="nav-inner">
-      <a href="index.html" class="nav-logo"><span class="nav-logo-rj">RJ</span> Produce</a>
-      <button class="nav-hamburger" id="nav-hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
-      <ul class="nav-links">
-
+      <a href="index.html" class="nav-logo"><span class="rj">RJ</span> Produce</a>
+      <button class="nav-burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+      <ul class="nav-links" id="navlinks">
         <li class="nav-item has-dropdown">
-          <a href="about.html" class="nav-parent" onclick="return false;" style="cursor:default;">About
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-          </a>
-          <div class="nav-dropdown">
-            
-            <a href="about.html#our-story">Our Story</a>
-            <a href="why-us.html">Why Choose Us</a>
-          </div>
+          <span class="nav-parent">About <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+          <div class="nav-dropdown"><a href="about.html#our-story">Our Story</a><a href="why-us.html">Why RJ Produce</a></div>
         </li>
-
         <li class="nav-item has-dropdown">
-          <a href="services.html" class="nav-parent" onclick="return false;" style="cursor:default;">Services
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-          </a>
-          <div class="nav-dropdown">
-            <a href="wholesale.html">Wholesale Distribution</a>
-            <a href="cross-border.html">Cross-Border Sourcing</a>
-            <a href="private-label.html">Private Label</a>
-            <a href="how-it-works.html">How It Works</a>
-          </div>
+          <span class="nav-parent">Capabilities <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+          <div class="nav-dropdown"><a href="wholesale.html">Wholesale Distribution</a><a href="cross-border.html">Cross-Border Sourcing</a><a href="private-label.html">Private Label</a><a href="how-it-works.html">How It Works</a></div>
         </li>
-
         <li class="nav-item has-dropdown">
-          <a href="products.html" class="nav-parent" onclick="return false;" style="cursor:default;">Products
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-          </a>
-          <div class="nav-dropdown">
-            <a href="products.html?filter=vegetables">Vegetables</a>
-            <a href="products.html?filter=fruits">Fruits</a>
-            <a href="products.html?filter=specialty">Specialty</a>
-            <a href="products.html">View All</a>
-          </div>
+          <span class="nav-parent">Products <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+          <div class="nav-dropdown"><a href="products.html?filter=vegetables">Vegetables</a><a href="products.html?filter=fruits">Fruits</a><a href="products.html?filter=specialty">Specialty</a><a href="products.html">View All</a></div>
         </li>
-
         <li class="nav-item has-dropdown">
-          <a href="sourcing.html" class="nav-parent" onclick="return false;" style="cursor:default;">Sourcing
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-          </a>
-          <div class="nav-dropdown">
-            <a href="sourcing.html">U.S. &amp; Mexico</a>
-            <a href="sustainability.html">Sustainability</a>
-            <a href="service-area.html">Service Area</a>
-          </div>
+          <span class="nav-parent">Network <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+          <div class="nav-dropdown"><a href="sourcing.html">U.S. &amp; Mexico Sourcing</a><a href="service-area.html">Distribution &amp; Service Area</a><a href="sustainability.html">Sustainability</a></div>
         </li>
-
-        <li><a href="contact.html" class="btn btn-nav-cta">Contact Us</a></li>
+        <li><a href="contact.html" class="nav-cta">Request a Quote</a></li>
       </ul>
     </div>
   </nav>
 
-  <!-- HERO BANNER -->
-  <div class="hero-banner">
-    <div class="hero-banner-inner">
-      <div class="hero-banner-left">
-        <h1 class="hero-banner-title"><span class="hero-banner-rj">RJ</span> Produce</h1>
-        <a href="https://www.grubmarket.com" target="_blank" rel="noopener" class="hero-banner-gm">
-          <span class="hero-banner-gm-label">A GrubMarket Company</span>
-        </a>
-      </div>
-    </div>
-  </div>
-
   <!-- HERO -->
-  <section class="hero">
-    <div class="hero-bg"></div>
+  <header class="hero">
+    <div class="hero-grid"></div>
+    <div class="hero-orb a"></div>
+    <div class="hero-orb b"></div>
     <div class="hero-inner">
-      <div class="hero-badge">Pharr, Texas &nbsp;·&nbsp; Est. 2004</div>
-      <h1>Premium Produce.<br/>Trusted Partnerships.</h1>
-      <p class="hero-sub">
-        RJ Produce is a leading produce wholesaler supplying high-quality fruits and vegetables
-        to businesses across the United States and Mexico.
-      </p>
-      <div class="hero-actions">
-        <a href="contact.html" class="btn btn-primary btn-lg">Get Started</a>
-        <a href="#about" class="btn btn-outline btn-lg">Learn More</a>
+      <div class="hero-eyebrow reveal in"><span class="dot"></span> A GrubMarket Company · Est. 2004</div>
+      <h1 class="reveal in" data-d="1">The supply chain behind <span class="accent">America's fresh produce.</span></h1>
+      <p class="lead reveal in" data-d="2">RJ Produce moves premium fruits and vegetables across the U.S. and Mexico — pairing two decades of direct grower relationships with the logistics, cold chain, and technology of a modern supply-chain company.</p>
+      <div class="hero-actions reveal in" data-d="3">
+        <a href="contact.html" class="btn btn-primary">Request a Quote <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+        <a href="contact.html" class="btn btn-ghost">Talk to Sales</a>
       </div>
     </div>
-    <div class="hero-visual">
-      <div class="hero-card hero-card-single">
-        <img src="https://images.unsplash.com/photo-1488459716781-31db52582fe9?w=900&h=520&fit=crop&auto=format" alt="Fresh Produce from the U.S. & Mexico" />
-        <div class="hero-card-overlay hero-card-overlay-single">
-          <span class="hero-card-title">Fresh Fruits &amp; Vegetables — Sourced directly from the U.S. &amp; Mexico</span>
+    <div class="hero-stats">
+      <div class="stat-card reveal in" data-d="1"><div class="n">20+</div><div class="l">Years powering produce supply since 2004</div></div>
+      <div class="stat-card reveal in" data-d="2"><div class="n">2</div><div class="l">Countries sourced — U.S. &amp; Mexico</div></div>
+      <div class="stat-card reveal in" data-d="3"><div class="n">365</div><div class="l">Days a year of continuous supply</div></div>
+      <div class="stat-card reveal in" data-d="4"><div class="n">100%</div><div class="l">Primus Labs certified facilities</div></div>
+    </div>
+  </header>
+
+  <!-- TRUST -->
+  <section class="trust">
+    <div class="wrap">
+      <div class="trust-label reveal">Trusted to supply national retail &amp; foodservice</div>
+      <div class="trust-row reveal" data-d="1">
+        <span>Costco</span>
+        <span>Restaurant Depot</span>
+        <span>Regional Grocers</span>
+        <span>Foodservice</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- PILLARS -->
+  <section class="sec">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="eyebrow">What we do</span>
+        <h2>One partner across the entire produce supply chain</h2>
+        <p>From the field to your dock, RJ Produce owns every link — so you get fresher product, fewer hand-offs, and a single team accountable for the result.</p>
+      </div>
+      <div class="pillars">
+        <div class="pillar reveal" data-d="1">
+          <div class="pillar-ic"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+          <h3>Direct Sourcing</h3>
+          <p>Contracted relationships with growers across Texas, the Southwest, and Mexico give us first access to seasonal and specialty produce — no brokers in between.</p>
+        </div>
+        <div class="pillar reveal" data-d="2">
+          <div class="pillar-ic"><svg viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div>
+          <h3>Logistics &amp; Cold Chain</h3>
+          <p>Our Pharr, Texas hub sits minutes from the busiest produce border crossing in North America — keeping transit short and the cold chain unbroken from field to shelf.</p>
+        </div>
+        <div class="pillar reveal" data-d="3">
+          <div class="pillar-ic"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+          <h3>Supply-Chain Technology</h3>
+          <p>Powered by WholesaleWare, buyers get real-time inventory visibility, streamlined digital ordering, and transaction history — the whole account managed online.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- STATS STRIP -->
-  <section class="stats-strip">
-    <div class="container stats-grid">
-      <div class="stat">
-        <div class="stat-num">20+</div>
-        <div class="stat-label">Years in Business</div>
+  <!-- SOURCING (split) -->
+  <section class="sec sec-tint">
+    <div class="wrap split">
+      <div class="split-text reveal">
+        <span class="eyebrow">Sourcing network</span>
+        <h2>Rooted in two of the world's most productive growing regions</h2>
+        <p>Positioned at the U.S.–Mexico border, RJ Produce taps both markets at once — domestic reliability and the depth, variety, and value of Mexican agriculture — to keep partners supplied no matter the season.</p>
+        <ul class="check-list">
+          <li><span class="ck"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span> Same-day border crossing into our Pharr facility</li>
+          <li><span class="ck"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span> Year-round availability through dual-country sourcing</li>
+          <li><span class="ck"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span> Preferred grower access during peak demand</li>
+        </ul>
+        <a href="sourcing.html" class="btn btn-dark">Explore our network</a>
       </div>
-      <div class="stat">
-        <div class="stat-num">100%</div>
-        <div class="stat-label">Certified Facilities</div>
-      </div>
-      <div class="stat">
-        <div class="stat-num">365</div>
-        <div class="stat-label">Days Year-Round Supply</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ABOUT -->
-  <section class="section section-tint" id="about">
-    <div class="container split">
-      <div class="split-text">
-        <div class="section-label">Who We Are</div>
-        <h2>A Trusted Name in Produce Since 2004</h2>
-        <p>
-          Founded by Rick Gorena in Pharr, Texas, RJ Produce was built on a simple promise:
-          deliver the freshest, highest-quality produce while maintaining the integrity and
-          relationships that make great business possible.
-        </p>
-        <p>
-          Over two decades, we've grown into a trusted wholesale partner for major national
-          retailers — supplying branded product to Costco, Restaurant Depot, and beyond.
-          Our deep roots in both domestic and Mexican agriculture mean year-round availability
-          and unmatched sourcing flexibility.
-        </p>
-        <a href="contact.html" class="btn btn-primary">Partner With Us</a>
-      </div>
-      <div class="split-visual">
-        <div class="about-single-img-wrap">
-          <img src="https://images.unsplash.com/photo-1606237906294-ae86d103d715?w=700&h=500&fit=crop&auto=format" alt="Fresh Produce Market" class="about-single-img" />
-          <div class="about-img-badge">
-            <strong>Direct Grower Relationships</strong>
-            <span>Mexico &amp; Domestic Sourcing</span>
-          </div>
-        </div>
+      <div class="split-media reveal" data-d="1">
+        <img src="https://images.unsplash.com/photo-1524661135-423995f22d0b?rect=0,520,650,480&w=800&h=600&fit=crop&auto=format" alt="Map of North America sourcing region" loading="lazy" />
+        <div class="media-badge"><strong>U.S. &amp; Mexico</strong><span>Direct grower partnerships</span></div>
       </div>
     </div>
   </section>
 
-  <!-- SERVICES -->
-  <section class="section" id="services">
-    <div class="container">
-      <div class="section-header">
-        <div class="section-label">What We Offer</div>
-        <h2>End-to-End Produce Solutions</h2>
-        <p>From sourcing to delivery, we handle every step of the supply chain.</p>
+  <!-- CAPABILITIES (dark feature grid) -->
+  <section class="sec sec-ink">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="eyebrow">Distribution &amp; logistics</span>
+        <h2>A distribution network built for scale and speed</h2>
+        <p>The infrastructure of a national supplier with the responsiveness of a regional partner.</p>
       </div>
-      <div class="cards-grid">
-        <div class="card">
-          <div class="card-img-wrap">
-            <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?w=400&h=200&fit=crop&auto=format" alt="Wholesale Distribution" />
-          </div>
-          <h3>Wholesale Distribution</h3>
-          <p>Bulk supply of fresh fruits and vegetables for retailers, foodservice operators, and distributors at competitive prices.</p>
-        </div>
-        <div class="card">
-          <div class="card-img-wrap">
-            <img src="cross-border.jpg" alt="Cross-Border Sourcing" style="object-position: center top;" />
-          </div>
-          <h3>Cross-Border Sourcing</h3>
-          <p>Direct relationships with growers in Mexico give us unique access to seasonal and specialty produce unavailable elsewhere.</p>
-        </div>
-        <div class="card">
-          <div class="card-img-wrap">
-            <img src="https://images.unsplash.com/photo-1534723452862-4c874018d66d?w=400&h=200&fit=crop&auto=format" alt="Private Label" />
-          </div>
-          <h3>Private Label &amp; Branded</h3>
-          <p>RJ Produce branded products reach major national retail chains including Costco and Restaurant Depot.</p>
-        </div>
-        <div class="card">
-          <div class="card-img-wrap">
-            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=200&fit=crop&auto=format" alt="Digital Order Management" />
-          </div>
-          <h3>Digital Order Management</h3>
-          <p>Powered by WholesaleWare — streamlined online ordering, inventory control, and financial management tools.</p>
-        </div>
+      <div class="feat-grid">
+        <div class="feat reveal" data-d="1"><div class="feat-ic"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg></div><h3>Gateway Location</h3><p>Minutes from the Pharr–Reynosa international bridge, one of North America's highest-volume produce crossings.</p></div>
+        <div class="feat reveal" data-d="2"><div class="feat-ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><h3>Faster to Market</h3><p>Shorter transit and fewer hand-offs mean produce arrives fresher, with more shelf life remaining.</p></div>
+        <div class="feat reveal" data-d="3"><div class="feat-ic"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l8.84 8.84 8.84-8.84a5.5 5.5 0 000-7.78z"/></svg></div><h3>Cold Chain Integrity</h3><p>Temperature managed from the moment product leaves the field through final delivery.</p></div>
+        <div class="feat reveal" data-d="1"><div class="feat-ic"><svg viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div><h3>Scheduled Delivery</h3><p>Reliable, recurring delivery windows built around your receiving dock and operations.</p></div>
+        <div class="feat reveal" data-d="2"><div class="feat-ic"><svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div><h3>Competitive Pricing</h3><p>Direct sourcing and volume keep costs lean — savings we pass through, not pad.</p></div>
+        <div class="feat reveal" data-d="3"><div class="feat-ic"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div><h3>Digital Visibility</h3><p>WholesaleWare puts inventory, ordering, and history in one real-time dashboard.</p></div>
       </div>
     </div>
   </section>
 
-
-  <!-- PRODUCTS -->
-  <section class="section section-tint" id="products">
-    <div class="container">
-      <div class="section-header">
-        <div class="section-label">Our Products</div>
-        <h2>Fresh From the Field</h2>
-        <p>Year-round supply of premium fruits and vegetables, sourced from the best domestic and Mexican growers.</p>
+  <!-- PRODUCT CATEGORIES -->
+  <section class="sec">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="eyebrow">Product categories</span>
+        <h2>Premium fruits &amp; vegetables, year-round</h2>
+        <p>A broad, dependable catalog spanning everyday staples and hard-to-source specialty items.</p>
       </div>
-      <div class="product-filters">
-        <button class="filter-btn active" data-filter="all">All</button>
-        <button class="filter-btn" data-filter="vegetables">Vegetables</button>
-        <button class="filter-btn" data-filter="fruits">Fruits</button>
-        <button class="filter-btn" data-filter="specialty">Specialty</button>
-      </div>
-      <div class="products-grid">
-        <div class="product-item" data-category="vegetables">
-          <img src="https://images.unsplash.com/photo-1582284540020-8acbe03f4924?w=300&h=200&fit=crop&auto=format" alt="Tomatoes" />
-          <span>Tomatoes</span>
-        </div>
-        <div class="product-item" data-category="specialty">
-          <img src="https://images.unsplash.com/photo-1519162808019-7de1683fa2ad?w=300&h=200&fit=crop&auto=format" alt="Avocados" />
-          <span>Avocados</span>
-        </div>
-        <div class="product-item" data-category="vegetables">
-          <img src="https://images.unsplash.com/photo-1563565375-f3fdfdbefa83?w=300&h=200&fit=crop&auto=format" alt="Peppers" />
-          <span>Peppers</span>
-        </div>
-        <div class="product-item" data-category="vegetables">
-          <img src="https://images.unsplash.com/photo-1449300079323-02e209d9d3a6?w=300&h=200&fit=crop&auto=format" alt="Cucumbers" />
-          <span>Cucumbers</span>
-        </div>
-        <div class="product-item" data-category="vegetables">
-          <img src="https://images.unsplash.com/photo-1551754655-cd27e38d2076?w=300&h=200&fit=crop&auto=format" alt="Corn" />
-          <span>Corn</span>
-        </div>
-        <div class="product-item" data-category="fruits">
-          <img src="https://images.unsplash.com/photo-1578855691621-8a08ea00d1fb?w=300&h=200&fit=crop&auto=format" alt="Citrus" />
-          <span>Citrus</span>
-        </div>
+      <div class="cat-grid">
+        <a class="cat reveal" data-d="1" href="products.html?filter=vegetables"><img src="https://images.unsplash.com/photo-1540420773420-3366772f4999?w=600&h=450&fit=crop&auto=format" alt="Fresh vegetables" loading="lazy"><div class="cat-ov"><h3>Vegetables</h3><span>Tomatoes, peppers, cucumbers &amp; more</span></div></a>
+        <a class="cat reveal" data-d="2" href="products.html?filter=fruits"><img src="https://images.unsplash.com/photo-1619566636858-adf3ef46400b?w=600&h=450&fit=crop&auto=format" alt="Fresh fruits" loading="lazy"><div class="cat-ov"><h3>Fruits</h3><span>Seasonal &amp; tropical varieties</span></div></a>
+        <a class="cat reveal" data-d="3" href="products.html?filter=specialty"><img src="https://images.unsplash.com/photo-1506976785307-8732e854ad03?w=600&h=450&fit=crop&auto=format" alt="Specialty produce" loading="lazy"><div class="cat-ov"><h3>Specialty</h3><span>Hard-to-find &amp; off-season items</span></div></a>
       </div>
     </div>
   </section>
-
-  <!-- SOURCING -->
-  <section class="section" id="sourcing">
-    <div class="container split">
-      <div class="split-text">
-        <div class="section-label">Where We Source</div>
-        <h2>Sourced from the United States and Mexico</h2>
-        <p>
-          RJ Produce sources directly from growing regions across the United States and Mexico. Our border-region location puts us at the intersection of two of the world's most productive agricultural nations, giving our partners year-round access to a broader product range than either country alone could support.
-        </p>
-        <p>
-          By working directly with farms on both sides of the border — no brokers, no middlemen — we deliver better pricing, tighter quality control, and greater sourcing flexibility for every account we serve.
-        </p>
-      </div>
-      <div class="split-visual">
-        <img src="sourcing-truck.jpg" alt="RJ Produce distribution truck on the highway" class="about-single-img" />
-      </div>
-    </div>
-  </section>
-
 
   <!-- CERTIFICATIONS -->
-  <section class="section section-tint" id="certifications">
-    <div class="container split">
-      <div class="split-text">
-        <div class="section-label">Quality &amp; Safety</div>
-        <h2>Certified. Compliant. Trusted.</h2>
-        <p>
-          At RJ Produce, food safety isn't a checkbox — it's a core value. Our facilities are
-          Primus Labs certified and operate under stringent safety and quality protocols that
-          meet the demands of the nation's top retailers.
-        </p>
-        <p>
-          We hold ourselves to the highest standards so our partners can have complete confidence
-          in every pallet that leaves our facilities.
-        </p>
-        <a href="contact.html" class="btn btn-primary">Request Certifications</a>
+  <section class="sec sec-tint">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="eyebrow">Food safety</span>
+        <h2>Certified, compliant, and audit-ready</h2>
+        <p>The standards the nation's largest retailers require — met on every shipment.</p>
       </div>
-      <div class="split-visual cert-visual">
-        <div class="cert-badge-wrap">
-          <div class="cert-badge">
-            <img src="https://images.unsplash.com/photo-1576086213369-97a306d36557?w=64&h=64&fit=crop&auto=format" alt="Primus Labs Certified" class="cert-img" />
-            <div class="cert-text">
-              <strong>Primus Labs Certified</strong>
-              <span>Food Safety Excellence</span>
-            </div>
-          </div>
-          <div class="cert-badge">
-            <img src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=64&h=64&fit=crop&auto=format" alt="Safety Protocols" class="cert-img" />
-            <div class="cert-text">
-              <strong>Safety Protocols</strong>
-              <span>Stringent Standards</span>
-            </div>
-          </div>
-          <div class="cert-badge">
-            <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=64&h=64&fit=crop&auto=format" alt="Quality Assurance" class="cert-img" />
-            <div class="cert-text">
-              <strong>Quality Assurance</strong>
-              <span>Every Shipment</span>
-            </div>
-          </div>
-        </div>
+      <div class="cert-row">
+        <div class="cert reveal" data-d="1"><div class="cert-ic"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div><h3>Primus Labs Certified</h3><p>Full food-safety inspection on every load, documentation on request.</p></div>
+        <div class="cert reveal" data-d="2"><div class="cert-ic"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><h3>FSMA Compliant</h3><p>Cross-border shipments meet USDA, FDA &amp; FSMA import requirements.</p></div>
+        <div class="cert reveal" data-d="3"><div class="cert-ic"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div><h3>Traceability</h3><p>Every box traces back to a known grower and growing region.</p></div>
+        <div class="cert reveal" data-d="4"><div class="cert-ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><h3>Quality Assurance</h3><p>Inspection and QA protocols standard at our certified facility.</p></div>
       </div>
     </div>
   </section>
 
-  <!-- CONTACT -->
-  <section class="section" id="contact">
-    <div class="container">
-      <div class="contact-grid">
+  <!-- INDUSTRIES -->
+  <section class="sec">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="eyebrow">Who we serve</span>
+        <h2>Built for the businesses that move produce</h2>
+      </div>
+      <div class="ind-grid">
+        <div class="ind reveal" data-d="1"><div class="ind-ic"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div><h3>National Retail</h3><p>Branded and private-label supply for chains like Costco and Restaurant Depot.</p></div>
+        <div class="ind reveal" data-d="2"><div class="ind-ic"><svg viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/></svg></div><h3>Regional Grocers</h3><p>Consistent, scheduled supply tailored to regional grocery operations.</p></div>
+        <div class="ind reveal" data-d="3"><div class="ind-ic"><svg viewBox="0 0 24 24"><path d="M18 8h1a4 4 0 010 8h-1"/><path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg></div><h3>Foodservice</h3><p>Dependable volume and quality for foodservice operators and kitchens.</p></div>
+        <div class="ind reveal" data-d="4"><div class="ind-ic"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div><h3>Distributors</h3><p>Wholesale volume and cross-border sourcing for downstream distributors.</p></div>
+      </div>
+    </div>
+  </section>
 
-        <div class="contact-left">
-          <div class="section-label">Get In Touch</div>
-          <h2>Ready to Source Premium Produce?</h2>
-          <p class="contact-intro-text">Contact our team to discuss your wholesale produce needs. We're based in Pharr, Texas — right at the U.S.–Mexico border.</p>
-
-          <div class="contact-details-row">
-            <div class="contact-detail-pill">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              <span>9005 Travis Drive, Pharr, TX</span>
-            </div>
-            <div class="contact-detail-pill">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 011 1V20a1 1 0 01-1 1C9.61 21 3 14.39 3 6a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.57a1 1 0 01-.24 1.01l-2.21 2.21z"/></svg>
-              <a href="tel:+19567814000">(956) 781-4000</a>
-            </div>
-          </div>
-
-          <form class="contact-form" onsubmit="handleSubmit(event)">
-            <div class="form-row">
-              <div class="form-field">
-                <label>Your Name</label>
-                <input type="text" placeholder="John Smith" required />
-              </div>
-              <div class="form-field">
-                <label>Company Name</label>
-                <input type="text" placeholder="Acme Foods LLC" required />
-              </div>
-            </div>
-            <div class="form-row">
-              <div class="form-field">
-                <label>Email Address</label>
-                <input type="email" placeholder="john@company.com" required />
-              </div>
-              <div class="form-field">
-                <label>Phone Number</label>
-                <input type="tel" placeholder="(555) 000-0000" />
-              </div>
-            </div>
-            <div class="form-field">
-              <label>Message</label>
-              <textarea placeholder="Tell us about your produce needs..." rows="4"></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary btn-lg">Send Message</button>
-          </form>
+  <!-- CTA -->
+  <section class="sec">
+    <div class="wrap">
+      <div class="cta reveal">
+        <div class="hero-grid"></div>
+        <h2>Let's build your produce supply program</h2>
+        <p>Tell us what you move and how often. Our team will put together pricing and a sourcing plan built around your business.</p>
+        <div class="cta-actions">
+          <a href="contact.html" class="btn btn-primary">Request a Quote <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+          <a href="contact.html" class="btn btn-ghost">Talk to Sales</a>
         </div>
-
-        <div class="contact-map-side">
-          <div class="contact-map-card">
-            <iframe
-              src="https://maps.google.com/maps?q=9005+Travis+Drive,+Pharr,+TX+78577&output=embed"
-              allowfullscreen=""
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
-              title="RJ Produce Location">
-            </iframe>
-            <div class="contact-map-footer">
-              <strong>RJ Produce, Inc.</strong>
-              <span>9005 Travis Drive · Pharr, TX</span>
-            </div>
-          </div>
-        </div>
-
       </div>
     </div>
   </section>
 
   <!-- FOOTER -->
   <footer class="footer">
-    <div class="container footer-inner">
-      <div class="footer-brand">
-        <div class="logo footer-logo">
-          <span class="logo-rj">RJ</span><span class="logo-produce"> Produce</span>
-        </div>
-        <p>Premium produce wholesale serving the U.S. and Mexico from Pharr, Texas.</p>
-      </div>
-      <div class="footer-links">
-        <div class="footer-col">
-          <strong>Company</strong>
-          <a href="about.html">About</a>
-          <a href="why-us.html">Why Choose Us</a>
-          <a href="index.html#certifications">Certifications</a>
+    <div class="wrap">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="flogo"><span class="rj">RJ</span> Produce</div>
+          <p>The supply chain behind fresh produce — serving the U.S. and Mexico from Pharr, Texas since 2004. A GrubMarket company.</p>
         </div>
         <div class="footer-col">
-          <strong>Services</strong>
+          <h4>Company</h4>
+          <a href="about.html#our-story">Our Story</a>
+          <a href="why-us.html">Why RJ Produce</a>
+          <a href="sustainability.html">Sustainability</a>
+        </div>
+        <div class="footer-col">
+          <h4>Capabilities</h4>
           <a href="wholesale.html">Wholesale</a>
           <a href="cross-border.html">Cross-Border</a>
+          <a href="private-label.html">Private Label</a>
           <a href="how-it-works.html">How It Works</a>
         </div>
         <div class="footer-col">
-          <strong>Sourcing</strong>
+          <h4>Network</h4>
           <a href="sourcing.html">U.S. &amp; Mexico</a>
-          <a href="sustainability.html">Sustainability</a>
           <a href="service-area.html">Service Area</a>
+          <a href="products.html">Products</a>
+          <a href="contact.html">Request a Quote</a>
         </div>
       </div>
-    </div>
-    <div class="footer-bottom">
-      <div class="container footer-bottom-inner">
-        <p>© 2026 RJ Produce. All rights reserved.</p>
+      <div class="footer-bot">
+        <span>© 2026 RJ Produce. All rights reserved.</span>
+        <span>9005 Travis Drive, Pharr, TX 78577 · (956) 781-4000</span>
       </div>
     </div>
   </footer>
 
   <script>
-    function handleSubmit(e) {
-      e.preventDefault();
-      const btn = e.target.querySelector('button[type="submit"]');
-      btn.textContent = 'Message Sent!';
-      btn.disabled = true;
-      setTimeout(() => {
-        btn.textContent = 'Send Message';
-        btn.disabled = false;
-        e.target.reset();
-      }, 3000);
-    }
-
-    // Smooth scroll
-    document.querySelectorAll('a[href^="#"]').forEach(a => {
-      a.addEventListener('click', e => {
-        const target = document.querySelector(a.getAttribute('href'));
-        if (target) {
-          e.preventDefault();
-          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-      });
+    // nav scroll state
+    const nav = document.getElementById('nav');
+    const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 30);
+    onScroll(); window.addEventListener('scroll', onScroll, {passive:true});
+    // mobile menu
+    const burger = document.getElementById('burger'), navlinks = document.getElementById('navlinks');
+    burger.addEventListener('click', () => { burger.classList.toggle('open'); navlinks.classList.toggle('open'); });
+    document.querySelectorAll('.nav-item.has-dropdown > .nav-parent').forEach(p => {
+      p.addEventListener('click', () => { if(window.innerWidth<=680) p.closest('.nav-item').classList.toggle('open'); });
     });
-
-    // Nav scroll shadow
-    window.addEventListener('scroll', () => {
-      document.querySelector('.nav').classList.toggle('nav-scrolled', window.scrollY > 20);
-    });
-
-    // Product category filter
-    document.querySelectorAll('.filter-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        const filter = btn.dataset.filter;
-        document.querySelectorAll('.product-item').forEach(item => {
-          item.style.display = (filter === 'all' || item.dataset.category === filter) ? '' : 'none';
-        });
-      });
-    });
-
-    // Nav dropdown: filter links scroll to section
-    document.querySelectorAll('.nav-dropdown a[data-filter]').forEach(a => {
-      a.addEventListener('click', e => {
-        e.preventDefault();
-        const filter = a.dataset.filter;
-        document.querySelector(`[data-filter="${filter}"]`)?.click();
-        document.querySelector('#products')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      });
-    });
+    // scroll reveal
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+    }, {threshold:.12, rootMargin:'0px 0px -40px 0px'});
+    document.querySelectorAll('.reveal:not(.in)').forEach(el => io.observe(el));
   </script>
 </body>
 </html>
