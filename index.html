@@ -148,12 +148,12 @@
 
     /* ── Feature grid (capabilities) ── */
     .feat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-    .feat{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:var(--r);overflow:hidden;transition:transform .4s var(--ease),background .4s}
-    .feat:hover{transform:translateY(-6px);background:rgba(255,255,255,.08)}
+    .feat{background:var(--white);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;transition:transform .4s var(--ease),box-shadow .4s}
+    .feat:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
     .feat-img{width:100%;height:150px;object-fit:cover;display:block}
     .feat-body{padding:24px 26px 28px}
-    .feat h3{font-size:1.1rem;font-weight:700;margin-bottom:8px}
-    .feat p{font-size:.92rem;color:rgba(255,255,255,.65);line-height:1.6}
+    .feat h3{font-size:1.1rem;font-weight:700;margin-bottom:8px;color:var(--ink)}
+    .feat p{font-size:.92rem;color:var(--gray);line-height:1.6}
 
     /* ── Product categories ── */
     .cat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
@@ -322,7 +322,7 @@
   </section>
 
   <!-- CAPABILITIES (dark feature grid) -->
-  <section class="sec sec-ink">
+  <section class="sec">
     <div class="wrap">
       <div class="sec-head reveal">
         <span class="eyebrow">Distribution &amp; logistics</span>
@@ -341,7 +341,7 @@
   </section>
 
   <!-- PRODUCT CATEGORIES -->
-  <section class="sec">
+  <section class="sec sec-tint">
     <div class="wrap">
       <div class="sec-head reveal">
         <span class="eyebrow">Product categories</span>
@@ -357,7 +357,7 @@
   </section>
 
   <!-- CERTIFICATIONS -->
-  <section class="sec sec-tint">
+  <section class="sec">
     <div class="wrap">
       <div class="sec-head reveal">
         <span class="eyebrow">Food safety</span>
@@ -374,7 +374,7 @@
   </section>
 
   <!-- INDUSTRIES -->
-  <section class="sec">
+  <section class="sec sec-tint">
     <div class="wrap">
       <div class="sec-head reveal">
         <span class="eyebrow">Who we serve</span>
