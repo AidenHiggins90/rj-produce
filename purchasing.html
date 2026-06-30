@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="How to purchase from RJ Produce — request a quote, set up an account, and order through our WholesaleWare platform with recurring delivery." />
+  <title>Purchasing — RJ Produce</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="theme.css?v=2" />
+  <style>
+    .pw-steps{max-width:900px;margin:0 auto;display:flex;flex-direction:column;gap:0}
+    .pw-step{display:grid;grid-template-columns:64px 1fr;gap:24px;padding:32px 0;border-bottom:1px solid var(--line)}
+    .pw-step:last-child{border-bottom:none}
+    .pw-num{width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,var(--green-bright),var(--green-dark));color:#fff;font-weight:800;font-size:1.1rem;display:flex;align-items:center;justify-content:center}
+    .pw-step h3{font-size:1.2rem;font-weight:700;margin-bottom:8px}
+    .pw-step p{font-size:.98rem;color:var(--gray);line-height:1.7}
+    .pw-tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .pw-tier{background:var(--white);border:1px solid var(--line);border-radius:var(--r-lg);padding:32px 28px;text-align:left}
+    .pw-tier h3{font-size:1.1rem;font-weight:700;margin-bottom:10px}
+    .pw-tier p{font-size:.92rem;color:var(--gray);line-height:1.6}
+    .pw-tier .badge{display:inline-block;font-size:.74rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--green-dark);background:var(--mist-2);padding:5px 12px;border-radius:100px;margin-bottom:16px}
+    @media(max-width:680px){.pw-step{grid-template-columns:48px 1fr}.pw-tiers{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <nav class="nav" id="nav"><div class="nav-inner">
+    <a href="index.html" class="nav-logo"><span class="rj">RJ</span> Produce</a>
+    <button class="nav-burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+    <ul class="nav-links" id="navlinks">
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Capabilities</a></li>
+      <li><a href="products.html">Products</a></li>
+      <li><a href="sourcing.html">Network</a></li>
+      <li><a href="purchasing.html">Purchasing</a></li>
+      <li><a href="contact.html" class="nav-cta">Request a Quote</a></li>
+    </ul>
+  </div></nav>
+
+  <header class="phero">
+    <div class="phero-grid"></div><div class="phero-orb"></div>
+    <div class="phero-inner">
+      <span class="eyebrow reveal in">Purchasing</span>
+      <h1 class="reveal in" data-d="1">How to buy from RJ Produce</h1>
+      <p class="reveal in" data-d="2">A straightforward path from first conversation to standing weekly orders — built for retailers, grocers, foodservice operators, and distributors.</p>
+    </div>
+  </header>
+
+  <!-- STEPS -->
+  <section class="sec">
+    <div class="wrap">
+      <div class="sec-head reveal"><span class="eyebrow">The Process</span><h2>From quote to recurring delivery</h2></div>
+      <div class="pw-steps">
+        <div class="pw-step reveal" data-d="1">
+          <div class="pw-num">1</div>
+          <div><h3>Request a Quote</h3><p>Tell us your business type, products of interest, and estimated monthly volume. Our team reviews every request and responds with pricing and availability — usually within one business day.</p></div>
+        </div>
+        <div class="pw-step reveal" data-d="2">
+          <div class="pw-num">2</div>
+          <div><h3>Account Setup</h3><p>Once pricing is confirmed, we set up your account with delivery preferences, billing terms, and any compliance documentation your business requires.</p></div>
+        </div>
+        <div class="pw-step reveal" data-d="3">
+          <div class="pw-num">3</div>
+          <div><h3>Order Through WholesaleWare</h3><p>Place and manage orders through our digital ordering platform — real-time inventory visibility, order history, and reordering in a few clicks, the same system used across GrubMarket's distributor network.</p></div>
+        </div>
+        <div class="pw-step reveal" data-d="4">
+          <div class="pw-num">4</div>
+          <div><h3>Recurring Delivery</h3><p>Set up standing orders on a schedule that matches your receiving dock. Your account manager monitors supply and flags any seasonal changes before they affect your shelf.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACCOUNT TYPES -->
+  <section class="sec sec-tint">
+    <div class="wrap">
+      <div class="sec-head reveal"><span class="eyebrow">Built For Your Business</span><h2>Purchasing options by account type</h2></div>
+      <div class="pw-tiers">
+        <div class="pw-tier reveal" data-d="1">
+          <span class="badge">Wholesale</span>
+          <h3>Retailers &amp; Grocers</h3>
+          <p>Standing or rotating orders with scheduled delivery, volume pricing, and branded or private-label packaging options.</p>
+        </div>
+        <div class="pw-tier reveal" data-d="2">
+          <span class="badge">Foodservice</span>
+          <h3>Restaurants &amp; Operators</h3>
+          <p>Flexible order sizes and frequency, with consistent quality and availability across seasonal menu changes.</p>
+        </div>
+        <div class="pw-tier reveal" data-d="3">
+          <span class="badge">Distributor</span>
+          <h3>Downstream Distributors</h3>
+          <p>Bulk and cross-border volume with documentation support for FSMA-compliant resale across the supply chain.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec"><div class="wrap"><div class="cta reveal"><div class="cta-grid"></div>
+    <h2>Ready to start purchasing?</h2>
+    <p>Submit a quote request and our team will walk you through account setup and your first order.</p>
+    <div class="cta-actions"><a href="contact.html" class="btn btn-primary">Request a Quote</a><a href="products.html" class="btn btn-ghost">View Products</a></div>
+  </div></div></section>
+
+  <footer class="footer"><div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand"><div class="flogo"><span class="rj">RJ</span> Produce</div><p>The supply chain behind fresh produce — serving the U.S. and Mexico from Pharr, Texas since 2004. A GrubMarket company.</p></div>
+      <div class="footer-col"><h4>About</h4><a href="about.html#our-story">Our Story</a><a href="about.html#why">Why RJ Produce</a></div>
+      <div class="footer-col"><h4>Capabilities</h4><a href="services.html#wholesale">Wholesale</a><a href="services.html#cross-border">Cross-Border</a><a href="services.html#private-label">Private Label</a><a href="services.html#how-it-works">How It Works</a></div>
+      <div class="footer-col"><h4>Network</h4><a href="sourcing.html#sourcing">U.S. &amp; Mexico</a><a href="sourcing.html#service-area">Service Area</a><a href="purchasing.html">Purchasing</a><a href="contact.html">Request a Quote</a></div>
+    </div>
+    <div class="footer-bot"><span>© 2026 RJ Produce. All rights reserved.</span><span>9005 Travis Drive, Pharr, TX 78577 · (956) 781-4000</span></div>
+  </div></footer>
+
+  <script>
+    const nav=document.getElementById('nav');const os=()=>nav.classList.toggle('scrolled',scrollY>30);os();addEventListener('scroll',os,{passive:true});
+    const b=document.getElementById('burger'),nl=document.getElementById('navlinks');b.addEventListener('click',()=>{b.classList.toggle('open');nl.classList.toggle('open')});
+    const io=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+    document.querySelectorAll('.reveal:not(.in)').forEach(el=>io.observe(el));
+  </script>
+</body>
+</html>
