@@ -153,10 +153,10 @@
 
     /* ── Certifications ── */
     .cert-row{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
-    .cert{background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:30px 24px;text-align:center;transition:transform .4s var(--ease),box-shadow .4s}
+    .cert{background:var(--white);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;text-align:center;transition:transform .4s var(--ease),box-shadow .4s}
     .cert:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
-    .cert-ic{width:50px;height:50px;margin:0 auto 16px;border-radius:13px;background:var(--mist-2);display:flex;align-items:center;justify-content:center}
-    .cert-ic svg{width:24px;height:24px;stroke:var(--green);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+    .cert-img{width:100%;height:140px;object-fit:cover;display:block}
+    .cert-body{padding:26px 24px 28px}
     .cert h3{font-size:1rem;font-weight:700;margin-bottom:6px}
     .cert p{font-size:.86rem;color:var(--gray);line-height:1.55}
 
@@ -357,10 +357,10 @@
         <p>The standards the nation's largest retailers require — met on every shipment.</p>
       </div>
       <div class="cert-row">
-        <div class="cert reveal" data-d="1"><div class="cert-ic"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div><h3>Primus Labs Certified</h3><p>Full food-safety inspection on every load, documentation on request.</p></div>
-        <div class="cert reveal" data-d="2"><div class="cert-ic"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><h3>FSMA Compliant</h3><p>Cross-border shipments meet USDA, FDA &amp; FSMA import requirements.</p></div>
-        <div class="cert reveal" data-d="3"><div class="cert-ic"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div><h3>Traceability</h3><p>Every box traces back to a known grower and growing region.</p></div>
-        <div class="cert reveal" data-d="4"><div class="cert-ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><h3>Quality Assurance</h3><p>Inspection and QA protocols standard at our certified facility.</p></div>
+        <div class="cert reveal" data-d="1"><img class="cert-img" src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=500&h=300&fit=crop&auto=format" alt="Laboratory food-safety testing" loading="lazy"><div class="cert-body"><h3>Primus Labs Certified</h3><p>Full food-safety inspection on every load, documentation on request.</p></div></div>
+        <div class="cert reveal" data-d="2"><img class="cert-img" src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=500&h=300&fit=crop&auto=format" alt="Compliance documentation" loading="lazy"><div class="cert-body"><h3>FSMA Compliant</h3><p>Cross-border shipments meet USDA, FDA &amp; FSMA import requirements.</p></div></div>
+        <div class="cert reveal" data-d="3"><img class="cert-img" src="https://images.unsplash.com/photo-1553413077-190dd305871c?w=500&h=300&fit=crop&auto=format" alt="Warehouse inventory shelves" loading="lazy"><div class="cert-body"><h3>Traceability</h3><p>Every box traces back to a known grower and growing region.</p></div></div>
+        <div class="cert reveal" data-d="4"><img class="cert-img" src="https://images.unsplash.com/photo-1607349913338-fca6f7fc42d0?w=500&h=300&fit=crop&auto=format" alt="Fresh produce quality display" loading="lazy"><div class="cert-body"><h3>Quality Assurance</h3><p>Inspection and QA protocols standard at our certified facility.</p></div></div>
       </div>
     </div>
   </section>
