@@ -40,10 +40,11 @@ a{text-decoration:none;color:inherit}
 /* nav — solid white, flat links, no dropdowns */
 .nav{position:fixed;top:0;left:0;right:0;z-index:100;background:#fff;border-bottom:1px solid var(--line);transition:box-shadow .3s var(--ease)}
 .nav.scrolled{box-shadow:0 8px 30px -20px rgba(0,0,0,.35)}
-.nav-inner{max-width:var(--maxw);margin:0 auto;padding:0 32px;height:74px;display:flex;align-items:center;justify-content:space-between}
-.nav-logo{font-size:1.35rem;font-weight:800;letter-spacing:-.03em;color:var(--ink)}
+.nav-inner{max-width:var(--maxw);margin:0 auto;padding:0 32px;height:78px;display:flex;align-items:center;justify-content:flex-start}
+.nav-logo{font-size:1.7rem;font-weight:800;letter-spacing:-.03em;color:var(--ink);flex-shrink:0;margin-right:44px}
 .nav-logo .rj{color:var(--green)}
-.nav-links{list-style:none;display:flex;align-items:center;gap:10px}
+.nav-links{list-style:none;display:flex;align-items:center;gap:10px;flex:1}
+.nav-links>li:last-child{margin-left:auto}
 .nav-links>li>a{display:inline-flex;align-items:center;font-size:1rem;font-weight:600;color:var(--ink);padding:10px 16px;border-radius:100px;transition:color .2s,background .2s}
 .nav-links>li>a:hover{color:var(--green)}
 .nav-cta{background:var(--green-bright);color:#04130a!important;font-weight:700;padding:11px 22px!important;border-radius:100px;transition:all .25s}
@@ -140,7 +141,8 @@ a{text-decoration:none;color:inherit}
 }
 @media(max-width:680px){
   .nav-burger{display:flex}
-  .nav-links{position:fixed;top:74px;left:0;right:0;background:#fff;flex-direction:column;align-items:stretch;gap:0;padding:10px 0 22px;display:none;border-top:1px solid var(--line);box-shadow:0 20px 40px -20px rgba(0,0,0,.25)}
+  .nav-links{position:fixed;top:78px;left:0;right:0;background:#fff;flex-direction:column;align-items:stretch;gap:0;padding:10px 0 22px;display:none;border-top:1px solid var(--line);box-shadow:0 20px 40px -20px rgba(0,0,0,.25)}
+  .nav-links>li:last-child{margin-left:0}
   .nav-links.open{display:flex}
   .nav-links>li>a{color:var(--ink);padding:14px 32px;border-radius:0;width:100%}
   .nav-cta{margin:12px 32px 0;text-align:center;justify-content:center}
