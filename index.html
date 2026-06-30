@@ -110,10 +110,10 @@
 
     /* ── Pillars ── */
     .pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-    .pillar{background:var(--white);border:1px solid var(--line);border-radius:var(--r-lg);padding:38px 32px;transition:transform .4s var(--ease),box-shadow .4s,border-color .4s;position:relative;overflow:hidden}
+    .pillar{background:var(--white);border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden;transition:transform .4s var(--ease),box-shadow .4s,border-color .4s}
     .pillar:hover{transform:translateY(-8px);box-shadow:var(--shadow-lg);border-color:transparent}
-    .pillar-ic{width:54px;height:54px;border-radius:14px;background:linear-gradient(135deg,var(--green-bright),var(--green-dark));display:flex;align-items:center;justify-content:center;margin-bottom:22px}
-    .pillar-ic svg{width:26px;height:26px;stroke:#fff;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+    .pillar-img{width:100%;height:180px;object-fit:cover;display:block}
+    .pillar-body{padding:30px 30px 34px}
     .pillar h3{font-size:1.25rem;font-weight:700;letter-spacing:-.01em;margin-bottom:10px}
     .pillar p{font-size:.97rem;color:var(--gray);line-height:1.65}
 
@@ -136,10 +136,10 @@
 
     /* ── Feature grid (capabilities) ── */
     .feat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-    .feat{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:var(--r);padding:30px 28px;transition:transform .4s var(--ease),background .4s}
+    .feat{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:var(--r);overflow:hidden;transition:transform .4s var(--ease),background .4s}
     .feat:hover{transform:translateY(-6px);background:rgba(255,255,255,.08)}
-    .feat-ic{width:46px;height:46px;border-radius:12px;background:rgba(111,224,138,.12);display:flex;align-items:center;justify-content:center;margin-bottom:18px}
-    .feat-ic svg{width:22px;height:22px;stroke:var(--green-glow);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+    .feat-img{width:100%;height:150px;object-fit:cover;display:block}
+    .feat-body{padding:24px 26px 28px}
     .feat h3{font-size:1.1rem;font-weight:700;margin-bottom:8px}
     .feat p{font-size:.92rem;color:rgba(255,255,255,.65);line-height:1.6}
 
@@ -276,19 +276,25 @@
       </div>
       <div class="pillars">
         <div class="pillar reveal" data-d="1">
-          <div class="pillar-ic"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
-          <h3>Direct Sourcing</h3>
-          <p>Contracted relationships with growers across Texas, the Southwest, and Mexico give us first access to seasonal and specialty produce — no brokers in between.</p>
+          <img class="pillar-img" src="https://images.unsplash.com/photo-1574943320219-553eb213f72d?w=600&h=380&fit=crop&auto=format" alt="Growers working in the field" loading="lazy">
+          <div class="pillar-body">
+            <h3>Direct Sourcing</h3>
+            <p>Contracted relationships with growers across Texas, the Southwest, and Mexico give us first access to seasonal and specialty produce — no brokers in between.</p>
+          </div>
         </div>
         <div class="pillar reveal" data-d="2">
-          <div class="pillar-ic"><svg viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div>
-          <h3>Logistics &amp; Cold Chain</h3>
-          <p>Our Pharr, Texas hub sits minutes from the busiest produce border crossing in North America — keeping transit short and the cold chain unbroken from field to shelf.</p>
+          <img class="pillar-img" src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=600&h=380&fit=crop&auto=format" alt="Refrigerated freight truck on the highway" loading="lazy">
+          <div class="pillar-body">
+            <h3>Logistics &amp; Cold Chain</h3>
+            <p>Our Pharr, Texas hub sits minutes from the busiest produce border crossing in North America — keeping transit short and the cold chain unbroken from field to shelf.</p>
+          </div>
         </div>
         <div class="pillar reveal" data-d="3">
-          <div class="pillar-ic"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
-          <h3>Supply-Chain Technology</h3>
-          <p>Powered by WholesaleWare, buyers get real-time inventory visibility, streamlined digital ordering, and transaction history — the whole account managed online.</p>
+          <img class="pillar-img" src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=380&fit=crop&auto=format" alt="Analytics dashboard on a laptop" loading="lazy">
+          <div class="pillar-body">
+            <h3>Supply-Chain Technology</h3>
+            <p>Powered by WholesaleWare, buyers get real-time inventory visibility, streamlined digital ordering, and transaction history — the whole account managed online.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -324,12 +330,12 @@
         <p>The infrastructure of a national supplier with the responsiveness of a regional partner.</p>
       </div>
       <div class="feat-grid">
-        <div class="feat reveal" data-d="1"><div class="feat-ic"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg></div><h3>Gateway Location</h3><p>Minutes from the Pharr–Reynosa international bridge, one of North America's highest-volume produce crossings.</p></div>
-        <div class="feat reveal" data-d="2"><div class="feat-ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><h3>Faster to Market</h3><p>Shorter transit and fewer hand-offs mean produce arrives fresher, with more shelf life remaining.</p></div>
-        <div class="feat reveal" data-d="3"><div class="feat-ic"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l8.84 8.84 8.84-8.84a5.5 5.5 0 000-7.78z"/></svg></div><h3>Cold Chain Integrity</h3><p>Temperature managed from the moment product leaves the field through final delivery.</p></div>
-        <div class="feat reveal" data-d="1"><div class="feat-ic"><svg viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div><h3>Scheduled Delivery</h3><p>Reliable, recurring delivery windows built around your receiving dock and operations.</p></div>
-        <div class="feat reveal" data-d="2"><div class="feat-ic"><svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div><h3>Competitive Pricing</h3><p>Direct sourcing and volume keep costs lean — savings we pass through, not pad.</p></div>
-        <div class="feat reveal" data-d="3"><div class="feat-ic"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div><h3>Digital Visibility</h3><p>WholesaleWare puts inventory, ordering, and history in one real-time dashboard.</p></div>
+        <div class="feat reveal" data-d="1"><img class="feat-img" src="https://images.unsplash.com/photo-1494412651409-8963ce7935a7?w=500&h=320&fit=crop&auto=format" alt="Aerial of a freight port" loading="lazy"><div class="feat-body"><h3>Gateway Location</h3><p>Minutes from the Pharr–Reynosa international bridge, one of North America's highest-volume produce crossings.</p></div></div>
+        <div class="feat reveal" data-d="2"><img class="feat-img" src="https://images.unsplash.com/photo-1473445730015-841f29a9490b?w=500&h=320&fit=crop&auto=format" alt="Freight truck on the highway" loading="lazy"><div class="feat-body"><h3>Faster to Market</h3><p>Shorter transit and fewer hand-offs mean produce arrives fresher, with more shelf life remaining.</p></div></div>
+        <div class="feat reveal" data-d="3"><img class="feat-img" src="https://images.unsplash.com/photo-1592924357228-91a4daadcfea?w=500&h=320&fit=crop&auto=format" alt="Fresh produce, just picked" loading="lazy"><div class="feat-body"><h3>Cold Chain Integrity</h3><p>Temperature managed from the moment product leaves the field through final delivery.</p></div></div>
+        <div class="feat reveal" data-d="1"><img class="feat-img" src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=500&h=320&fit=crop&auto=format" alt="Delivery vehicle on the road" loading="lazy"><div class="feat-body"><h3>Scheduled Delivery</h3><p>Reliable, recurring delivery windows built around your receiving dock and operations.</p></div></div>
+        <div class="feat reveal" data-d="2"><img class="feat-img" src="https://images.unsplash.com/photo-1567427017947-545c5f8d16ad?w=500&h=320&fit=crop&auto=format" alt="Coins representing value" loading="lazy"><div class="feat-body"><h3>Competitive Pricing</h3><p>Direct sourcing and volume keep costs lean — savings we pass through, not pad.</p></div></div>
+        <div class="feat reveal" data-d="3"><img class="feat-img" src="https://images.unsplash.com/photo-1620714223084-8fcacc6dfd8d?w=500&h=320&fit=crop&auto=format" alt="Managing an order online" loading="lazy"><div class="feat-body"><h3>Digital Visibility</h3><p>WholesaleWare puts inventory, ordering, and history in one real-time dashboard.</p></div></div>
       </div>
     </div>
   </section>

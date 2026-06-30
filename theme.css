@@ -99,11 +99,11 @@ a{text-decoration:none;color:inherit}
 /* card grids */
 .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
 .grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
-.card{background:var(--white);border:1px solid var(--line);border-radius:var(--r-lg);padding:34px 30px;transition:transform .4s var(--ease),box-shadow .4s,border-color .4s}
+.card{background:var(--white);border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden;display:block;transition:transform .4s var(--ease),box-shadow .4s,border-color .4s}
 .card:hover{transform:translateY(-8px);box-shadow:var(--shadow-lg);border-color:transparent}
 .sec-tint .card{background:var(--white)}
-.card-ic{width:52px;height:52px;border-radius:14px;background:linear-gradient(135deg,var(--green-bright),var(--green-dark));display:flex;align-items:center;justify-content:center;margin-bottom:20px}
-.card-ic svg{width:25px;height:25px;stroke:#fff;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.card-img{width:100%;height:180px;object-fit:cover;display:block}
+.card-body{padding:30px 30px 32px}
 .card h3{font-size:1.18rem;font-weight:700;letter-spacing:-.01em;margin-bottom:10px}
 .card p{font-size:.96rem;color:var(--gray);line-height:1.65}
 
