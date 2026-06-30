@@ -162,10 +162,10 @@
 
     /* ── Industries ── */
     .ind-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
-    .ind{background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:28px 24px;transition:transform .4s var(--ease),border-color .4s}
-    .ind:hover{transform:translateY(-5px);border-color:var(--green-bright)}
-    .ind-ic{width:44px;height:44px;border-radius:11px;background:var(--mist-2);display:flex;align-items:center;justify-content:center;margin-bottom:16px}
-    .ind-ic svg{width:22px;height:22px;stroke:var(--green-dark);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+    .ind{background:var(--white);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;transition:transform .4s var(--ease),box-shadow .4s,border-color .4s}
+    .ind:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:transparent}
+    .ind-img{width:100%;height:150px;object-fit:cover;display:block}
+    .ind-body{padding:22px 24px 26px}
     .ind h3{font-size:1.05rem;font-weight:700;margin-bottom:6px}
     .ind p{font-size:.9rem;color:var(--gray);line-height:1.55}
 
@@ -373,10 +373,10 @@
         <h2>Built for the businesses that move produce</h2>
       </div>
       <div class="ind-grid">
-        <div class="ind reveal" data-d="1"><div class="ind-ic"><svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg></div><h3>National Retail</h3><p>Branded and private-label supply for chains like Costco and Restaurant Depot.</p></div>
-        <div class="ind reveal" data-d="2"><div class="ind-ic"><svg viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/></svg></div><h3>Regional Grocers</h3><p>Consistent, scheduled supply tailored to regional grocery operations.</p></div>
-        <div class="ind reveal" data-d="3"><div class="ind-ic"><svg viewBox="0 0 24 24"><path d="M3 2v7a3 3 0 006 0V2"/><line x1="6" y1="9" x2="6" y2="22"/><path d="M17 2c-1.5 0-3 1.5-3 4v5h3"/><line x1="17" y1="2" x2="17" y2="22"/></svg></div><h3>Foodservice</h3><p>Dependable volume and quality for foodservice operators and kitchens.</p></div>
-        <div class="ind reveal" data-d="4"><div class="ind-ic"><svg viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div><h3>Distributors</h3><p>Wholesale volume and cross-border sourcing for downstream distributors.</p></div>
+        <div class="ind reveal" data-d="1"><img class="ind-img" src="https://images.unsplash.com/photo-1578916171728-46686eac8d58?w=500&h=320&fit=crop&auto=format" alt="National retail store" loading="lazy"><div class="ind-body"><h3>National Retail</h3><p>Branded and private-label supply for chains like Costco and Restaurant Depot.</p></div></div>
+        <div class="ind reveal" data-d="2"><img class="ind-img" src="https://images.unsplash.com/photo-1583258292688-d0213dc5a3a8?w=500&h=320&fit=crop&auto=format" alt="Grocery produce aisle" loading="lazy"><div class="ind-body"><h3>Regional Grocers</h3><p>Consistent, scheduled supply tailored to regional grocery operations.</p></div></div>
+        <div class="ind reveal" data-d="3"><img class="ind-img" src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=500&h=320&fit=crop&auto=format" alt="Restaurant dining room" loading="lazy"><div class="ind-body"><h3>Foodservice</h3><p>Dependable volume and quality for foodservice operators and kitchens.</p></div></div>
+        <div class="ind reveal" data-d="4"><img class="ind-img" src="https://images.unsplash.com/photo-1565891741441-64926e441838?w=500&h=320&fit=crop&auto=format" alt="Distribution loading dock with trucks" loading="lazy"><div class="ind-body"><h3>Distributors</h3><p>Wholesale volume and cross-border sourcing for downstream distributors.</p></div></div>
       </div>
     </div>
   </section>
