@@ -18,9 +18,9 @@
       --green-bright:#3fae54;
       --green-glow:#6fe08a;
       --green-dark:#1e5528;
-      --mist:#f4f9f5;
-      --mist-2:#eef6f0;
-      --line:#e4ece6;
+      --mist:#f7f6f0;
+      --mist-2:#eef0e7;
+      --line:#e6e7dd;
       --gray:#5d6b63;
       --gray-2:#8a978f;
       --white:#fff;
@@ -74,21 +74,33 @@
     .nav-burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 
     /* ── Hero ── */
-    .hero{position:relative;color:#fff;overflow:hidden;padding:170px 0 110px;background:linear-gradient(100deg,rgba(8,18,12,.9) 28%,rgba(8,18,12,.62) 68%,rgba(8,18,12,.42)),url('https://images.unsplash.com/photo-1542838132-92c53300491e?w=1800&q=80&auto=format&fit=crop') center/cover no-repeat}
+    .hero{position:relative;color:#fff;overflow:hidden;padding:172px 0 112px;background:var(--ink)}
+    /* image layer with slow zoom */
+    .hero::before{content:'';position:absolute;inset:0;z-index:0;background:url('https://images.unsplash.com/photo-1605000797499-95a51c5269ae?w=1900&q=80&auto=format&fit=crop') center/cover no-repeat;animation:heroZoom 26s ease-in-out infinite alternate}
+    /* dark overlay + green radial glow + vignette */
+    .hero::after{content:'';position:absolute;inset:0;z-index:1;pointer-events:none;background:radial-gradient(55% 55% at 78% 28%,rgba(63,174,84,.32),transparent 70%),linear-gradient(100deg,rgba(7,16,11,.95) 24%,rgba(7,16,11,.74) 62%,rgba(7,16,11,.5) 100%),radial-gradient(125% 115% at 50% 45%,transparent 52%,rgba(0,0,0,.6))}
+    @keyframes heroZoom{from{transform:scale(1)}to{transform:scale(1.09)}}
     .hero-grid,.hero-orb{display:none}
+    /* light grain */
+    .hero-grain{position:absolute;inset:0;z-index:1;pointer-events:none;opacity:.06;mix-blend-mode:overlay;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='140'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>")}
     .hero-inner{position:relative;z-index:2;max-width:var(--maxw);margin:0 auto;padding:0 32px}
-    .hero-eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:.78rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--green-glow);background:rgba(111,224,138,.1);border:1px solid rgba(111,224,138,.2);padding:7px 16px;border-radius:100px;margin-bottom:28px}
-    .hero-eyebrow .dot{width:7px;height:7px;border-radius:50%;background:var(--green-glow);box-shadow:0 0 10px var(--green-glow)}
-    .hero h1{font-size:clamp(2.6rem,6vw,4.6rem);font-weight:800;line-height:1.04;letter-spacing:-.03em;max-width:16ch}
-    .hero h1 .accent{background:linear-gradient(120deg,var(--green-glow),#bff5cb);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
-    .hero p.lead{margin:26px 0 38px;font-size:clamp(1.05rem,1.6vw,1.28rem);color:rgba(255,255,255,.75);max-width:60ch;line-height:1.65}
+    .hero-eyebrow{display:inline-flex;align-items:center;gap:9px;font-size:.76rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--green-glow);background:rgba(111,224,138,.12);border:1px solid rgba(111,224,138,.24);padding:8px 17px;border-radius:100px;margin-bottom:30px}
+    .hero-eyebrow .dot{width:7px;height:7px;border-radius:50%;background:var(--green-glow);box-shadow:0 0 12px var(--green-glow)}
+    .hero h1{font-size:clamp(2.7rem,6vw,4.7rem);font-weight:800;line-height:1.03;letter-spacing:-.035em;max-width:17ch}
+    .hero h1 .accent{background:linear-gradient(120deg,var(--green-glow),#c7f6d2);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+    .hero p.lead{margin:28px 0 40px;font-size:clamp(1.06rem,1.6vw,1.3rem);color:rgba(255,255,255,.82);max-width:62ch;line-height:1.66;text-shadow:0 1px 20px rgba(0,0,0,.3)}
     .hero-actions{display:flex;gap:14px;flex-wrap:wrap}
+    /* intro line before stats */
+    .hero-intro{position:relative;z-index:2;max-width:var(--maxw);margin:74px auto 0;padding:0 32px;display:flex;align-items:center;gap:16px}
+    .hero-intro .bar{height:1px;flex:1;background:linear-gradient(90deg,rgba(111,224,138,.5),transparent)}
+    .hero-intro span{font-size:1.05rem;font-weight:700;letter-spacing:-.01em;color:#fff;white-space:nowrap}
+    .hero-intro span em{font-style:normal;color:var(--green-glow)}
     /* floating stat cards */
-    .hero-stats{position:relative;z-index:2;max-width:var(--maxw);margin:72px auto 0;padding:0 32px;display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
-    .stat-card{background:#0f2417;border:1px solid rgba(111,224,138,.22);border-radius:var(--r);padding:28px 24px;box-shadow:0 16px 40px -18px rgba(0,0,0,.6);transition:transform .4s var(--ease),background .4s}
-    .stat-card:hover{transform:translateY(-6px);background:#15301f}
-    .stat-card .n{font-size:2.4rem;font-weight:800;letter-spacing:-.02em;line-height:1;background:linear-gradient(120deg,#fff,var(--green-glow));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
-    .stat-card .l{margin-top:10px;font-size:.86rem;color:rgba(255,255,255,.62);line-height:1.45}
+    .hero-stats{position:relative;z-index:2;max-width:var(--maxw);margin:22px auto 0;padding:0 32px;display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+    .stat-card{background:rgba(16,36,23,.72);backdrop-filter:blur(6px);border:1px solid rgba(111,224,138,.22);border-radius:var(--r);padding:28px 24px;box-shadow:0 18px 44px -20px rgba(0,0,0,.7);transition:transform .4s var(--ease),background .4s,border-color .4s}
+    .stat-card:hover{transform:translateY(-6px);background:rgba(21,48,31,.85);border-color:rgba(111,224,138,.4)}
+    .stat-card .n{font-size:2.5rem;font-weight:800;letter-spacing:-.02em;line-height:1;background:linear-gradient(120deg,#fff,var(--green-glow));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+    .stat-card .l{margin-top:11px;font-size:.86rem;color:rgba(255,255,255,.66);line-height:1.45}
 
     /* ── Trust strip ── */
     .trust{background:var(--white);padding:46px 0;border-bottom:1px solid var(--line)}
@@ -205,6 +217,8 @@
       .nav-links>li>a{color:var(--ink);padding:14px 32px;border-radius:0;width:100%}
       .nav-cta{margin:12px 32px 0;text-align:center;justify-content:center}
       .hero{padding:130px 0 80px}
+      .hero-intro span{white-space:normal}
+      .hero-intro .bar{display:none}
       .hero-stats{grid-template-columns:1fr 1fr;gap:12px}
       .pillars,.feat-grid,.cat-grid,.cert-row,.ind-grid{grid-template-columns:1fr}
       .sec{padding:76px 0}
@@ -233,23 +247,22 @@
 
   <!-- HERO -->
   <header class="hero">
-    <div class="hero-grid"></div>
-    <div class="hero-orb a"></div>
-    <div class="hero-orb b"></div>
+    <div class="hero-grain"></div>
     <div class="hero-inner">
-      <div class="hero-eyebrow reveal in"><span class="dot"></span> A GrubMarket Company · Est. 2004</div>
-      <h1 class="reveal in" data-d="1">The supply chain behind <span class="accent">America's fresh produce.</span></h1>
-      <p class="lead reveal in" data-d="2">RJ Produce moves premium fruits and vegetables across the U.S. and Mexico — pairing two decades of direct grower relationships with the logistics, cold chain, and technology of a modern supply-chain company.</p>
+      <div class="hero-eyebrow reveal in"><span class="dot"></span> Trusted Since 2004</div>
+      <h1 class="reveal in" data-d="1">Sourced direct from the growers <span class="accent">we've trusted for decades.</span></h1>
+      <p class="lead reveal in" data-d="2">For 20+ years, RJ Produce has built direct relationships with family farms across the U.S. and Mexico — pairing that trust with modern logistics and an unbroken cold chain to keep retailers, grocers, and foodservice partners dependably supplied, year-round.</p>
       <div class="hero-actions reveal in" data-d="3">
         <a href="contact.html" class="btn btn-primary">Request a Quote <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
         <a href="contact.html" class="btn btn-ghost">Talk to Sales</a>
       </div>
     </div>
+    <div class="hero-intro reveal in" data-d="3"><span><em>Family relationships.</em> Modern logistics.</span><span class="bar"></span></div>
     <div class="hero-stats">
-      <div class="stat-card reveal in" data-d="1"><div class="n">20+</div><div class="l">Years powering produce supply since 2004</div></div>
-      <div class="stat-card reveal in" data-d="2"><div class="n">50+</div><div class="l">Fresh produce varieties sourced</div></div>
-      <div class="stat-card reveal in" data-d="3"><div class="n">365</div><div class="l">Days a year of continuous supply</div></div>
-      <div class="stat-card reveal in" data-d="4"><div class="n">100M+</div><div class="l">Pounds of produce moved every year</div></div>
+      <div class="stat-card reveal in" data-d="1"><div class="n">20+</div><div class="l">Years of dependable supply, since 2004</div></div>
+      <div class="stat-card reveal in" data-d="2"><div class="n">100+</div><div class="l">Family-farm grower partners, U.S. &amp; Mexico</div></div>
+      <div class="stat-card reveal in" data-d="3"><div class="n">365</div><div class="l">Days a year of continuous, year-round supply</div></div>
+      <div class="stat-card reveal in" data-d="4"><div class="n">100M+</div><div class="l">Pounds of produce delivered annually</div></div>
     </div>
   </header>
 
