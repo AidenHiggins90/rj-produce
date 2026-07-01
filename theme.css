@@ -41,8 +41,11 @@ a{text-decoration:none;color:inherit}
 .nav{position:fixed;top:0;left:0;right:0;z-index:100;background:#fff;border-bottom:1px solid var(--line);transition:box-shadow .3s var(--ease)}
 .nav.scrolled{box-shadow:0 8px 30px -20px rgba(0,0,0,.35)}
 .nav-inner{max-width:var(--maxw);margin:0 auto;padding:0 32px;height:78px;display:flex;align-items:center;justify-content:flex-start}
-.nav-logo{font-size:1.7rem;font-weight:800;letter-spacing:-.03em;color:var(--ink);flex-shrink:0;margin-right:44px}
+.nav-brand{display:flex;align-items:center;flex-shrink:0;margin-right:44px}
+.nav-logo{font-size:1.7rem;font-weight:800;letter-spacing:-.03em;color:var(--ink)}
 .nav-logo .rj{color:var(--green)}
+.gm-brand-mark{display:flex;align-items:center;margin-left:12px;padding-left:12px;border-left:1px solid var(--line);height:22px}
+.gm-brand-logo{height:13px;width:auto;display:block}
 .nav-links{list-style:none;display:flex;align-items:center;gap:10px;flex:1}
 .nav-links>li:last-child{margin-left:auto}
 .nav-links>li>a{display:inline-flex;align-items:center;font-size:1rem;font-weight:600;color:var(--ink);padding:10px 16px;border-radius:100px;transition:color .2s,background .2s}
