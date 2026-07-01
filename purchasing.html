@@ -22,7 +22,22 @@
     .pw-tier h3{font-size:1.1rem;font-weight:700;margin-bottom:10px}
     .pw-tier p{font-size:.92rem;color:var(--gray);line-height:1.6}
     .pw-tier .badge{display:inline-block;font-size:.74rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--green-dark);background:var(--mist-2);padding:5px 12px;border-radius:100px;margin-bottom:16px}
-    @media(max-width:680px){.pw-step{grid-template-columns:48px 1fr}.pw-tiers{grid-template-columns:1fr}}
+    /* benefits strip */
+    .pw-benefits{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+    .pw-benefit{text-align:center;padding:8px 12px}
+    .pw-benefit .bi{width:52px;height:52px;margin:0 auto 16px;border-radius:14px;background:linear-gradient(135deg,var(--green-bright),var(--green-dark));display:flex;align-items:center;justify-content:center}
+    .pw-benefit .bi svg{width:24px;height:24px;stroke:#fff;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+    .pw-benefit h3{font-size:1rem;font-weight:700;margin-bottom:6px}
+    .pw-benefit p{font-size:.88rem;color:var(--gray);line-height:1.5}
+    /* category chips */
+    .pw-cats{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .pw-cat{display:block;background:var(--white);border:1px solid var(--line);border-radius:var(--r-lg);padding:30px 26px;text-align:left;transition:transform .35s var(--ease),box-shadow .35s,border-color .35s}
+    .pw-cat:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:transparent}
+    .pw-cat h3{font-size:1.1rem;font-weight:700;margin-bottom:6px}
+    .pw-cat p{font-size:.9rem;color:var(--gray)}
+    .pw-cat .arrow{display:inline-flex;align-items:center;gap:6px;margin-top:14px;font-size:.86rem;font-weight:700;color:var(--green-dark)}
+    .pw-cat .arrow svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+    @media(max-width:680px){.pw-step{grid-template-columns:48px 1fr}.pw-tiers{grid-template-columns:1fr}.pw-benefits{grid-template-columns:1fr 1fr}.pw-cats{grid-template-columns:1fr}}
   </style>
 </head>
 <body>
@@ -47,6 +62,30 @@
       <p class="reveal in" data-d="2">A straightforward path from first conversation to standing weekly orders — built for retailers, grocers, foodservice operators, and distributors.</p>
     </div>
   </header>
+
+  <!-- BENEFITS STRIP -->
+  <section class="sec" style="padding-bottom:0">
+    <div class="wrap">
+      <div class="pw-benefits">
+        <div class="pw-benefit reveal" data-d="1">
+          <div class="bi"><svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div>
+          <h3>Direct Grower Pricing</h3><p>No broker markups — pricing reflects the produce itself.</p>
+        </div>
+        <div class="pw-benefit reveal" data-d="2">
+          <div class="bi"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
+          <h3>Dedicated Account Manager</h3><p>One person who knows your account and your schedule.</p>
+        </div>
+        <div class="pw-benefit reveal" data-d="3">
+          <div class="bi"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+          <h3>Real-Time Ordering</h3><p>Place orders and track inventory through WholesaleWare.</p>
+        </div>
+        <div class="pw-benefit reveal" data-d="4">
+          <div class="bi"><svg viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div>
+          <h3>Recurring Delivery</h3><p>Standing orders on a schedule built around your dock.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- STEPS -->
   <section class="sec">
@@ -97,7 +136,28 @@
     </div>
   </section>
 
-  <section class="sec"><div class="wrap"><div class="cta reveal"><div class="cta-grid"></div>
+  <!-- CATEGORY SHOWCASE -->
+  <section class="sec">
+    <div class="wrap">
+      <div class="sec-head reveal"><span class="eyebrow">Browse By Category</span><h2>Order across our full catalog</h2></div>
+      <div class="pw-cats">
+        <a class="pw-cat reveal" data-d="1" href="products.html?filter=vegetables">
+          <h3>Vegetables</h3><p>Tomatoes, peppers, cucumbers, corn &amp; more staples.</p>
+          <span class="arrow">View category <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+        </a>
+        <a class="pw-cat reveal" data-d="2" href="products.html?filter=fruits">
+          <h3>Fruits</h3><p>Citrus and seasonal fruit sourced year-round.</p>
+          <span class="arrow">View category <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+        </a>
+        <a class="pw-cat reveal" data-d="3" href="products.html?filter=specialty">
+          <h3>Specialty</h3><p>Avocados, mangos, papaya &amp; hard-to-find items.</p>
+          <span class="arrow">View category <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec sec-tint"><div class="wrap"><div class="cta reveal"><div class="cta-grid"></div>
     <h2>Ready to start purchasing?</h2>
     <p>Submit a quote request and our team will walk you through account setup and your first order.</p>
     <div class="cta-actions"><a href="contact.html" class="btn btn-primary">Request a Quote</a><a href="products.html" class="btn btn-ghost">View Products</a></div>
