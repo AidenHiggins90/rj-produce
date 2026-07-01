@@ -67,6 +67,9 @@
     .nav-links>li>a:hover{color:var(--green)}
     .nav-cta{background:var(--green-bright);color:#04130a!important;font-weight:700;padding:11px 22px!important;border-radius:100px;transition:all .25s}
     .nav-cta:hover{background:var(--green-glow)!important;color:#04130a!important;transform:translateY(-1px)}
+    .gm-nav-badge{display:flex;align-items:center;gap:6px;padding:0 6px;white-space:nowrap}
+    .gm-nav-badge span{font-size:.78rem;color:var(--gray)}
+    .gm-nav-logo-sm{height:13px;width:auto;display:block}
     .nav-burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px;z-index:300}
     .nav-burger span{width:24px;height:2px;background:var(--ink);border-radius:2px;transition:.25s}
     .nav-burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
@@ -217,6 +220,7 @@
       .nav-burger{display:flex}
       .nav-links{position:fixed;top:78px;left:0;right:0;background:#fff;flex-direction:column;align-items:stretch;gap:0;padding:10px 0 22px;display:none;border-top:1px solid var(--line);box-shadow:0 20px 40px -20px rgba(0,0,0,.25)}
       .nav-links>li:last-child{margin-left:0}
+      .gm-nav-badge{display:none}
       .nav-links.open{display:flex}
       .nav-links>li>a{color:var(--ink);padding:14px 32px;border-radius:0;width:100%}
       .nav-cta{margin:12px 32px 0;text-align:center;justify-content:center}
@@ -245,6 +249,7 @@
         <li><a href="products.html">Products</a></li>
         <li><a href="sourcing.html">Network</a></li>
       <li><a href="purchasing.html">Purchasing</a></li>
+        <li class="gm-nav-badge"><span>Part of</span><img src="https://www.grubmarket.com/hello/assets/icons/logo_black.svg" alt="GrubMarket" class="gm-nav-logo-sm"></li>
         <li><a href="contact.html" class="nav-cta">Request a Quote</a></li>
       </ul>
     </div>
@@ -261,11 +266,6 @@
         <a href="contact.html" class="btn btn-primary">Request a Quote <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
         <a href="contact.html" class="btn btn-ghost">Talk to Sales</a>
       </div>
-      <a href="https://www.grubmarket.com" target="_blank" rel="noopener" class="gm-badge reveal in" data-d="3">
-        <span>A</span>
-        <img src="https://www.grubmarket.com/hello/assets/icons/logo_white.svg" alt="GrubMarket" class="gm-logo">
-        <span>company</span>
-      </a>
     </div>
     <div class="hero-intro reveal in" data-d="3"><span><em>Family relationships.</em> Modern logistics.</span><span class="bar"></span></div>
     <div class="hero-stats">
