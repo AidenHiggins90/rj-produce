@@ -127,6 +127,10 @@ a{text-decoration:none;color:inherit}
 .footer-brand .flogo{font-size:1.4rem;font-weight:800;color:#fff;letter-spacing:-.03em}
 .footer-brand .flogo .rj{color:var(--green-glow)}
 .footer-brand p{margin-top:14px;font-size:.92rem;line-height:1.6;max-width:34ch}
+.gm-badge{display:inline-flex;align-items:center;gap:7px;margin-top:20px;opacity:.7;transition:opacity .2s var(--ease)}
+.gm-badge:hover{opacity:1}
+.gm-badge span{font-size:.85rem;color:rgba(255,255,255,.7)}
+.gm-logo{height:15px;width:auto;display:block}
 .footer-col h4{color:#fff;font-size:.82rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:16px}
 .footer-col a{display:block;font-size:.92rem;padding:5px 0;transition:color .2s}
 .footer-col a:hover{color:var(--green-glow)}
