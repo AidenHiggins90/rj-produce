@@ -1,469 +1,239 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="RJ Produce is the supply chain behind America's fresh produce — sourcing premium fruits and vegetables across the U.S. and Mexico with two decades of grower relationships, border-region logistics, and modern supply-chain technology." />
-  <title>RJ Produce — The Supply Chain Behind Fresh Produce</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="RJ Produce is a grower–shipper of fresh fruits and vegetables, sourcing direct from family farms across the U.S. and Mexico and shipping from Pharr, Texas since 2004." />
+  <title>RJ Produce — Grower &amp; shipper of fresh fruits and vegetables</title>
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
-  <style>
-    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-    :root{
-      --ink:#0a1410;          /* near-black green */
-      --ink-2:#12231b;
-      --green:#2d7a3a;
-      --green-bright:#3fae54;
-      --green-glow:#6fe08a;
-      --green-dark:#1e5528;
-      --mist:#f7f6f0;
-      --mist-2:#eef0e7;
-      --line:#e6e7dd;
-      --gray:#5d6b63;
-      --gray-2:#8a978f;
-      --white:#fff;
-      --r-lg:24px;--r:16px;--r-sm:12px;
-      --shadow:0 10px 40px -12px rgba(10,20,16,.18);
-      --shadow-lg:0 30px 80px -24px rgba(10,20,16,.28);
-      --ring:1px solid rgba(255,255,255,.08);
-      --maxw:1240px;
-      --ease:cubic-bezier(.22,1,.36,1);
-    }
-    html{scroll-behavior:smooth}
-    body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;color:var(--ink);background:var(--white);line-height:1.6;-webkit-font-smoothing:antialiased}
-    img{display:block;max-width:100%}
-    a{text-decoration:none;color:inherit}
-    .wrap{max-width:var(--maxw);margin:0 auto;padding:0 32px}
-
-    /* ── Reveal animation ── */
-    .reveal{opacity:0;transform:translateY(28px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
-    .reveal.in{opacity:1;transform:none}
-    .reveal[data-d="1"]{transition-delay:.08s}.reveal[data-d="2"]{transition-delay:.16s}
-    .reveal[data-d="3"]{transition-delay:.24s}.reveal[data-d="4"]{transition-delay:.32s}
-
-    /* ── Buttons ── */
-    .btn{display:inline-flex;align-items:center;gap:9px;font-family:inherit;font-weight:600;font-size:.95rem;padding:14px 26px;border-radius:100px;border:1.5px solid transparent;cursor:pointer;transition:all .25s var(--ease);white-space:nowrap}
-    .btn-primary{background:var(--green-bright);color:#04130a;border-color:var(--green-bright);box-shadow:0 8px 30px -8px rgba(63,174,84,.6)}
-    .btn-primary:hover{background:var(--green-glow);box-shadow:0 12px 40px -8px rgba(63,174,84,.8);transform:translateY(-2px)}
-    .btn-ghost{background:rgba(255,255,255,.06);color:#fff;border-color:rgba(255,255,255,.22);backdrop-filter:blur(8px)}
-    .btn-ghost:hover{background:rgba(255,255,255,.14);transform:translateY(-2px)}
-    .btn-dark{background:var(--ink);color:#fff;border-color:var(--ink)}
-    .btn-dark:hover{background:var(--ink-2);transform:translateY(-2px)}
-    .btn-outline{background:transparent;color:var(--ink);border-color:var(--line)}
-    .btn-outline:hover{border-color:var(--ink);transform:translateY(-2px)}
-    .btn svg{width:16px;height:16px}
-
-    /* ── Nav (solid white, flat) ── */
-    .nav{position:fixed;top:0;left:0;right:0;z-index:100;background:#fff;border-bottom:1px solid var(--line);transition:box-shadow .3s var(--ease)}
-    .nav.scrolled{box-shadow:0 8px 30px -20px rgba(0,0,0,.35)}
-    .nav-inner{max-width:var(--maxw);margin:0 auto;padding:0 32px;height:78px;display:flex;align-items:center;justify-content:flex-start}
-    .nav-brand{display:flex;align-items:center;flex-shrink:0;margin-right:44px}
-    .nav-logo{font-size:1.7rem;font-weight:800;letter-spacing:-.03em;color:var(--ink)}
-    .nav-logo .rj{color:var(--green)}
-    .gm-brand-mark{display:flex;align-items:center;margin-left:12px;padding-left:12px;border-left:1px solid var(--line);height:22px}
-    .gm-brand-logo{height:13px;width:auto;display:block}
-    .nav-links{list-style:none;display:flex;align-items:center;gap:10px;flex:1}
-    .nav-links>li:last-child{margin-left:auto}
-    .nav-links>li>a{display:inline-flex;align-items:center;font-size:1rem;font-weight:600;color:var(--ink);padding:10px 16px;border-radius:100px;transition:color .2s,background .2s}
-    .nav-links>li>a:hover{color:var(--green)}
-    .nav-cta{background:var(--green-bright);color:#04130a!important;font-weight:700;padding:11px 22px!important;border-radius:100px;transition:all .25s}
-    .nav-cta:hover{background:var(--green-glow)!important;color:#04130a!important;transform:translateY(-1px)}
-    .gm-nav-badge{display:flex;align-items:center;gap:6px;padding:0 6px;white-space:nowrap}
-    .gm-nav-badge span{font-size:.78rem;color:var(--gray)}
-    .gm-nav-logo-sm{height:13px;width:auto;display:block}
-    .gm-strip{background:var(--mist);border-bottom:1px solid var(--line);padding:16px 0;text-align:center}
-    .gm-strip span{font-size:.92rem;color:var(--gray)}
-    .gm-strip-logo{height:16px;width:auto;display:inline-block;vertical-align:-3px;margin:0 5px}
-    .nav-burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px;z-index:300}
-    .nav-burger span{width:24px;height:2px;background:var(--ink);border-radius:2px;transition:.25s}
-    .nav-burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
-    .nav-burger.open span:nth-child(2){opacity:0}
-    .nav-burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
-
-    /* ── Hero ── */
-    .hero{position:relative;color:#fff;overflow:hidden;padding:172px 0 112px;background:var(--ink)}
-    /* image layer with slow zoom */
-    .hero::before{content:'';position:absolute;inset:0;z-index:0;background:url('https://images.unsplash.com/photo-1605000797499-95a51c5269ae?w=1900&q=80&auto=format&fit=crop') center/cover no-repeat;animation:heroZoom 26s ease-in-out infinite alternate}
-    /* dark overlay + green radial glow + vignette */
-    .hero::after{content:'';position:absolute;inset:0;z-index:1;pointer-events:none;background:radial-gradient(55% 55% at 78% 28%,rgba(63,174,84,.32),transparent 70%),linear-gradient(100deg,rgba(7,16,11,.95) 24%,rgba(7,16,11,.74) 62%,rgba(7,16,11,.5) 100%),radial-gradient(125% 115% at 50% 45%,transparent 52%,rgba(0,0,0,.6))}
-    @keyframes heroZoom{from{transform:scale(1)}to{transform:scale(1.09)}}
-    .hero-grid,.hero-orb{display:none}
-    /* light grain */
-    .hero-grain{position:absolute;inset:0;z-index:1;pointer-events:none;opacity:.06;mix-blend-mode:overlay;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='140'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>")}
-    .hero-inner{position:relative;z-index:2;max-width:var(--maxw);margin:0 auto;padding:0 32px}
-    .hero-eyebrow{display:inline-flex;align-items:center;gap:9px;font-size:.76rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--green-glow);background:rgba(111,224,138,.12);border:1px solid rgba(111,224,138,.24);padding:8px 17px;border-radius:100px;margin-bottom:30px}
-    .hero-eyebrow .dot{width:7px;height:7px;border-radius:50%;background:var(--green-glow);box-shadow:0 0 12px var(--green-glow)}
-    .hero h1{font-size:clamp(2.7rem,6vw,4.7rem);font-weight:800;line-height:1.03;letter-spacing:-.035em;max-width:17ch}
-    .hero h1 .accent{background:linear-gradient(120deg,var(--green-glow),#c7f6d2);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
-    .hero p.lead{margin:28px 0 40px;font-size:clamp(1.06rem,1.6vw,1.3rem);color:rgba(255,255,255,.82);max-width:62ch;line-height:1.66;text-shadow:0 1px 20px rgba(0,0,0,.3)}
-    .hero-actions{display:flex;gap:14px;flex-wrap:wrap}
-    /* intro line before stats */
-    .hero-intro{position:relative;z-index:2;max-width:var(--maxw);margin:74px auto 0;padding:0 32px;display:flex;align-items:center;gap:16px}
-    .hero-intro .bar{height:1px;flex:1;background:linear-gradient(90deg,rgba(111,224,138,.5),transparent)}
-    .hero-intro span{font-size:1.05rem;font-weight:700;letter-spacing:-.01em;color:#fff;white-space:nowrap}
-    .hero-intro span em{font-style:normal;color:var(--green-glow)}
-    /* floating stat cards */
-    .hero-stats{position:relative;z-index:2;max-width:var(--maxw);margin:22px auto 0;padding:0 32px;display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
-    .stat-card{background:rgba(16,36,23,.72);backdrop-filter:blur(6px);border:1px solid rgba(111,224,138,.22);border-radius:var(--r);padding:28px 24px;box-shadow:0 18px 44px -20px rgba(0,0,0,.7);transition:transform .4s var(--ease),background .4s,border-color .4s}
-    .stat-card:hover{transform:translateY(-6px);background:rgba(21,48,31,.85);border-color:rgba(111,224,138,.4)}
-    .stat-card .n{font-size:2.5rem;font-weight:800;letter-spacing:-.02em;line-height:1;background:linear-gradient(120deg,#fff,var(--green-glow));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
-    .stat-card .l{margin-top:11px;font-size:.86rem;color:rgba(255,255,255,.66);line-height:1.45}
-
-    /* ── Trust strip ── */
-    .trust{background:var(--white);padding:46px 0;border-bottom:1px solid var(--line)}
-    .trust-label{text-align:center;font-size:.78rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--gray-2);margin-bottom:24px}
-    .trust-row{display:flex;align-items:center;justify-content:center;gap:56px;flex-wrap:wrap}
-    .trust-row span{font-size:1.5rem;font-weight:800;letter-spacing:-.02em;color:#b9c4bd}
-
-    /* ── Section scaffolding ── */
-    .sec{padding:110px 0}
-    .sec-tint{background:var(--mist)}
-    .sec-ink{background:var(--ink);color:#fff}
-    .eyebrow{display:inline-block;font-size:.78rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--green);background:var(--mist-2);padding:6px 14px;border-radius:100px;margin-bottom:18px}
-    .sec-ink .eyebrow{color:var(--green-glow);background:rgba(111,224,138,.1)}
-    .sec-head{max-width:680px;margin:0 auto 64px;text-align:center}
-    .sec-head h2{font-size:clamp(2rem,3.6vw,2.9rem);font-weight:800;letter-spacing:-.025em;line-height:1.1}
-    .sec-head p{margin-top:18px;font-size:1.08rem;color:var(--gray);line-height:1.7}
-    .sec-ink .sec-head p{color:rgba(255,255,255,.7)}
-    h2.lead-h{font-size:clamp(2rem,3.6vw,2.9rem);font-weight:800;letter-spacing:-.025em;line-height:1.12}
-
-    /* ── Pillars ── */
-    .pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-    .pillar{background:var(--white);border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden;transition:transform .4s var(--ease),box-shadow .4s,border-color .4s}
-    .pillar:hover{transform:translateY(-8px);box-shadow:var(--shadow-lg);border-color:transparent}
-    .pillar-img{width:100%;height:180px;object-fit:cover;display:block}
-    .pillar-body{padding:30px 30px 34px}
-    .pillar h3{font-size:1.25rem;font-weight:700;letter-spacing:-.01em;margin-bottom:10px}
-    .pillar p{font-size:.97rem;color:var(--gray);line-height:1.65}
-
-    /* ── Split blocks ── */
-    .split{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
-    .split.rev .split-media{order:-1}
-    .split-text h2{font-size:clamp(1.9rem,3.2vw,2.6rem);font-weight:800;letter-spacing:-.025em;line-height:1.12;margin-bottom:20px}
-    .split-text p{font-size:1.04rem;color:var(--gray);line-height:1.75;margin-bottom:16px}
-    .sec-ink .split-text p{color:rgba(255,255,255,.72)}
-    .split-media{position:relative}
-    .split-media img{width:100%;border-radius:var(--r-lg);box-shadow:var(--shadow-lg)}
-    .media-badge{position:absolute;bottom:22px;left:22px;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border-radius:var(--r);padding:14px 18px;box-shadow:var(--shadow)}
-    .media-badge strong{display:block;font-size:.95rem;color:var(--ink)}
-    .media-badge span{font-size:.82rem;color:var(--gray)}
-    .check-list{list-style:none;margin:8px 0 28px;display:flex;flex-direction:column;gap:14px}
-    .check-list li{display:flex;gap:12px;align-items:flex-start;font-size:1rem;font-weight:500}
-    .sec-ink .check-list li{color:rgba(255,255,255,.85)}
-    .check-list .ck{flex-shrink:0;width:24px;height:24px;border-radius:50%;background:rgba(63,174,84,.15);display:flex;align-items:center;justify-content:center;margin-top:1px}
-    .check-list .ck svg{width:13px;height:13px;stroke:var(--green-bright);fill:none;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
-
-    /* ── Feature grid (capabilities) ── */
-    .feat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-    .feat{background:var(--white);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;transition:transform .4s var(--ease),box-shadow .4s}
-    .feat:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
-    .feat-img{width:100%;height:150px;object-fit:cover;display:block}
-    .feat-body{padding:24px 26px 28px}
-    .feat h3{font-size:1.1rem;font-weight:700;margin-bottom:8px;color:var(--ink)}
-    .feat p{font-size:.92rem;color:var(--gray);line-height:1.6}
-
-    /* ── Product categories ── */
-    .cat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-    .cat{position:relative;border-radius:var(--r-lg);overflow:hidden;aspect-ratio:4/3;box-shadow:var(--shadow)}
-    .cat img{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease)}
-    .cat:hover img{transform:scale(1.06)}
-    .cat-ov{position:absolute;inset:0;background:linear-gradient(180deg,transparent 35%,rgba(7,18,12,.82));display:flex;flex-direction:column;justify-content:flex-end;padding:26px}
-    .cat-ov h3{color:#fff;font-size:1.35rem;font-weight:700}
-    .cat-ov span{color:rgba(255,255,255,.78);font-size:.9rem;margin-top:4px}
-
-    /* ── Certifications ── */
-    .cert-row{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
-    .cert{background:var(--white);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;text-align:center;transition:transform .4s var(--ease),box-shadow .4s}
-    .cert:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
-    .cert-img{width:100%;height:140px;object-fit:cover;display:block}
-    .cert-body{padding:26px 24px 28px}
-    .cert h3{font-size:1rem;font-weight:700;margin-bottom:6px}
-    .cert p{font-size:.86rem;color:var(--gray);line-height:1.55}
-
-    /* ── Industries ── */
-    .ind-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
-    .ind{background:var(--white);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;transition:transform .4s var(--ease),box-shadow .4s,border-color .4s}
-    .ind:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:transparent}
-    .ind-img{width:100%;height:150px;object-fit:cover;display:block}
-    .ind-body{padding:22px 24px 26px}
-    .ind h3{font-size:1.05rem;font-weight:700;margin-bottom:6px}
-    .ind p{font-size:.9rem;color:var(--gray);line-height:1.55}
-
-    /* ── CTA ── */
-    .cta{position:relative;background:radial-gradient(120% 140% at 20% 0%,#1c4a30,var(--ink));color:#fff;border-radius:32px;padding:80px 56px;text-align:center;overflow:hidden}
-    .cta .hero-grid{mask-image:radial-gradient(80% 80% at 50% 0%,#000,transparent)}
-    .cta h2{position:relative;z-index:2;font-size:clamp(2rem,4vw,3rem);font-weight:800;letter-spacing:-.025em;line-height:1.1;max-width:18ch;margin:0 auto}
-    .cta p{position:relative;z-index:2;margin:20px auto 36px;color:rgba(255,255,255,.75);font-size:1.1rem;max-width:52ch}
-    .cta-actions{position:relative;z-index:2;display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
-
-    /* ── Footer ── */
-    .footer{background:var(--ink);color:rgba(255,255,255,.62);padding:72px 0 32px}
-    .footer-top{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:40px;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,.1)}
-    .footer-brand .flogo{font-size:1.4rem;font-weight:800;color:#fff;letter-spacing:-.03em}
-    .footer-brand .flogo .rj{color:var(--green-glow)}
-    .footer-brand p{margin-top:14px;font-size:.92rem;line-height:1.6;max-width:34ch}
-    .gm-badge{display:inline-flex;align-items:center;gap:7px;margin-top:20px;opacity:.7;transition:opacity .2s var(--ease)}
-    .gm-badge:hover{opacity:1}
-    .gm-badge span{font-size:.85rem;color:rgba(255,255,255,.7)}
-    .gm-logo{height:15px;width:auto;display:block}
-    .footer-col h4{color:#fff;font-size:.82rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:16px}
-    .footer-col a{display:block;font-size:.92rem;padding:5px 0;transition:color .2s}
-    .footer-col a:hover{color:var(--green-glow)}
-    .footer-bot{display:flex;justify-content:space-between;align-items:center;padding-top:28px;font-size:.85rem;flex-wrap:wrap;gap:10px}
-
-    /* ── Responsive ── */
-    @media(max-width:980px){
-      .hero-stats{grid-template-columns:repeat(2,1fr)}
-      .pillars,.feat-grid,.cat-grid{grid-template-columns:1fr 1fr}
-      .cert-row,.ind-grid{grid-template-columns:1fr 1fr}
-      .split{grid-template-columns:1fr;gap:40px}
-      .split.rev .split-media{order:0}
-      .footer-top{grid-template-columns:1fr 1fr}
-    }
-    @media(max-width:680px){
-      .nav-burger{display:flex}
-      .nav-links{position:fixed;top:78px;left:0;right:0;background:#fff;flex-direction:column;align-items:stretch;gap:0;padding:10px 0 22px;display:none;border-top:1px solid var(--line);box-shadow:0 20px 40px -20px rgba(0,0,0,.25)}
-      .nav-links>li:last-child{margin-left:0}
-      .gm-nav-badge{display:none}
-      .nav-links.open{display:flex}
-      .nav-links>li>a{color:var(--ink);padding:14px 32px;border-radius:0;width:100%}
-      .nav-cta{margin:12px 32px 0;text-align:center;justify-content:center}
-      .hero{padding:130px 0 80px}
-      .hero-intro span{white-space:normal}
-      .hero-intro .bar{display:none}
-      .hero-stats{grid-template-columns:1fr 1fr;gap:12px}
-      .pillars,.feat-grid,.cat-grid,.cert-row,.ind-grid{grid-template-columns:1fr}
-      .sec{padding:76px 0}
-      .cta{padding:56px 24px;border-radius:24px}
-      .trust-row{gap:28px}
-      .footer-top{grid-template-columns:1fr;gap:28px}
-    }
-  </style>
+  <meta name="theme-color" content="#14864F" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="RJ Produce" />
+  <meta property="og:title" content="RJ Produce — Grower &amp; shipper of fresh fruits and vegetables" />
+  <meta property="og:description" content="Sourced direct from the growers we've trusted for two decades. Cross-border sourcing, unbroken cold chain, and year-round supply from Pharr, Texas." />
+  <meta property="og:image" content="assets/img/gm-cratewall.jpg" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "RJ Produce, Inc.",
+    "description": "Grower-shipper and wholesale distributor of fresh fruits and vegetables, sourcing across the U.S. and Mexico.",
+    "foundingDate": "2004",
+    "telephone": "+1-956-781-4000",
+    "address": { "@type": "PostalAddress", "streetAddress": "9005 Travis Drive", "addressLocality": "Pharr", "addressRegion": "TX", "postalCode": "78577", "addressCountry": "US" },
+    "parentOrganization": { "@type": "Organization", "name": "GrubMarket", "url": "https://www.grubmarket.com/" }
+  }
+  </script>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/rj.css" />
 </head>
 <body>
+  <div id="site-header-mount"></div>
 
-  <!-- NAV -->
-  <nav class="nav" id="nav">
-    <div class="nav-inner">
-      <div class="nav-brand"><a href="index.html" class="nav-logo"><span class="rj">RJ</span> Produce</a><span class="gm-brand-mark"><img src="https://www.grubmarket.com/hello/assets/icons/logo_black.svg" alt="GrubMarket" class="gm-brand-logo"></span></div>
-      <button class="nav-burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
-      <ul class="nav-links" id="navlinks">
-        <li><a href="about.html">About</a></li>
-        <li><a href="services.html">Capabilities</a></li>
-        <li><a href="products.html">Products</a></li>
-        <li><a href="sourcing.html">Network</a></li>
-      <li><a href="purchasing.html">Purchasing</a></li>
-        <li><a href="contact.html" class="nav-cta">Request a Quote</a></li>
-      </ul>
-    </div>
-  </nav>
-
-  <!-- HERO -->
-  <header class="hero">
-    <div class="hero-grain"></div>
-    <div class="hero-inner">
-      <div class="hero-eyebrow reveal in"><span class="dot"></span> Trusted Since 2004</div>
-      <h1 class="reveal in" data-d="1">Sourced direct from the growers <span class="accent">we've trusted for decades.</span></h1>
-      <p class="lead reveal in" data-d="2">For 20+ years, RJ Produce has paired direct grower relationships across the U.S. and Mexico with modern logistics and an unbroken cold chain — keeping retailers, grocers, and foodservice partners supplied year-round.</p>
-      <div class="hero-actions reveal in" data-d="3">
-        <a href="contact.html" class="btn btn-primary">Request a Quote <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
-        <a href="contact.html" class="btn btn-ghost">Talk to Sales</a>
-      </div>
-    </div>
-    <div class="hero-intro reveal in" data-d="3"><span><em>Family relationships.</em> Modern logistics.</span><span class="bar"></span></div>
-    <div class="hero-stats">
-      <div class="stat-card reveal in" data-d="1"><div class="n">20+</div><div class="l">Years of dependable supply, since 2004</div></div>
-      <div class="stat-card reveal in" data-d="2"><div class="n">100+</div><div class="l">Family-farm grower partners, U.S. &amp; Mexico</div></div>
-      <div class="stat-card reveal in" data-d="3"><div class="n">365</div><div class="l">Days a year of continuous, year-round supply</div></div>
-      <div class="stat-card reveal in" data-d="4"><div class="n">100M+</div><div class="l">Pounds of produce delivered annually</div></div>
-    </div>
-  </header>
-
-  <!-- GRUBMARKET TRUST STRIP -->
-  <div class="gm-strip">
-    <span>A member of the <img src="https://www.grubmarket.com/hello/assets/icons/logo_black.svg" alt="GrubMarket" class="gm-strip-logo"> family</span>
-  </div>
-
-  <!-- PILLARS -->
-  <section class="sec">
-    <div class="wrap">
-      <div class="sec-head reveal">
-        <span class="eyebrow">What we do</span>
-        <h2>One partner across the entire produce supply chain</h2>
-        <p>From the field to your dock, RJ Produce owns every link — so you get fresher product, fewer hand-offs, and a single team accountable for the result.</p>
-      </div>
-      <div class="pillars">
-        <div class="pillar reveal" data-d="1">
-          <img class="pillar-img" src="https://images.unsplash.com/photo-1574943320219-553eb213f72d?w=600&h=380&fit=crop&auto=format" alt="Growers working in the field" loading="lazy">
-          <div class="pillar-body">
-            <h3>Direct Sourcing</h3>
-            <p>Contracted relationships with growers across Texas, the Southwest, and Mexico give us first access to seasonal and specialty produce — no brokers in between.</p>
+  <main id="main" tabindex="-1">
+    <!-- ===================== HERO ===================== -->
+    <section class="hero">
+      <div class="wrap">
+        <div>
+          <span class="eyebrow">Grower &amp; shipper since 2004</span>
+          <h1>Sourced direct from the growers <span class="accent">we've trusted for decades.</span></h1>
+          <p class="lead">RJ Produce pairs direct family-farm relationships across the U.S. and Mexico with border-region logistics and an unbroken cold chain — keeping retailers, grocers, and foodservice partners supplied year-round.</p>
+          <div class="hero-cta">
+            <a class="btn solid" href="contact.html">Request a Quote</a>
+            <a class="btn" href="products.html">See what we ship →</a>
           </div>
+          <p class="hero-note">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+            Pharr, Texas — minutes from the Pharr–Reynosa International Bridge
+          </p>
         </div>
-        <div class="pillar reveal" data-d="2">
-          <img class="pillar-img" src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=600&h=380&fit=crop&auto=format" alt="Refrigerated freight truck on the highway" loading="lazy">
-          <div class="pillar-body">
-            <h3>Logistics &amp; Cold Chain</h3>
-            <p>Our Pharr, Texas hub sits minutes from one of the busiest produce border crossings in North America — keeping transit short and the cold chain unbroken from field to shelf.</p>
-          </div>
+        <div class="hero-art rj-hero" role="img" aria-label="Rows of crops at a partner farm"></div>
+      </div>
+    </section>
+
+    <!-- ===================== AUDIENCE ENTRY ===================== -->
+    <section class="section tight audience">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="eyebrow">Who we ship to</span>
+          <h2>One grower–shipper behind retail, grocery, foodservice, and wholesale</h2>
         </div>
-        <div class="pillar reveal" data-d="3">
-          <img class="pillar-img" src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=380&fit=crop&auto=format" alt="Analytics dashboard on a laptop" loading="lazy">
-          <div class="pillar-body">
-            <h3>Supply-Chain Technology</h3>
-            <p>Powered by WholesaleWare, buyers get real-time inventory visibility, streamlined digital ordering, and transaction history — the whole account managed online.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SOURCING (split) -->
-  <section class="sec sec-tint">
-    <div class="wrap split">
-      <div class="split-text reveal">
-        <span class="eyebrow">Sourcing network</span>
-        <h2>Two countries, one dependable supply chain</h2>
-        <p>Our Pharr, Texas location puts us on the U.S.–Mexico border, so a single relationship gives partners both markets — steady domestic supply plus the variety and value of Mexican agriculture.</p>
-        <ul class="check-list">
-          <li><span class="ck"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span> Same-day border crossing into our Pharr facility</li>
-          <li><span class="ck"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span> Year-round availability through dual-country sourcing</li>
-          <li><span class="ck"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span> Preferred grower access during peak demand</li>
-        </ul>
-        <a href="sourcing.html" class="btn btn-dark">Explore our network</a>
-      </div>
-      <div class="split-media reveal" data-d="1">
-        <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=800&h=600&fit=crop&auto=format" alt="Aerial view of cultivated farmland" loading="lazy" />
-        <div class="media-badge"><strong>U.S. &amp; Mexico</strong><span>Direct grower partnerships</span></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CAPABILITIES (dark feature grid) -->
-  <section class="sec">
-    <div class="wrap">
-      <div class="sec-head reveal">
-        <span class="eyebrow">Distribution &amp; logistics</span>
-        <h2>A distribution network built for scale and speed</h2>
-        <p>Built to move volume without losing the personal touch.</p>
-      </div>
-      <div class="feat-grid">
-        <div class="feat reveal" data-d="1"><img class="feat-img" src="https://images.unsplash.com/photo-1494412651409-8963ce7935a7?w=500&h=320&fit=crop&auto=format" alt="Aerial of a freight port" loading="lazy"><div class="feat-body"><h3>Gateway Location</h3><p>Located at the Pharr–Reynosa bridge, giving us first access to cross-border loads before they reach inland distributors.</p></div></div>
-        <div class="feat reveal" data-d="2"><img class="feat-img" src="sourcing-truck.jpg" alt="18-wheeler moving fast on the open highway" loading="lazy"><div class="feat-body"><h3>Faster to Market</h3><p>Shorter transit and fewer hand-offs mean produce arrives fresher, with more shelf life remaining.</p></div></div>
-        <div class="feat reveal" data-d="3"><img class="feat-img" src="https://images.unsplash.com/photo-1592924357228-91a4daadcfea?w=500&h=320&fit=crop&auto=format" alt="Fresh produce, just picked" loading="lazy"><div class="feat-body"><h3>Cold Chain Integrity</h3><p>Temperature managed from the moment product leaves the field through final delivery.</p></div></div>
-        <div class="feat reveal" data-d="1"><img class="feat-img" src="https://images.unsplash.com/photo-1506784983877-45594efa4cbe?w=500&h=320&fit=crop&auto=format" alt="Calendar planning a delivery schedule" loading="lazy"><div class="feat-body"><h3>Scheduled Delivery</h3><p>Reliable, recurring delivery windows built around your receiving dock and operations.</p></div></div>
-        <div class="feat reveal" data-d="2"><img class="feat-img" src="https://images.unsplash.com/photo-1567427017947-545c5f8d16ad?w=500&h=320&fit=crop&auto=format" alt="Coins representing value" loading="lazy"><div class="feat-body"><h3>Competitive Pricing</h3><p>Direct sourcing and volume keep costs lean — savings we pass through, not pad.</p></div></div>
-        <div class="feat reveal" data-d="3"><img class="feat-img" src="https://images.unsplash.com/photo-1620714223084-8fcacc6dfd8d?w=500&h=320&fit=crop&auto=format" alt="Managing an order online" loading="lazy"><div class="feat-body"><h3>Digital Visibility</h3><p>Check stock, place orders, and review past invoices from your phone or desktop.</p></div></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PRODUCT CATEGORIES -->
-  <section class="sec sec-tint">
-    <div class="wrap">
-      <div class="sec-head reveal">
-        <span class="eyebrow">Product categories</span>
-        <h2>Premium fruits &amp; vegetables, year-round</h2>
-        <p>A broad, dependable catalog spanning everyday staples and hard-to-source specialty items.</p>
-      </div>
-      <div class="cat-grid">
-        <a class="cat reveal" data-d="1" href="products.html?filter=vegetables"><img src="https://images.unsplash.com/photo-1540420773420-3366772f4999?w=600&h=450&fit=crop&auto=format" alt="Fresh vegetables" loading="lazy"><div class="cat-ov"><h3>Vegetables</h3><span>Tomatoes, peppers, cucumbers &amp; more</span></div></a>
-        <a class="cat reveal" data-d="2" href="products.html?filter=fruits"><img src="https://images.unsplash.com/photo-1619566636858-adf3ef46400b?w=600&h=450&fit=crop&auto=format" alt="Fresh fruits" loading="lazy"><div class="cat-ov"><h3>Fruits</h3><span>Seasonal &amp; tropical varieties</span></div></a>
-        <a class="cat reveal" data-d="3" href="products.html?filter=specialty"><img src="https://images.unsplash.com/photo-1610348725531-843dff563e2c?w=600&h=450&fit=crop&auto=format" alt="Assorted specialty produce" loading="lazy"><div class="cat-ov"><h3>Specialty</h3><span>Avocados, mangos &amp; hard-to-find produce</span></div></a>
-      </div>
-    </div>
-  </section>
-
-  <!-- INDUSTRIES -->
-  <section class="sec">
-    <div class="wrap">
-      <div class="sec-head reveal">
-        <span class="eyebrow">Who we serve</span>
-        <h2>Built for the businesses that move produce</h2>
-      </div>
-      <div class="ind-grid">
-        <div class="ind reveal" data-d="1"><img class="ind-img" src="https://images.unsplash.com/photo-1578916171728-46686eac8d58?w=500&h=320&fit=crop&auto=format" alt="National retail store" loading="lazy"><div class="ind-body"><h3>National Retail</h3><p>Branded and private-label supply for chains like Costco and Restaurant Depot.</p></div></div>
-        <div class="ind reveal" data-d="2"><img class="ind-img" src="https://images.unsplash.com/photo-1583258292688-d0213dc5a3a8?w=500&h=320&fit=crop&auto=format" alt="Grocery produce aisle" loading="lazy"><div class="ind-body"><h3>Regional Grocers</h3><p>Consistent, scheduled supply tailored to regional grocery operations.</p></div></div>
-        <div class="ind reveal" data-d="3"><img class="ind-img" src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=500&h=320&fit=crop&auto=format" alt="Restaurant dining room" loading="lazy"><div class="ind-body"><h3>Foodservice</h3><p>Dependable volume and quality for foodservice operators and kitchens.</p></div></div>
-        <div class="ind reveal" data-d="4"><img class="ind-img" src="https://images.unsplash.com/photo-1565891741441-64926e441838?w=500&h=320&fit=crop&auto=format" alt="Distribution loading dock with trucks" loading="lazy"><div class="ind-body"><h3>Distributors</h3><p>Wholesale volume and cross-border sourcing for downstream distributors.</p></div></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA -->
-  <section class="sec sec-tint">
-    <div class="wrap">
-      <div class="cta reveal">
-        <div class="cta-grid"></div>
-        <h2>Let's talk about your produce program</h2>
-        <p>Tell us what you move and how often. Our team will put together pricing and a sourcing plan built around your business.</p>
-        <div class="cta-actions">
-          <a href="contact.html" class="btn btn-primary">Request a Quote <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
-          <a href="contact.html" class="btn btn-ghost">Talk to Sales</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="wrap">
-      <div class="footer-top">
-        <div class="footer-brand">
-          <div class="flogo"><span class="rj">RJ</span> Produce</div>
-          <p>The supply chain behind fresh produce — serving the U.S. and Mexico from Pharr, Texas since 2004.</p>
-          <a href="https://www.grubmarket.com" target="_blank" rel="noopener" class="gm-badge">
-            <span>A</span>
-            <img src="https://www.grubmarket.com/hello/assets/icons/logo_white.svg" alt="GrubMarket" class="gm-logo">
-            <span>company</span>
+        <div class="aud-grid">
+          <a class="aud-tile reveal" href="purchasing.html">
+            <span class="aud-img" style="background-image:image-set(url('assets/img/gm-storefront.webp') type('image/webp'), url('assets/img/gm-storefront.jpg') type('image/jpeg'))"></span>
+            <span class="aud-body">
+              <h3>National retail</h3>
+              <p>Branded and private-label programs built to chain specifications.</p>
+              <span class="aud-link">How to buy →</span>
+            </span>
+          </a>
+          <a class="aud-tile reveal" href="purchasing.html">
+            <span class="aud-img" style="background-image:image-set(url('assets/img/gm-aisle.webp') type('image/webp'), url('assets/img/gm-aisle.jpg') type('image/jpeg'))"></span>
+            <span class="aud-body">
+              <h3>Regional grocers</h3>
+              <p>Scheduled, repeatable supply sized to your store count.</p>
+              <span class="aud-link">See purchasing →</span>
+            </span>
+          </a>
+          <a class="aud-tile reveal" href="services.html#wholesale">
+            <span class="aud-img" style="background-image:image-set(url('assets/img/gm-market.webp') type('image/webp'), url('assets/img/gm-market.jpg') type('image/jpeg'))"></span>
+            <span class="aud-body">
+              <h3>Foodservice</h3>
+              <p>Consistent grade and pack across seasonal menu changes.</p>
+              <span class="aud-link">Our capabilities →</span>
+            </span>
+          </a>
+          <a class="aud-tile reveal" href="services.html#cross-border">
+            <span class="aud-img" style="background-image:image-set(url('assets/img/gm-truckdock.webp') type('image/webp'), url('assets/img/gm-truckdock.jpg') type('image/jpeg'))"></span>
+            <span class="aud-body">
+              <h3>Distributors</h3>
+              <p>Cross-border volume with the documentation resale requires.</p>
+              <span class="aud-link">Cross-border sourcing →</span>
+            </span>
           </a>
         </div>
-        <div class="footer-col">
-          <h4>Company</h4>
-          <a href="about.html#our-story">Our Story</a>
-          <a href="about.html#why">Why RJ Produce</a>
-        </div>
-        <div class="footer-col">
-          <h4>Capabilities</h4>
-          <a href="services.html#wholesale">Wholesale</a>
-          <a href="services.html#cross-border">Cross-Border</a>
-          <a href="services.html#private-label">Private Label</a>
-          <a href="services.html#how-it-works">How It Works</a>
-        </div>
-        <div class="footer-col">
-          <h4>Network</h4>
-          <a href="sourcing.html#sourcing">U.S. &amp; Mexico</a>
-          <a href="sourcing.html#service-area">Service Area</a>
-          <a href="sourcing.html#sustainability">Sustainability</a>
-          <a href="purchasing.html">Purchasing</a>
-          <a href="contact.html">Request a Quote</a>
-        </div>
       </div>
-      <div class="footer-bot">
-        <span>© 2026 RJ Produce. All rights reserved.</span>
-        <span>9005 Travis Drive, Pharr, TX 78577 · (956) 781-4000</span>
-      </div>
-    </div>
-  </footer>
+    </section>
 
-  <script>
-    // nav scroll state
-    const nav = document.getElementById('nav');
-    const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 30);
-    onScroll(); window.addEventListener('scroll', onScroll, {passive:true});
-    // mobile menu
-    const burger = document.getElementById('burger'), navlinks = document.getElementById('navlinks');
-    burger.addEventListener('click', () => { burger.classList.toggle('open'); navlinks.classList.toggle('open'); });
-    document.querySelectorAll('.nav-item.has-dropdown > .nav-parent').forEach(p => {
-      p.addEventListener('click', () => { if(window.innerWidth<=680) p.closest('.nav-item').classList.toggle('open'); });
-    });
-    // scroll reveal
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
-    }, {threshold:.12, rootMargin:'0px 0px -40px 0px'});
-    document.querySelectorAll('.reveal:not(.in)').forEach(el => io.observe(el));
-  </script>
+    <!-- ===================== PROOF ===================== -->
+    <section class="section tight proof">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="eyebrow">Two decades in the Valley</span>
+          <h2>A supply record buyers plan their year around</h2>
+        </div>
+        <div class="proof-stats">
+          <div class="pstat"><div class="n">20+</div><div class="l">Years shipping, since 2004</div></div>
+          <div class="pstat"><div class="n">100+</div><div class="l">Family-farm grower partners</div></div>
+          <div class="pstat"><div class="n">365</div><div class="l">Days a year of continuous supply</div></div>
+          <div class="pstat"><div class="n">100M+</div><div class="l">Pounds shipped annually</div></div>
+        </div>
+        <div class="proof-badges">
+          <span>PrimusGFS certified facility</span>
+          <span>FSMA-compliant documentation</span>
+          <span>Cross-docked at Pharr, TX</span>
+          <span>Part of the GrubMarket family since 2021</span>
+        </div>
+        <p class="proof-trust">Shipping to <strong>Costco</strong>, <strong>Restaurant Depot</strong>, regional grocery chains &amp; foodservice distributors</p>
+      </div>
+    </section>
+
+    <!-- ===================== WHAT WE DO ===================== -->
+    <section class="section" id="pillars">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="eyebrow">What we do</span>
+          <h2>One partner across the entire produce supply chain</h2>
+          <p>From the field to your dock, RJ Produce owns every link — fresher product, fewer hand-offs, and a single team accountable for the result.</p>
+        </div>
+
+        <div class="grid">
+          <div class="card photo featured" style="background-image:image-set(url('assets/img/gm-orchard.webp') type('image/webp'), url('assets/img/gm-orchard.jpg') type('image/jpeg'))">
+            <span class="tag">Where it starts</span>
+            <div class="p-body">
+              <h3>Direct sourcing</h3>
+              <p>Contracted relationships with growers in Texas, the Southwest, and Mexico give us first access to seasonal and specialty produce — no brokers in between.</p>
+              <a class="btn" href="sourcing.html">Our grower network</a>
+            </div>
+          </div>
+
+          <div class="card photo" style="background-image:image-set(url('assets/img/gm-truckdock.webp') type('image/webp'), url('assets/img/gm-truckdock.jpg') type('image/jpeg'))">
+            <div class="p-body">
+              <h3>Cross-border logistics</h3>
+              <p>Our Pharr hub sits minutes from one of the busiest produce crossings in North America, keeping transit short and the cold chain unbroken.</p>
+              <a class="btn" href="services.html#cross-border">How crossings work</a>
+            </div>
+          </div>
+
+          <div class="card photo" style="background-image:image-set(url('assets/img/gm-cratestack.webp') type('image/webp'), url('assets/img/gm-cratestack.jpg') type('image/jpeg'))">
+            <div class="p-body">
+              <h3>Packing &amp; private label</h3>
+              <p>Retail-ready product under your brand or ours — pack size, PLU codes, and nutritional panels built to each retailer's spec.</p>
+              <a class="btn" href="services.html#private-label">Private label program</a>
+            </div>
+          </div>
+
+          <div class="card photo" style="background-image:image-set(url('assets/img/gm-produceboxes.webp') type('image/webp'), url('assets/img/gm-produceboxes.jpg') type('image/jpeg'))">
+            <div class="p-body">
+              <h3>Cold chain &amp; food safety</h3>
+              <p>Temperature managed from the field through final delivery, in a PrimusGFS-certified facility with lot-level traceability.</p>
+              <a class="btn" href="services.html#food-safety">Food safety standards</a>
+            </div>
+          </div>
+
+          <div class="card photo" style="background-image:image-set(url('assets/img/boxes.webp') type('image/webp'), url('assets/img/boxes.jpg') type('image/jpeg'))">
+            <div class="p-body">
+              <h3>Year-round programs</h3>
+              <p>Overlapping growing regions mean one region's harvest picks up as another winds down — a contract that holds for a full year.</p>
+              <a class="btn" href="products.html#seasonality">Seasonal availability</a>
+            </div>
+          </div>
+
+          <div class="card photo" style="background-image:image-set(url('assets/img/gm-warehousetablet.webp') type('image/webp'), url('assets/img/gm-warehousetablet.jpg') type('image/jpeg'))">
+            <div class="p-body">
+              <h3>Digital ordering</h3>
+              <p>Live inventory, digital ordering, and complete order history through WholesaleWare — the whole account managed online.</p>
+              <a class="btn" href="purchasing.html">How to buy</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== WHO WE ARE ===================== -->
+    <section class="section media img-right cover bg-rj-team" id="about">
+      <div class="wrap">
+        <div class="media-text">
+          <span class="eyebrow">Who we are</span>
+          <h2>A Rio Grande Valley grower–shipper, built on trust</h2>
+          <p>RJ Produce started in 2004 in Pharr, Texas with a handful of grower relationships and a belief that the produce business runs on trust. In a region where most operators chased the lowest price, we bet on showing up, keeping our word, and treating growers and buyers as long-term partners.</p>
+          <p>Those early relationships became the foundation. As farms on both sides of the border learned they could count on us season after season, the business grew — from local deliveries to supplying branded product to some of the largest retailers in the country. In 2021 that track record brought us into the GrubMarket family, adding national reach and technology without changing how we do business.</p>
+          <a class="btn" href="about.html">Read our story</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CATEGORIES ===================== -->
+    <section class="section delivery" id="categories">
+      <div class="wrap">
+        <span class="eyebrow">What we ship</span>
+        <h2>Premium fruits and vegetables, year-round</h2>
+        <p class="lead" style="max-width:64ch;margin:0 auto 44px">A broad, dependable catalog spanning everyday staples and hard-to-source specialty items — grown by partners we know by name.</p>
+        <div class="aud-grid">
+          <a class="aud-tile" href="products.html?filter=vegetables">
+            <span class="aud-img" style="background-image:url('assets/img/produce/p-772f4999.jpg')"></span>
+            <span class="aud-body"><h3>Vegetables</h3><p>Tomatoes, peppers, cucumbers, onions, corn.</p><span class="aud-link">View vegetables →</span></span>
+          </a>
+          <a class="aud-tile" href="products.html?filter=fruits">
+            <span class="aud-img" style="background-image:url('assets/img/produce/p-ef46400b.jpg')"></span>
+            <span class="aud-body"><h3>Fruits</h3><p>Citrus, melons, berries, and seasonal varieties.</p><span class="aud-link">View fruits →</span></span>
+          </a>
+          <a class="aud-tile" href="products.html?filter=specialty">
+            <span class="aud-img" style="background-image:url('assets/img/produce/p-ff563e2c.jpg')"></span>
+            <span class="aud-body"><h3>Specialty</h3><p>Avocados, mangos, papaya, and hard-to-find items.</p><span class="aud-link">View specialty →</span></span>
+          </a>
+          <a class="aud-tile" href="products.html#seasonality">
+            <span class="aud-img" style="background-image:image-set(url('assets/img/field-old.webp') type('image/webp'), url('assets/img/field-old.jpg') type('image/jpeg'))"></span>
+            <span class="aud-body"><h3>Seasonal programs</h3><p>Twelve-month coverage across overlapping regions.</p><span class="aud-link">See the calendar →</span></span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CTA BAND ===================== -->
+    <section class="cta-band">
+      <div class="wrap">
+        <h2>Let's talk about your produce program</h2>
+        <p>Tell us what you move and how often. Our team will put together pricing and a sourcing plan built around your business — usually within one business day.</p>
+        <div class="hero-cta">
+          <a class="btn solid-light" href="contact.html">Request a Quote</a>
+          <a class="btn light" href="services.html">See our capabilities</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer-mount"></div>
+  <script src="js/layout.js"></script>
 </body>
 </html>
