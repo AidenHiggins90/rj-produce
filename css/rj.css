@@ -33,7 +33,11 @@
 }
 .footer .gm-lockup { margin-top: 18px; font-size: 13px; color: #b8c4bd; opacity: .85; }
 .footer .gm-lockup:hover { opacity: 1; }
-@media (max-width: 1080px) { .site-header .gm-lockup { display: none; } }
+/* six nav links plus the CTA need the room — drop the lockup earlier, and never
+   let a two-word link wrap onto a second line inside the header */
+@media (max-width: 1400px) { .site-header .gm-lockup { display: none; } }
+.nav-link { white-space: nowrap; }
+.brand .wordmark, .brand .sub { white-space: nowrap; }
 
 /* The shared `.mobile-panel a` rule wins on specificity and repaints the
    panel's CTA text dark — force the solid button's own colours back. */
@@ -71,7 +75,9 @@
 }
 .step:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); border-color: var(--mint-100); }
 .step .num {
-  width: 40px; height: 40px; border-radius: 11px; display: grid; place-items: center;
+  /* pill, not a fixed circle — some steps are labelled ("Now") rather than numbered */
+  min-width: 40px; height: 40px; padding: 0 12px; border-radius: 11px;
+  display: inline-grid; place-items: center;
   background: linear-gradient(135deg, var(--green-bright), var(--green-dark));
   color: #fff; font-family: var(--head); font-weight: 900; font-size: 16px; margin-bottom: 18px;
 }
@@ -105,6 +111,7 @@
   transition: transform .18s ease, box-shadow .18s ease;
 }
 .pitem:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+.pitem picture { display: block; width: 100%; height: 100%; }
 .pitem img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .5s ease; }
 .pitem:hover img { transform: scale(1.06); }
 .pitem .p-name {
@@ -134,18 +141,22 @@
 @media (max-width: 480px) { .certs { grid-template-columns: 1fr; } }
 
 /* ---- Seasonal availability table ---- */
-.season-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); box-shadow: var(--shadow-sm); }
+/* positioned so the visually-hidden cell labels are clipped by this
+   scroller instead of escaping to the page and widening it on mobile */
+.season-wrap { position: relative; overflow-x: auto; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); box-shadow: var(--shadow-sm); }
 table.season { border-collapse: collapse; width: 100%; min-width: 720px; font-size: 14px; }
 table.season th, table.season td { padding: 12px 10px; text-align: center; border-bottom: 1px solid var(--line); }
 table.season thead th { font-family: var(--sans); font-weight: 700; font-size: 11.5px; letter-spacing: .07em; text-transform: uppercase; color: var(--muted); background: var(--mint-25); }
 table.season tbody th { text-align: left; font-family: var(--head); font-weight: 700; color: var(--ink); white-space: nowrap; padding-left: 18px; }
-table.season td span { display: block; height: 10px; border-radius: 5px; background: var(--line); }
-table.season td.on span { background: var(--green-bright); }
-table.season td.peak span { background: var(--green-dark); }
+/* Peak and available differ by pattern as well as shade — two greens alone are
+   not distinguishable for deuteranopia, and the table carries real meaning. */
+table.season td > span:first-child { display: block; height: 11px; border-radius: 6px; background: var(--line); }
+table.season td.on   > span:first-child { background: repeating-linear-gradient(135deg, var(--green-bright) 0 4px, #fff 4px 7px); }
+table.season td.peak > span:first-child { background: var(--green-dark); }
 .season-key { display: flex; gap: 22px; justify-content: center; flex-wrap: wrap; margin-top: 20px; font-size: 13px; color: var(--muted); }
-.season-key i { display: inline-block; width: 22px; height: 9px; border-radius: 5px; vertical-align: -1px; margin-right: 7px; }
+.season-key i { display: inline-block; width: 24px; height: 11px; border-radius: 6px; vertical-align: -1px; margin-right: 7px; }
 .season-key .k-peak { background: var(--green-dark); }
-.season-key .k-on { background: var(--green-bright); }
+.season-key .k-on { background: repeating-linear-gradient(135deg, var(--green-bright) 0 4px, #fff 4px 7px); }
 .season-key .k-off { background: var(--line); }
 
 /* ---- Contact / quote page ---- */
@@ -170,9 +181,12 @@ table.season td.peak span { background: var(--green-dark); }
 @media (max-width: 900px) { .q-layout { grid-template-columns: 1fr; gap: 40px; } }
 
 /* Screen-reader-only text (table captions, etc.) */
+/* Not absolutely positioned: inside table cells the abs-pos boxes escape the
+   .season-wrap scroller and widen the whole page on mobile. clip-path hides
+   the text while it stays in flow at 1px. */
 .visually-hidden {
-  position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0;
-  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+  display: block; width: 1px; height: 1px; margin: -1px; padding: 0;
+  overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0;
 }
 
 /* ---- Reveal-on-scroll (progressive enhancement; visible without JS) ---- */

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://rj-produce.vercel.app/sitemap.xml

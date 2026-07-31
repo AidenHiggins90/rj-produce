@@ -1,7 +1,7 @@
 /* ============================================================
    RJ Produce — shared header + footer, injected on every page.
    Same header/footer language as the GrubMarket design system,
-   with a flat 5-item nav (no mega panels — RJ has one product line).
+   with a flat 6-item nav (no mega panels — RJ has one product line).
    ============================================================ */
 (function () {
   var GM_W = "assets/icons/gm-logo-white.svg";
@@ -12,6 +12,7 @@
     { t: "Capabilities", href: "services.html" },
     { t: "Products",     href: "products.html" },
     { t: "Network",      href: "sourcing.html" },
+    { t: "Food Safety",  href: "food-safety.html" },
     { t: "Purchasing",   href: "purchasing.html" }
   ];
 
@@ -47,8 +48,8 @@
         '<p class="blurb">The supply chain behind fresh produce — sourcing direct from growers across the U.S. and Mexico from Pharr, Texas since 2004.</p>' +
         '<a class="gm-lockup" href="https://www.grubmarket.com" target="_blank" rel="noopener">' +
           'A <img src="' + GM_W + '" alt="GrubMarket" /> company</a></div>' +
-      '<div><h5>Company</h5><a href="about.html">Our Story</a><a href="about.html#why">Why RJ Produce</a><a href="sourcing.html#sustainability">Sustainability</a><a href="contact.html">Contact</a></div>' +
-      '<div><h5>Capabilities</h5><a href="services.html#wholesale">Wholesale Distribution</a><a href="services.html#cross-border">Cross-Border Sourcing</a><a href="services.html#private-label">Private Label</a><a href="services.html#food-safety">Food Safety</a></div>' +
+      '<div><h5>Company</h5><a href="about.html">Our Story</a><a href="team.html">Our Team</a><a href="about.html#why">Why RJ Produce</a><a href="sourcing.html#sustainability">Sustainability</a><a href="contact.html">Contact</a></div>' +
+      '<div><h5>Capabilities</h5><a href="services.html#wholesale">Wholesale Distribution</a><a href="services.html#cross-border">Cross-Border Sourcing</a><a href="services.html#private-label">Private Label</a><a href="food-safety.html">Food Safety</a></div>' +
       '<div><h5>Products</h5><a href="products.html?filter=vegetables">Vegetables</a><a href="products.html?filter=fruits">Fruits</a><a href="products.html?filter=specialty">Specialty</a><a href="products.html#seasonality">Seasonal Availability</a></div>' +
       '<div><h5>Buyers</h5><a href="purchasing.html">How to Buy</a><a href="sourcing.html#service-area">Service Area</a><a href="sourcing.html#hub">Our Hub</a><a href="contact.html">Request a Quote</a></div>' +
     '</div>' +
