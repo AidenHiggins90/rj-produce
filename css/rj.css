@@ -173,6 +173,8 @@ table.season td.peak > span:first-child { background: var(--green-dark); }
 .q-form > p { font-size: 15px; color: var(--muted); margin-bottom: 22px; }
 .q-form .lead-form { max-width: none; margin: 0; }
 .q-form .lead-form button { width: 100%; justify-content: center; }
+/* honeypot — off-screen rather than display:none, which some bots skip */
+.hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
 .map-card { border: 1px solid var(--line); border-radius: 16px; overflow: hidden; box-shadow: var(--shadow-md); background: var(--surface); }
 .map-card iframe { display: block; width: 100%; height: 380px; border: 0; }
 .map-foot { padding: 18px 22px; }

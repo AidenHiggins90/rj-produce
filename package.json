@@ -1,0 +1,10 @@
+{
+  "name": "rj-produce",
+  "private": true,
+  "version": "1.0.0",
+  "description": "RJ Produce — static marketing site with one serverless function for quote requests.",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  }
+}

@@ -49,5 +49,7 @@ of Mon–Sat 7:00–6:00, and dated timeline milestones for 2012 and 2018.
   Real names, titles, and photos are what make that page work.
 - **Downloadable certificates.** The food-safety page describes the program; buyers
   want the PDF. Drop them in `assets/docs/` and link from the "Request the packet" CTA.
+- **Quote form email config.** `/api/quote` is deployed but inert until the Resend
+  key and inbox addresses are set in Vercel — see README.md.
 - **Customer references.** No testimonials or logos anywhere. One quote from a
   long-standing buyer would outperform any copy on the site.

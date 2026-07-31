@@ -40,8 +40,8 @@
   <meta property="og:description" content="Tell us what you move and how often. Pricing and a sourcing plan, usually within one business day. Pharr, TX · (956) 781-4000." />
   <meta property="og:image" content="https://rj-produce.vercel.app/assets/img/gm-market.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
-  <link rel="stylesheet" href="css/style.css?v=20260731c" />
-  <link rel="stylesheet" href="css/rj.css?v=20260731c" />
+  <link rel="stylesheet" href="css/style.css?v=20260731d" />
+  <link rel="stylesheet" href="css/rj.css?v=20260731d" />
 </head>
 <body>
   <div id="site-header-mount"></div>
@@ -99,6 +99,7 @@
             </div>
             <div class="field full"><label for="q-products">Products of interest</label><input id="q-products" name="products" type="text" placeholder="e.g. tomatoes, peppers, avocados, specialty" /></div>
             <div class="field full"><label for="q-message">Anything else? <span class="opt">(optional)</span></label><textarea id="q-message" name="message" rows="4" placeholder="Delivery region, timing, packaging requirements…"></textarea></div>
+            <div class="hp" aria-hidden="true"><label for="q-website">Website</label><input id="q-website" name="website" type="text" tabindex="-1" autocomplete="off" /></div>
             <div class="field full">
               <button class="btn solid" type="submit">Submit request</button>
               <p class="form-status" id="quoteStatus" role="status" aria-live="polite"></p>
@@ -121,75 +122,57 @@
   </main>
 
   <div id="site-footer-mount"></div>
-  <script src="js/layout.js?v=20260731c"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/layout.js?v=20260731d"></script>
   <script>
     (function () {
-      var SUPABASE_URL = "https://tobdowwvwagpekbhaopq.supabase.co";
-      var SUPABASE_ANON_KEY = "sb_publishable_mC9fbE8MPIJaoY25f4GqBQ_feuzlU4p";
       var form = document.getElementById("quoteForm");
       var status = document.getElementById("quoteStatus");
-      var sb = window.supabase && window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
-
-      /* Which desk a request belongs to. The routing tag is written into the
-         message body so this keeps working against the existing table schema —
-         add a `route` column later and the autoresponder can filter on it. */
-      var ROUTES = {
-        "National retail": { tag: "national-retail", desk: "National accounts" },
-        "Regional grocer": { tag: "regional-grocer", desk: "Retail sales" },
-        "Foodservice":     { tag: "foodservice",     desk: "Foodservice sales" },
-        "Distributor":     { tag: "distributor",     desk: "Wholesale / cross-border" },
-        "Other":           { tag: "general",         desk: "Sales" }
-      };
-      function routeFor(type, volume) {
-        var r = ROUTES[type] || ROUTES.Other;
-        // large volume always goes to the national desk regardless of segment
-        if (volume === "20+ truckloads") return { tag: r.tag + "+large", desk: "National accounts" };
-        return r;
-      }
+      var CALL = ' Please call <a href="tel:+19567814000">(956) 781-4000</a>.';
 
       form.addEventListener("submit", function (e) {
         e.preventDefault();
         if (!form.reportValidity()) return;
         var btn = form.querySelector('button[type="submit"]');
         var v = function (id) { return document.getElementById(id).value.trim(); };
-        var route = routeFor(v("q-type"), v("q-volume"));
-        var composed = [
-          "ROUTE: " + route.tag + " → " + route.desk,
-          "",
-          "Business type: " + (v("q-type") || "—"),
-          "Monthly volume: " + (v("q-volume") || "—"),
-          "Products of interest: " + (v("q-products") || "—"),
-          "", v("q-message")
-        ].join("\n");
-
-        if (!sb) {
-          status.className = "form-status err";
-          status.innerHTML = 'We couldn\'t reach the form service. Please call <a href="tel:+19567814000">(956) 781-4000</a>.';
-          return;
-        }
 
         btn.disabled = true;
         btn.textContent = "Sending…";
-        sb.from("contact_submissions").insert([{
-          name: v("q-name"), company: v("q-company"), email: v("q-email"),
-          phone: v("q-phone"), message: composed
-        }]).then(function (res) {
-          if (res.error) {
-            console.error(res.error);
-            status.className = "form-status err";
-            status.innerHTML = 'Something went wrong. Please call <a href="tel:+19567814000">(956) 781-4000</a>.';
-            btn.disabled = false; btn.textContent = "Submit request";
-            return;
-          }
+        status.className = "form-status";
+        status.textContent = "";
+
+        fetch("/api/quote", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            name: v("q-name"), company: v("q-company"), email: v("q-email"),
+            phone: v("q-phone"), type: v("q-type"), volume: v("q-volume"),
+            products: v("q-products"), message: v("q-message"), website: v("q-website")
+          })
+        }).then(function (res) {
+          return res.json().catch(function () { return {}; }).then(function (data) {
+            if (!res.ok) throw new Error(data.error || "Request failed");
+            return data;
+          });
+        }).then(function (data) {
           status.className = "form-status ok";
-          status.innerHTML = "Request received — routed to <strong>" + route.desk +
-            "</strong>. Someone will reply to " + v("q-email") +
-            " within one business day. Need it sooner? Call " +
-            '<a href="tel:+19567814000">(956) 781-4000</a>.';
+          status.innerHTML = "Request received" +
+            (data.desk ? " — routed to <strong>" + data.desk + "</strong>" : "") +
+            ". " + (data.confirmation === "sent"
+              ? "A confirmation is on its way to " + v("q-email") + ", and someone"
+              : "Someone") +
+            " will reply within one business day.";
           btn.textContent = "Request sent ✓";
           form.reset();
-          setTimeout(function () { btn.disabled = false; btn.textContent = "Submit request"; status.textContent = ""; status.className = "form-status"; }, 8000);
+          setTimeout(function () {
+            btn.disabled = false; btn.textContent = "Submit request";
+            status.textContent = ""; status.className = "form-status";
+          }, 10000);
+        }).catch(function (err) {
+          console.error(err);
+          status.className = "form-status err";
+          status.innerHTML = "We couldn't send that just now." + CALL;
+          btn.disabled = false;
+          btn.textContent = "Submit request";
         });
       });
     })();
