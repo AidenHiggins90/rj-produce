@@ -18,10 +18,9 @@
 
   var brand =
     '<a class="brand" href="index.html" aria-label="RJ Produce home">' +
-      '<span><span class="wordmark"><span class="rj">RJ</span> Produce</span>' +
-      '<span class="sub">Grower &amp; Shipper · Since 2004</span></span></a>' +
-    '<a class="gm-lockup" href="https://www.grubmarket.com" target="_blank" rel="noopener">' +
-      'A <img src="' + GM_B + '" alt="GrubMarket" /> company</a>';
+      '<span class="wordmark"><span class="rj">RJ</span> Produce</span></a>' +
+    '<a class="gm-lockup" href="https://www.grubmarket.com" target="_blank" rel="noopener" ' +
+      'aria-label="A GrubMarket company"><img src="' + GM_B + '" alt="GrubMarket" /></a>';
 
   var navLinks = LINKS.map(function (l) {
     return '<a class="nav-link" href="' + l.href + '">' + l.t + '</a>';

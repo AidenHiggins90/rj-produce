@@ -7,37 +7,28 @@
 
 /* ---- Wordmark (RJ has no logotype file, so the brand is set in type) ---- */
 .brand .wordmark {
-  font-family: var(--head); font-weight: 900; font-size: 25px;
-  letter-spacing: -0.03em; color: var(--ink); line-height: 1;
+  font-family: var(--head); font-weight: 900; font-size: 26px;
+  letter-spacing: -0.03em; color: var(--ink); line-height: 1; white-space: nowrap;
 }
 .brand .wordmark .rj { color: var(--green); }
-.brand .sub {
-  display: block; font-size: 10px; font-weight: 700; letter-spacing: .16em;
-  text-transform: uppercase; color: var(--muted); margin-top: 3px;
-}
-/* Below ~420px the tagline wraps under the wordmark and pushes the header
-   taller than the sticky --header-h the mobile panel is anchored to. */
-@media (max-width: 430px) {
-  .brand .wordmark { font-size: 22px; }
-  .brand .sub { font-size: 9px; letter-spacing: .12em; white-space: nowrap; }
-}
+@media (max-width: 430px) { .brand .wordmark { font-size: 23px; } }
 .footer .wordmark { font-family: var(--head); font-weight: 900; font-size: 24px; color: #fff; letter-spacing: -0.03em; }
 .footer .wordmark .rj { color: var(--green-bright); }
 
-/* "A GrubMarket company" lockups */
+/* "A GrubMarket company" — the logo alone in the header, spelled out in the footer */
 .gm-lockup { display: inline-flex; align-items: center; gap: 8px; }
 .gm-lockup img { height: 14px; width: auto; display: block; }
 .site-header .gm-lockup {
-  padding-left: 14px; margin-left: 2px; border-left: 1px solid var(--line);
-  font-size: 12px; color: var(--muted); font-weight: 700;
+  flex: none; margin-left: 16px; padding-left: 16px; border-left: 1px solid var(--line);
+  opacity: .55; transition: opacity .15s ease;
 }
+.site-header .gm-lockup:hover { opacity: 1; }
+.site-header .gm-lockup img { height: 15px; }
 .footer .gm-lockup { margin-top: 18px; font-size: 13px; color: #b8c4bd; opacity: .85; }
 .footer .gm-lockup:hover { opacity: 1; }
-/* six nav links plus the CTA need the room — drop the lockup earlier, and never
-   let a two-word link wrap onto a second line inside the header */
-@media (max-width: 1400px) { .site-header .gm-lockup { display: none; } }
+/* six nav links plus the CTA need the room back below this width */
+@media (max-width: 1180px) { .site-header .gm-lockup { display: none; } }
 .nav-link { white-space: nowrap; }
-.brand .wordmark, .brand .sub { white-space: nowrap; }
 
 /* The shared `.mobile-panel a` rule wins on specificity and repaints the
    panel's CTA text dark — force the solid button's own colours back. */
