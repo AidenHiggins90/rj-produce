@@ -30,7 +30,7 @@
     { t: "Network", href: "sourcing.html", sub: [
       { t: "U.S. & Mexico Sourcing", d: "Direct relationships across both growing countries.", href: "sourcing.html#sourcing" },
       { t: "Service Area",           d: "Where we ship, from Texas to national retail chains.", href: "sourcing.html#service-area" },
-      { t: "Our Hub",                d: "Pharr, Texas — minutes from the international bridge.", href: "sourcing.html#hub" },
+      { t: "Facilities",            d: "Pharr, Texas plus Veracruz and Tijuana in Mexico.", href: "sourcing.html#facilities" },
       { t: "Sustainability",         d: "Working with each region's natural growing calendar.", href: "sourcing.html#sustainability" }
     ]},
     { t: "Food Safety", href: "food-safety.html", sub: [
@@ -97,7 +97,7 @@
       '<div><h5>Company</h5><a href="about.html">Our Story</a><a href="team.html">Our Team</a><a href="about.html#why">Why RJ Produce</a><a href="sourcing.html#sustainability">Sustainability</a><a href="contact.html">Contact</a></div>' +
       '<div><h5>Capabilities</h5><a href="services.html#wholesale">Wholesale Distribution</a><a href="services.html#cross-border">Cross-Border Sourcing</a><a href="services.html#private-label">Private Label</a><a href="food-safety.html">Food Safety</a></div>' +
       '<div><h5>Products</h5><a href="products.html?filter=vegetables">Vegetables</a><a href="products.html?filter=fruits">Fruits</a><a href="products.html?filter=specialty">Specialty</a><a href="products.html#seasonality">Seasonal Availability</a></div>' +
-      '<div><h5>Buyers</h5><a href="purchasing.html">How to Buy</a><a href="sourcing.html#service-area">Service Area</a><a href="sourcing.html#hub">Our Hub</a><a href="contact.html">Request a Quote</a></div>' +
+      '<div><h5>Buyers</h5><a href="purchasing.html">How to Buy</a><a href="sourcing.html#service-area">Service Area</a><a href="sourcing.html#facilities">Facilities</a><a href="contact.html">Request a Quote</a></div>' +
     '</div>' +
     '<div class="bottom"><span>© 2026 RJ Produce, Inc. All rights reserved.</span>' +
       '<span>9005 Travis Drive, Pharr, TX 78577 &nbsp;·&nbsp; <a href="tel:+19567814000">(956) 781-4000</a></span>' +

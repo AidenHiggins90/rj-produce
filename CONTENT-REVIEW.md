@@ -34,6 +34,7 @@ Treat as previously published, but worth a re-check since they're now more promi
 | Quote requests answered within one business day | contact, purchasing, homepage CTA | Repeated in four places. If the real number is two days, change it — this one gets tested immediately. |
 | Documentation packet contents (certificates, insurance, W-9, food-safety records) | food safety CTA | Confirm what you actually send for vendor onboarding. |
 | Harvest volume committed before the season opens | capabilities, purchasing, team | Confirm this is how the grower contracts work. |
+| What the Veracruz and Tijuana facilities actually do | network page, facilities section | Their existence is confirmed; the site now describes both as sourcing and grower-relationship sites, and ties Veracruz to tropical fruit and Tijuana to the western crossing and Baja calendar. That characterisation is inference from geography — correct it if either does packing, cold storage, or consolidation you'd rather lead with, and add street addresses if you want them listed. |
 
 ## Resolved
 
@@ -63,9 +64,5 @@ of Mon–Sat 7:00–6:00, and dated timeline milestones for 2012 and 2018.
   key and inbox addresses are set in Vercel — see README.md.
 - **Legal pages.** privacy.html and terms.html are drafts written to match how the
   site actually behaves; both carry a review notice and need your attorney's pass.
-- **Mexico facilities.** Produce Market Guide and ZoomInfo both list facilities in
-  Veracruz and Tijuana alongside Pharr. Neither appears anywhere on the site. They are
-  not asserted here because those listings date from around the 2021 acquisition —
-  confirm they're current and the Network page should say so.
 - **Customer references.** No testimonials or logos anywhere. One quote from a
   long-standing buyer would outperform any copy on the site.
