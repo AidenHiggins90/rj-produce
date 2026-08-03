@@ -6,12 +6,16 @@
    ============================================================ */
 
 /* ---- Wordmark (RJ has no logotype file, so the brand is set in type) ---- */
+.brand-logo { height: 34px; width: auto; display: block; }
+@media (max-width: 430px) { .brand-logo { height: 30px; } }
 .brand .wordmark {
   font-family: var(--head); font-weight: 900; font-size: 26px;
   letter-spacing: -0.03em; color: var(--ink); line-height: 1; white-space: nowrap;
 }
 .brand .wordmark .rj { color: var(--green); }
-@media (max-width: 430px) { .brand .wordmark { font-size: 23px; } }
+@media (max-width: 430px) { .brand-logo { height: 34px; width: auto; display: block; }
+@media (max-width: 430px) { .brand-logo { height: 30px; } }
+.brand .wordmark { font-size: 23px; } }
 .footer .wordmark { font-family: var(--head); font-weight: 900; font-size: 24px; color: #fff; letter-spacing: -0.03em; }
 .footer .wordmark .rj { color: var(--green-bright); }
 
@@ -88,8 +92,8 @@
 
 /* ---- Hero art: RJ's own field photograph ---- */
 .hero-art.rj-hero {
-  background-image: image-set(url("../assets/img/gm-cratewall-hero.webp") type("image/webp"),
-                              url("../assets/img/gm-cratewall-hero.jpg") type("image/jpeg"));
+  background-image: image-set(url("../assets/img/rj-hero-field.webp") type("image/webp"),
+                              url("../assets/img/rj-hero-field.jpg") type("image/jpeg"));
 }
 .hero .hero-note {
   display: flex; align-items: center; gap: 10px; margin-top: 26px;
@@ -98,14 +102,14 @@
 .hero .hero-note svg { width: 17px; height: 17px; flex: none; }
 
 /* ---- Media-section image sources (the #fff-fade bleed sections) ---- */
-.bg-rj-field::before     { background-image: image-set(url("../assets/img/gm-orchard.webp") type("image/webp"), url("../assets/img/gm-orchard.jpg") type("image/jpeg")); }
-.bg-rj-dock::before      { background-image: image-set(url("../assets/img/gm-truckdock.webp") type("image/webp"), url("../assets/img/gm-truckdock.jpg") type("image/jpeg")); }
-.bg-rj-warehouse::before { background-image: image-set(url("../assets/img/gm-market.webp") type("image/webp"), url("../assets/img/gm-market.jpg") type("image/jpeg")); }
-.bg-rj-crates::before    { background-image: image-set(url("../assets/img/gm-cratestack.webp") type("image/webp"), url("../assets/img/gm-cratestack.jpg") type("image/jpeg")); }
-.bg-rj-boxes::before     { background-image: image-set(url("../assets/img/boxes.webp") type("image/webp"), url("../assets/img/boxes.jpg") type("image/jpeg")); }
+.bg-rj-field::before     { background-image: image-set(url("../assets/img/rj-field-rows.webp") type("image/webp"), url("../assets/img/rj-field-rows.jpg") type("image/jpeg")); }
+.bg-rj-dock::before      { background-image: image-set(url("../assets/img/rj-harvest-crew.webp") type("image/webp"), url("../assets/img/rj-harvest-crew.jpg") type("image/jpeg")); }
+.bg-rj-warehouse::before { background-image: image-set(url("../assets/img/rj-lettuce-rows.webp") type("image/webp"), url("../assets/img/rj-lettuce-rows.jpg") type("image/jpeg")); }
+.bg-rj-crates::before    { background-image: image-set(url("../assets/img/rj-branded-cartons.webp") type("image/webp"), url("../assets/img/rj-branded-cartons.jpg") type("image/jpeg")); }
+.bg-rj-boxes::before     { background-image: image-set(url("../assets/img/rj-cilantro-rows.webp") type("image/webp"), url("../assets/img/rj-cilantro-rows.jpg") type("image/jpeg")); }
 .bg-rj-tablet::before    { background-image: image-set(url("../assets/img/gm-warehousetablet.webp") type("image/webp"), url("../assets/img/gm-warehousetablet.jpg") type("image/jpeg")); }
-.bg-rj-market::before    { background-image: image-set(url("../assets/img/gm-storefront.webp") type("image/webp"), url("../assets/img/gm-storefront.jpg") type("image/jpeg")); }
-.bg-rj-team::before      { background-image: image-set(url("../assets/img/gm-teamwork.webp") type("image/webp"), url("../assets/img/gm-teamwork.jpg") type("image/jpeg")); }
+.bg-rj-market::before    { background-image: image-set(url("../assets/img/rj-booth.webp") type("image/webp"), url("../assets/img/rj-booth.jpg") type("image/jpeg")); }
+.bg-rj-team::before      { background-image: image-set(url("../assets/img/rj-cilantro-hands.webp") type("image/webp"), url("../assets/img/rj-cilantro-hands.jpg") type("image/jpeg")); }
 
 /* ---- Numbered process steps ---- */
 .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }

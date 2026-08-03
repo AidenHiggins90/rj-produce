@@ -51,7 +51,8 @@
 
   var brand =
     '<a class="brand" href="index.html" aria-label="RJ Produce home">' +
-      '<span class="wordmark"><span class="rj">RJ</span> Produce</span></a>' +
+      '<img class="brand-logo" src="assets/icons/rj-logo.png" alt="RJ Produce" width="160" height="50" />' +
+      '</a>' +
     '<a class="gm-lockup" href="https://www.grubmarket.com" target="_blank" rel="noopener" ' +
       'aria-label="A GrubMarket company"><img src="' + GM_B + '" alt="GrubMarket" /></a>';
 

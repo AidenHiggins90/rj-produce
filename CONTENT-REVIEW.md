@@ -61,6 +61,11 @@ of Mon–Sat 7:00–6:00, and dated timeline milestones for 2012 and 2018.
 
 ## Still missing
 
+- **Product catalogue mismatch.** The catalogue lists tomatoes, apples, pineapple,
+  strawberries and kiwi. Every source on RJ — the trade listings, the archived site, and
+  the recovered photography — describes limes, mangoes, chillies, cilantro, broccoli,
+  cauliflower, celery and tomatillos, sold under the RJ Produce, TIGER and MONKEY brands.
+  The catalogue should probably be rebuilt around what you actually ship.
 - **Named people.** The team page describes four roles but names only the founder. The
   archived company site lists Rick Gorena (General Manager), Melissa Garcia (Office
   Manager / AP), Melissa Cruz (Sales & Procurement), Roy Salinas (Sales Manager) and
