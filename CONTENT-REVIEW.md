@@ -34,8 +34,17 @@ Treat as previously published, but worth a re-check since they're now more promi
 | Quote requests answered within one business day | contact, purchasing, homepage CTA | Repeated in four places. If the real number is two days, change it — this one gets tested immediately. |
 | Documentation packet contents (certificates, insurance, W-9, food-safety records) | food safety CTA | Confirm what you actually send for vendor onboarding. |
 | Harvest volume committed before the season opens | capabilities, purchasing, team | Confirm this is how the grower contracts work. |
-| Headquarters city | footer, contact, schema, throughout | The GrubMarket acquisition release lists RJ Produce's HQ as **McAllen**, and mentions Veracruz and Tijuana facilities that appear nowhere on the site. The Pharr address carried over from the previous site. Confirm which is current. |
-| Geo coordinates 26.2034, -98.1836 in the LocalBusiness schema | contact page | Approximate for Pharr. Replace with the exact coordinates of 9005 Travis Drive for local search. |
+
+## Resolved
+
+**Headquarters — Pharr is correct.** The 2021 GrubMarket acquisition release says
+"McAllen", but Pharr sits inside the McAllen metro and the release appears to be using
+the metro name. Every trade and directory listing gives the street address the site
+already used: Blue Book Services — the produce trade's credit reference — lists
+9005 Travis Dr, Pharr, TX 78577-9326, matching Produce Market Guide, Yahoo Local and
+Yellow Pages, all with (956) 781-4000. The address is unchanged; the LocalBusiness
+schema now carries geocoded coordinates for that address (26.1092243, -98.2023317)
+rather than an approximation of the city centre.
 
 ## Removed as unverifiable
 
@@ -54,5 +63,9 @@ of Mon–Sat 7:00–6:00, and dated timeline milestones for 2012 and 2018.
   key and inbox addresses are set in Vercel — see README.md.
 - **Legal pages.** privacy.html and terms.html are drafts written to match how the
   site actually behaves; both carry a review notice and need your attorney's pass.
+- **Mexico facilities.** Produce Market Guide and ZoomInfo both list facilities in
+  Veracruz and Tijuana alongside Pharr. Neither appears anywhere on the site. They are
+  not asserted here because those listings date from around the 2021 acquisition —
+  confirm they're current and the Network page should say so.
 - **Customer references.** No testimonials or logos anywhere. One quote from a
   long-standing buyer would outperform any copy on the site.
