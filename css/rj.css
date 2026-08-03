@@ -176,6 +176,14 @@
 }
 .card .fac-meta a { font-weight: 700; }
 
+.locations { margin-top: 30px; padding-top: 26px; border-top: 1px solid var(--line); }
+.locations h3 { font-size: 17px; color: var(--ink-green); margin-bottom: 14px; }
+.locations ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 16px; }
+.locations li { display: grid; gap: 3px; }
+.locations strong { font-family: var(--head); font-weight: 700; font-size: 15px; color: var(--ink); }
+.locations span { font-size: 14.5px; line-height: 1.55; color: var(--muted); }
+.locations .loc-note { margin: 16px 0 0; font-size: 14px; color: var(--muted); }
+
 /* ---- Certification / food-safety badges ---- */
 .certs { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
 .cert {

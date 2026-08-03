@@ -38,14 +38,19 @@ Treat as previously published, but worth a re-check since they're now more promi
 
 ## Resolved
 
-**Headquarters — Pharr is correct.** The 2021 GrubMarket acquisition release says
-"McAllen", but Pharr sits inside the McAllen metro and the release appears to be using
-the metro name. Every trade and directory listing gives the street address the site
-already used: Blue Book Services — the produce trade's credit reference — lists
-9005 Travis Dr, Pharr, TX 78577-9326, matching Produce Market Guide, Yahoo Local and
-Yellow Pages, all with (956) 781-4000. The address is unchanged; the LocalBusiness
-schema now carries geocoded coordinates for that address (26.1092243, -98.2023317)
-rather than an approximation of the city centre.
+**Headquarters — unresolved, and the site may have the wrong address.** An earlier
+pass concluded Pharr was correct on the strength of trade directories. The company's own
+website contradicts that. The archived rjproduceinc.com contact and facilities pages both
+give:
+
+> RJ Produce, 5300 George McVay Dr., McAllen, TX 78503 — Ph: (956) 781-4000 (Main Office)
+
+That is the same phone number the site uses. Blue Book Services, Produce Market Guide,
+Yahoo Local and Yellow Pages all give 9005 Travis Dr, Pharr, TX 78577 instead. The most
+likely reading is that McAllen is the main office and Pharr is the warehouse or an older
+listing — but that is a guess. **Decide which address the site should carry**, and whether
+both belong on it. Everything currently says Pharr: the footer, the contact page, the map
+embed, the LocalBusiness schema, and the Network page.
 
 ## Removed as unverifiable
 
@@ -56,8 +61,14 @@ of Mon–Sat 7:00–6:00, and dated timeline milestones for 2012 and 2018.
 
 ## Still missing
 
-- **Named people.** The team page describes four roles but names only the founder.
-  Real names, titles, and photos are what make that page work.
+- **Named people.** The team page describes four roles but names only the founder. The
+  archived company site lists Rick Gorena (General Manager), Melissa Garcia (Office
+  Manager / AP), Melissa Cruz (Sales & Procurement), Roy Salinas (Sales Manager) and
+  Andy Szabo (Chicago office, sales), with direct numbers and @rjproduceinc.com emails.
+  Confirm who is still with the company before putting any of it on the page.
+- **Mexico street addresses.** The Veracruz and Tijuana facilities appear on the contact
+  page by city only — no public source, including the company's own site, publishes their
+  addresses. Supply them and both entries can be completed.
 - **Downloadable certificates.** The food-safety page describes the program; buyers
   want the PDF. Drop them in `assets/docs/` and link from the "Request the packet" CTA.
 - **Quote form email config.** `/api/quote` is deployed but inert until the Resend
