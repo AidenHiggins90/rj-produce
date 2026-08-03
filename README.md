@@ -13,8 +13,11 @@ css/rj.css                  RJ-specific layer
 js/layout.js                header + footer injection, scroll reveal, stat count-ups
 api/quote.js                quote form handler (Vercel Serverless Function)
 assets/                     fonts, icons, photography
+js/catalog.js               the line card — edit products and pack sizes here
 CONTENT-REVIEW.md           every factual claim and whether it's confirmed
-PHOTO-BRIEF.md              what to shoot to replace the stock photography
+PHOTO-BRIEF.md              photography: what's live and what's still worth shooting
+DOMAIN.md                   moving off the vercel.app address, plus email DNS
+TESTIMONIAL.md              how to get the customer quote, and where it goes
 ```
 
 Local preview — any static server works, but `/api/quote` only runs under Vercel:

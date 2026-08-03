@@ -26,14 +26,15 @@ Treat as previously published, but worth a re-check since they're now more promi
 
 | Claim | Where | Note |
 | --- | --- | --- |
-| Seasonal availability calendar (8 commodities × 12 months) | products page | Labeled illustrative on the page. Peak/available windows are plausible for the Valley and Mexico but are **not** RJ's actual calendar. Replace with real windows or delete the section. |
 | Inspection detail — temperature recorded at the door, grade verified against written spec, out-of-spec rejected at the dock, pre-ship check filed to the lot | food safety | Describes a standard program. Confirm this matches what you actually do and document. |
 | Lot codes tie to grower, block, and harvest date; printed on the case; recall query in both directions | food safety | Same — this is the claim a retailer will audit. |
 | Recall procedure timing — hold and notify at hour 0, scope and document same day | food safety | Confirm against your written recall plan, or replace with it. |
 | "Every account is assigned a named contact in each of four roles" | team | Confirm the roles and whether every account really gets all four. |
 | Quote requests answered within one business day | contact, purchasing, homepage CTA | Repeated in four places. If the real number is two days, change it — this one gets tested immediately. |
 | Documentation packet contents (certificates, insurance, W-9, food-safety records) | food safety CTA | Confirm what you actually send for vendor onboarding. |
-| Harvest volume committed before the season opens | capabilities, purchasing, team | Confirm this is how the grower contracts work. |
+| Harvest volume committed before the season opens | capabilities, purchasing, team, products | Confirm this is how the grower contracts work. |
+| Line-card details | products page | Commodities come from your trade-show banner (Ataulfo mangoes, red mangoes, Persian limes, broccoli crowns, chile peppers), the Produce Market Guide listing, and your own photography. The one-line descriptions of each — "serrano, jalapeño and specialty chiles", "cut and bunched in the field" — are reasonable but unconfirmed. **Pack sizes and counts are deliberately blank**; fill `pack` in `js/catalog.js` and the cards show them automatically. |
+| Three broccoli labels | products page, brands section | RJ Produce, TIGER and MONKEY all appear on your cartons in the recovered photos. Confirm which commodities each label covers and whether any are retailer-specific. |
 | What the Veracruz and Tijuana facilities actually do | network page, facilities section | Their existence is confirmed; the site now describes both as sourcing and grower-relationship sites, and ties Veracruz to tropical fruit and Tijuana to the western crossing and Baja calendar. That characterisation is inference from geography — correct it if either does packing, cold storage, or consolidation you'd rather lead with, and add street addresses if you want them listed. |
 
 ## Resolved
@@ -61,11 +62,8 @@ of Mon–Sat 7:00–6:00, and dated timeline milestones for 2012 and 2018.
 
 ## Still missing
 
-- **Product catalogue mismatch.** The catalogue lists tomatoes, apples, pineapple,
-  strawberries and kiwi. Every source on RJ — the trade listings, the archived site, and
-  the recovered photography — describes limes, mangoes, chillies, cilantro, broccoli,
-  cauliflower, celery and tomatillos, sold under the RJ Produce, TIGER and MONKEY brands.
-  The catalogue should probably be rebuilt around what you actually ship.
+- **Pack sizes.** Every line-card item says "Pack sizes on request" because nothing
+  published states them. Fill them into `js/catalog.js` and they appear on the cards.
 - **Named people.** The team page describes four roles but names only the founder. The
   archived company site lists Rick Gorena (General Manager), Melissa Garcia (Office
   Manager / AP), Melissa Cruz (Sales & Procurement), Roy Salinas (Sales Manager) and
@@ -80,5 +78,5 @@ of Mon–Sat 7:00–6:00, and dated timeline milestones for 2012 and 2018.
   key and inbox addresses are set in Vercel — see README.md.
 - **Legal pages.** privacy.html and terms.html are drafts written to match how the
   site actually behaves; both carry a review notice and need your attorney's pass.
-- **Customer references.** No testimonials or logos anywhere. One quote from a
-  long-standing buyer would outperform any copy on the site.
+- **Customer references.** Still none. TESTIMONIAL.md has the ask, what to collect,
+  and the markup — one approved quote and it goes live.

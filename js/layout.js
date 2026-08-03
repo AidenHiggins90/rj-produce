@@ -22,10 +22,10 @@
       { t: "How It Works",           d: "Source, inspect and pack, ship — the process end to end.", href: "services.html#how-it-works" }
     ]},
     { t: "Products", href: "products.html", sub: [
-      { t: "Vegetables",           d: "Tomatoes, peppers, cucumbers, onions, corn.", href: "products.html?filter=vegetables" },
-      { t: "Fruits",               d: "Citrus, melons, berries, and seasonal varieties.", href: "products.html?filter=fruits" },
-      { t: "Specialty",            d: "Avocados, mangos, papaya, and hard-to-find items.", href: "products.html?filter=specialty" },
-      { t: "Seasonal Availability",d: "Peak and available windows, month by month.", href: "products.html#seasonality" }
+      { t: "Citrus & Tropical", d: "Persian limes, Ataulfo and red mangoes.", href: "products.html?filter=citrus-tropical" },
+      { t: "Vegetables",        d: "Broccoli crowns, cauliflower, celery, carrots.", href: "products.html?filter=vegetables" },
+      { t: "Chiles & Herbs",    d: "Chile and bell peppers, cilantro, tomatillos.", href: "products.html?filter=chiles-herbs" },
+      { t: "Our Labels",        d: "Broccoli ships as RJ Produce, TIGER and MONKEY.", href: "products.html#brands" }
     ]},
     { t: "Network", href: "sourcing.html", sub: [
       { t: "U.S. & Mexico Sourcing", d: "Direct relationships across both growing countries.", href: "sourcing.html#sourcing" },
@@ -97,7 +97,7 @@
           'A <img src="' + GM_W + '" alt="GrubMarket" /> company</a></div>' +
       '<div><h5>Company</h5><a href="about.html">Our Story</a><a href="team.html">Our Team</a><a href="about.html#why">Why RJ Produce</a><a href="sourcing.html#sustainability">Sustainability</a><a href="contact.html">Contact</a></div>' +
       '<div><h5>Capabilities</h5><a href="services.html#wholesale">Wholesale Distribution</a><a href="services.html#cross-border">Cross-Border Sourcing</a><a href="services.html#private-label">Private Label</a><a href="food-safety.html">Food Safety</a></div>' +
-      '<div><h5>Products</h5><a href="products.html?filter=vegetables">Vegetables</a><a href="products.html?filter=fruits">Fruits</a><a href="products.html?filter=specialty">Specialty</a><a href="products.html#seasonality">Seasonal Availability</a></div>' +
+      '<div><h5>Products</h5><a href="products.html?filter=citrus-tropical">Citrus &amp; Tropical</a><a href="products.html?filter=vegetables">Vegetables</a><a href="products.html?filter=chiles-herbs">Chiles &amp; Herbs</a><a href="products.html#brands">Our Labels</a></div>' +
       '<div><h5>Buyers</h5><a href="purchasing.html">How to Buy</a><a href="sourcing.html#service-area">Service Area</a><a href="sourcing.html#facilities">Facilities</a><a href="contact.html">Request a Quote</a></div>' +
     '</div>' +
     '<div class="bottom"><span>© 2026 RJ Produce, Inc. All rights reserved.</span>' +
