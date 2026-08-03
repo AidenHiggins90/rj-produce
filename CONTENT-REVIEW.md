@@ -34,6 +34,7 @@ Treat as previously published, but worth a re-check since they're now more promi
 | Quote requests answered within one business day | contact, purchasing, homepage CTA | Repeated in four places. If the real number is two days, change it — this one gets tested immediately. |
 | Documentation packet contents (certificates, insurance, W-9, food-safety records) | food safety CTA | Confirm what you actually send for vendor onboarding. |
 | Harvest volume committed before the season opens | capabilities, purchasing, team | Confirm this is how the grower contracts work. |
+| Headquarters city | footer, contact, schema, throughout | The GrubMarket acquisition release lists RJ Produce's HQ as **McAllen**, and mentions Veracruz and Tijuana facilities that appear nowhere on the site. The Pharr address carried over from the previous site. Confirm which is current. |
 | Geo coordinates 26.2034, -98.1836 in the LocalBusiness schema | contact page | Approximate for Pharr. Replace with the exact coordinates of 9005 Travis Drive for local search. |
 
 ## Removed as unverifiable
@@ -51,5 +52,7 @@ of Mon–Sat 7:00–6:00, and dated timeline milestones for 2012 and 2018.
   want the PDF. Drop them in `assets/docs/` and link from the "Request the packet" CTA.
 - **Quote form email config.** `/api/quote` is deployed but inert until the Resend
   key and inbox addresses are set in Vercel — see README.md.
+- **Legal pages.** privacy.html and terms.html are drafts written to match how the
+  site actually behaves; both carry a review notice and need your attorney's pass.
 - **Customer references.** No testimonials or logos anywhere. One quote from a
   long-standing buyer would outperform any copy on the site.

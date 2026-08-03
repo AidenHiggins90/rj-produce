@@ -7,6 +7,26 @@
   <title>Products — RJ Produce</title>
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <meta name="theme-color" content="#14864F" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://rj-produce.vercel.app/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Products",
+        "item": "https://rj-produce.vercel.app/products.html"
+      }
+    ]
+  }
+  </script>
   <link rel="canonical" href="https://rj-produce.vercel.app/products.html" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="RJ Produce" />
@@ -14,8 +34,8 @@
   <meta property="og:description" content="Vegetables, fruits, and specialty produce shipped year-round, with a month-by-month seasonal availability calendar." />
   <meta property="og:image" content="https://rj-produce.vercel.app/assets/img/produce/p-e03f4924.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
-  <link rel="stylesheet" href="css/style.css?v=20260731h" />
-  <link rel="stylesheet" href="css/rj.css?v=20260731h" />
+  <link rel="stylesheet" href="css/style.css?v=20260803a" />
+  <link rel="stylesheet" href="css/rj.css?v=20260803a" />
 </head>
 <body>
   <div id="site-header-mount"></div>
@@ -103,7 +123,7 @@
   </main>
 
   <div id="site-footer-mount"></div>
-  <script src="js/layout.js?v=20260731h"></script>
+  <script src="js/layout.js?v=20260803a"></script>
   <script>
     (function () {
       var btns = [].slice.call(document.querySelectorAll(".fbtn"));
@@ -112,10 +132,25 @@
         items.forEach(function (i) { i.hidden = f !== "all" && i.dataset.cat !== f; });
         btns.forEach(function (b) { b.setAttribute("aria-pressed", String(b.dataset.filter === f)); });
       }
-      btns.forEach(function (b) { b.addEventListener("click", function () { apply(b.dataset.filter); }); });
-      var p = new URLSearchParams(location.search).get("filter");
-      if (p && btns.some(function (b) { return b.dataset.filter === p; })) apply(p);
+      btns.forEach(function (b) {
+        b.addEventListener("click", function () {
+          apply(b.dataset.filter);
+          // keep the URL shareable — "here's our specialty line" should be a link
+          var url = b.dataset.filter === "all"
+            ? location.pathname
+            : location.pathname + "?filter=" + b.dataset.filter;
+          history.replaceState(null, "", url + location.hash);
+        });
+      });
+      function fromUrl() {
+        var f = new URLSearchParams(location.search).get("filter");
+        if (f && btns.some(function (b) { return b.dataset.filter === f; })) apply(f);
+        else apply("all");
+      }
+      fromUrl();
+      window.addEventListener("popstate", fromUrl);
     })();
   </script>
+  <script defer src="/_vercel/insights/script.js"></script>
 </body>
 </html>

@@ -100,7 +100,8 @@
       '<div><h5>Buyers</h5><a href="purchasing.html">How to Buy</a><a href="sourcing.html#service-area">Service Area</a><a href="sourcing.html#hub">Our Hub</a><a href="contact.html">Request a Quote</a></div>' +
     '</div>' +
     '<div class="bottom"><span>© 2026 RJ Produce, Inc. All rights reserved.</span>' +
-      '<span>9005 Travis Drive, Pharr, TX 78577 &nbsp;·&nbsp; <a href="tel:+19567814000">(956) 781-4000</a></span></div>' +
+      '<span>9005 Travis Drive, Pharr, TX 78577 &nbsp;·&nbsp; <a href="tel:+19567814000">(956) 781-4000</a></span>' +
+      '<span><a href="privacy.html">Privacy</a> &nbsp;·&nbsp; <a href="terms.html">Terms</a></span></div>' +
     '</div></footer>';
 
   var hMount = document.getElementById("site-header-mount");
@@ -130,8 +131,23 @@
     items.forEach(function (i) { if (i !== except) setOpen(i, false); });
   }
 
+  // A touch device has no hover, so the panel would never open and the chevron
+  // would promise a menu that doesn't exist. There, the first tap opens it and
+  // the second follows the link.
+  var coarse = window.matchMedia("(hover: none)").matches ||
+               window.matchMedia("(pointer: coarse)").matches;
+
   items.forEach(function (item) {
     var link = item.querySelector(".nav-link");
+    if (coarse) {
+      link.addEventListener("click", function (e) {
+        if (!item.classList.contains("open")) {
+          e.preventDefault();
+          closeAll(item);
+          setOpen(item, true);
+        }
+      });
+    }
     item.addEventListener("mouseenter", function () { clearTimeout(closeTimer); closeAll(item); setOpen(item, true); });
     item.addEventListener("mouseleave", function () {
       closeTimer = setTimeout(function () { setOpen(item, false); }, 140);
@@ -151,6 +167,8 @@
     });
   });
   document.addEventListener("keydown", function (e) { if (e.key === "Escape") closeAll(); });
+  // tapping anywhere else dismisses an open panel on touch
+  document.addEventListener("click", function (e) { if (!e.target.closest(".nav-item")) closeAll(); });
 
   /* mobile panel */
   var hamburger = document.getElementById("hamburger");

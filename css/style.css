@@ -9,8 +9,6 @@
 /* ---- GrubMarket brand fonts — self-hosted so they load with no cross-origin block ---- */
 @font-face { font-family: "Museo Sans Rounded"; font-weight: 300; font-display: swap;
   src: url("../assets/fonts/MuseoSansRounded-300-webfont.woff2") format("woff2"); }
-@font-face { font-family: "Museo Sans Rounded"; font-weight: 500; font-display: swap;
-  src: url("../assets/fonts/MuseoSansRounded-500.woff2") format("woff2"); }
 @font-face { font-family: "Museo Sans Rounded"; font-weight: 700; font-display: swap;
   src: url("../assets/fonts/MuseoSansRounded-700-webfont.woff2") format("woff2"); }
 /* weight 900 also answers the 800 rules — it is the heaviest face shipped, so it
@@ -615,3 +613,15 @@ img { max-width: 100%; }
   /* the footer is already dark in light mode — keep it distinct from the page */
   .site-footer { background: #0A0F0C; }
 }
+
+/* ============================================================
+   PROSE (legal pages) — restored from the source stylesheet; the
+   prune dropped these when no page used them yet.
+   ============================================================ */
+.prose { max-width: 760px; margin: 0 auto; }
+.prose h2 { font-size: 26px; margin-top: 40px; }
+.prose h3 { font-size: 19px; margin-top: 28px; color: var(--ink-green); }
+.prose p, .prose li { font-size: 17px; line-height: 1.68; color: var(--body); }
+.note { background: var(--mint-50); border: 1px solid var(--line); border-left: 3px solid var(--green); border-radius: 8px; padding: 14px 18px; font-size: 14px; color: var(--muted); margin-bottom: 32px; }
+.prose ul { margin: 0 0 18px; padding-left: 22px; }
+.prose li { margin-bottom: 9px; }

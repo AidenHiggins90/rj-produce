@@ -29,6 +29,9 @@
 /* six nav links plus the CTA need the room back below this width */
 @media (max-width: 1180px) { .site-header .gm-lockup { display: none; } }
 .nav-link { white-space: nowrap; }
+/* the shared .is-active green measures 4.10:1 on mint-25 — below the 4.5 this
+   15px text needs, so the active item uses the darker brand green */
+.nav-link.is-active { color: var(--ink-green); }
 
 /* ---- Section dropdowns: each nav item opens a panel of sub-links with a
    line of subtext. Same language as the GrubMarket mega panels, sized for
@@ -72,8 +75,9 @@
 .mobile-panel .mp-section { padding-bottom: 6px; }
 .mobile-panel .mp-top { border-bottom: 0; padding: 10px 0 4px; font-size: 16px; }
 .mobile-panel .mp-sub {
-  border-bottom: 0; padding: 7px 0 7px 16px; font-weight: 500;
-  font-size: 14.5px; color: var(--body);
+  /* 300 not 500 — only 300/700/900 faces ship, and 500 would synthesise */
+  border-bottom: 0; padding: 7px 0 7px 16px; font-weight: 300;
+  font-size: 15px; color: var(--body);
 }
 .mobile-panel .mp-sub:hover { color: var(--ink-green); }
 
@@ -84,8 +88,8 @@
 
 /* ---- Hero art: RJ's own field photograph ---- */
 .hero-art.rj-hero {
-  background-image: image-set(url("../assets/img/gm-cratewall.webp") type("image/webp"),
-                              url("../assets/img/gm-cratewall.jpg") type("image/jpeg"));
+  background-image: image-set(url("../assets/img/gm-cratewall-hero.webp") type("image/webp"),
+                              url("../assets/img/gm-cratewall-hero.jpg") type("image/jpeg"));
 }
 .hero .hero-note {
   display: flex; align-items: center; gap: 10px; margin-top: 26px;
