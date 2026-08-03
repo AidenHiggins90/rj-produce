@@ -213,6 +213,9 @@
   var nums = [].slice.call(document.querySelectorAll(".proof .pstat .n, .stats .stat .n"));
   if (nums.length && "IntersectionObserver" in window &&
       !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    // Parse only — the authored number stays on screen. Zeroing it here meant a
+    // stat could sit at 0 forever if the animation never ran (a backgrounded tab
+    // gets no requestAnimationFrame, so the counter would start and never tick).
     nums.forEach(function (el) {
       var m = el.textContent.trim().match(/^([^0-9]*)([0-9.,]+)(.*)$/);
       if (!m) { el.dataset.skip = "1"; return; }
@@ -220,22 +223,30 @@
       el.dataset.suffix = m[3];
       el.dataset.value = m[2].replace(/,/g, "");
       el.dataset.comma = m[2].indexOf(",") > -1 ? "1" : "0";
-      el.textContent = m[1] + "0" + m[3];
     });
+
+    function render(el, v) {
+      var dec = el.dataset.value.indexOf(".") > -1 ? el.dataset.value.split(".")[1].length : 0;
+      var s = dec ? v.toFixed(dec) : String(Math.round(v));
+      if (el.dataset.comma === "1") s = s.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+      el.textContent = el.dataset.prefix + s + el.dataset.suffix;
+    }
+
     var nio = new IntersectionObserver(function (entries) {
       entries.forEach(function (e) {
         var el = e.target;
         if (!e.isIntersecting || el.dataset.done || el.dataset.skip) return;
         el.dataset.done = "1";
-        var target = parseFloat(el.dataset.value), start = null;
-        var dec = el.dataset.value.indexOf(".") > -1 ? el.dataset.value.split(".")[1].length : 0;
+        var target = parseFloat(el.dataset.value);
+        // nothing to animate into if frames aren't coming — leave the real number
+        if (document.hidden) return;
+        var start = null;
+        render(el, 0);
         (function step(ts) {
+          if (document.hidden) { render(el, target); return; }   // tab left mid-count
           if (!start) start = ts;
           var p = Math.min((ts - start) / 1300, 1);
-          var v = target * (1 - Math.pow(1 - p, 3));
-          var s = dec ? v.toFixed(dec) : String(Math.round(v));
-          if (el.dataset.comma === "1") s = s.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-          el.textContent = el.dataset.prefix + s + el.dataset.suffix;
+          render(el, target * (1 - Math.pow(1 - p, 3)));
           if (p < 1) requestAnimationFrame(step);
         })(performance.now());
       });
