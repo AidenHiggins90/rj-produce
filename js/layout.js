@@ -1,20 +1,53 @@
 /* ============================================================
    RJ Produce — shared header + footer, injected on every page.
-   Same header/footer language as the GrubMarket design system,
-   with a flat 6-item nav (no mega panels — RJ has one product line).
+   Same header/footer language as the GrubMarket design system:
+   six top-level sections, each opening a panel of sub-links with a
+   line of subtext, so a buyer can see what's inside before clicking.
    ============================================================ */
 (function () {
   var GM_W = "assets/icons/gm-logo-white.svg";
   var GM_B = "assets/icons/gm-logo-black.svg";
 
   var LINKS = [
-    { t: "About",        href: "about.html" },
-    { t: "Capabilities", href: "services.html" },
-    { t: "Products",     href: "products.html" },
-    { t: "Network",      href: "sourcing.html" },
-    { t: "Food Safety",  href: "food-safety.html" },
-    { t: "Purchasing",   href: "purchasing.html" }
+    { t: "About", href: "about.html", sub: [
+      { t: "Our Story",       d: "Founded in Pharr in 2004, part of GrubMarket since 2021.", href: "about.html#our-story" },
+      { t: "Our Team",        d: "The people who run your account, sourcing, QA, and freight.", href: "team.html" },
+      { t: "Why RJ Produce",  d: "Two decades of grower relationships and an unbroken calendar.", href: "about.html#why" },
+      { t: "Sustainability",  d: "Buying to the season, direct from the farm, with fewer hand-offs.", href: "sourcing.html#sustainability" }
+    ]},
+    { t: "Capabilities", href: "services.html", sub: [
+      { t: "Wholesale Distribution", d: "High-volume supply for retail, foodservice, and distributors.", href: "services.html#wholesale" },
+      { t: "Cross-Border Sourcing",  d: "Mexican growers cleared through our Pharr border hub.", href: "services.html#cross-border" },
+      { t: "Private Label & Branded",d: "Retail-ready packs built to each chain's specification.", href: "services.html#private-label" },
+      { t: "How It Works",           d: "Source, inspect and pack, ship — the process end to end.", href: "services.html#how-it-works" }
+    ]},
+    { t: "Products", href: "products.html", sub: [
+      { t: "Vegetables",           d: "Tomatoes, peppers, cucumbers, onions, corn.", href: "products.html?filter=vegetables" },
+      { t: "Fruits",               d: "Citrus, melons, berries, and seasonal varieties.", href: "products.html?filter=fruits" },
+      { t: "Specialty",            d: "Avocados, mangos, papaya, and hard-to-find items.", href: "products.html?filter=specialty" },
+      { t: "Seasonal Availability",d: "Peak and available windows, month by month.", href: "products.html#seasonality" }
+    ]},
+    { t: "Network", href: "sourcing.html", sub: [
+      { t: "U.S. & Mexico Sourcing", d: "Direct relationships across both growing countries.", href: "sourcing.html#sourcing" },
+      { t: "Service Area",           d: "Where we ship, from Texas to national retail chains.", href: "sourcing.html#service-area" },
+      { t: "Our Hub",                d: "Pharr, Texas — minutes from the international bridge.", href: "sourcing.html#hub" },
+      { t: "Sustainability",         d: "Working with each region's natural growing calendar.", href: "sourcing.html#sustainability" }
+    ]},
+    { t: "Food Safety", href: "food-safety.html", sub: [
+      { t: "The Program",      d: "Third-party audit, FSMA records, traceability, cold chain.", href: "food-safety.html#program" },
+      { t: "Inspection",       d: "Every load checked against your written spec before it ships.", href: "food-safety.html#inspection" },
+      { t: "Traceability",     d: "From your pallet back to the grower's block in one step.", href: "food-safety.html#traceability" },
+      { t: "Recall Procedure", d: "What happens, in what order, and who calls whom.", href: "food-safety.html#recall" }
+    ]},
+    { t: "Purchasing", href: "purchasing.html", sub: [
+      { t: "What You Get",   d: "Direct pricing, a named account manager, standing delivery.", href: "purchasing.html#benefits" },
+      { t: "The Process",    d: "Quote, account setup, online ordering, recurring delivery.", href: "purchasing.html#process" },
+      { t: "Account Types",  d: "Retailers, foodservice operators, and downstream distributors.", href: "purchasing.html#accounts" },
+      { t: "Request a Quote",d: "Pricing and availability, usually within one business day.", href: "contact.html" }
+    ]}
   ];
+
+  var CHEV = '<span class="chev" aria-hidden="true"></span>';
 
   var brand =
     '<a class="brand" href="index.html" aria-label="RJ Produce home">' +
@@ -22,8 +55,17 @@
     '<a class="gm-lockup" href="https://www.grubmarket.com" target="_blank" rel="noopener" ' +
       'aria-label="A GrubMarket company"><img src="' + GM_B + '" alt="GrubMarket" /></a>';
 
-  var navLinks = LINKS.map(function (l) {
-    return '<a class="nav-link" href="' + l.href + '">' + l.t + '</a>';
+  var navLinks = LINKS.map(function (l, i) {
+    var panel = l.sub.map(function (s) {
+      return '<a class="m-link" href="' + s.href + '">' +
+               '<span class="m-t">' + s.t + '</span>' +
+               '<span class="m-d">' + s.d + '</span></a>';
+    }).join("");
+    return '<div class="nav-item">' +
+            '<a class="nav-link" href="' + l.href + '" aria-haspopup="true" aria-expanded="false" ' +
+             'aria-controls="navpanel-' + i + '">' + l.t + CHEV + '</a>' +
+            '<div class="nav-panel" id="navpanel-' + i + '"><div class="nav-panel-inner">' + panel + '</div></div>' +
+           '</div>';
   }).join("");
 
   var header =
@@ -37,7 +79,12 @@
         '<span></span><span></span><span></span></button>' +
     '</div></header>' +
     '<div class="mobile-panel" id="mobilePanel">' +
-      LINKS.map(function (l) { return '<a href="' + l.href + '">' + l.t + '</a>'; }).join("") +
+      LINKS.map(function (l) {
+        return '<div class="mp-section"><a class="mp-top" href="' + l.href + '">' + l.t + '</a>' +
+          l.sub.map(function (s) {
+            return '<a class="mp-sub" href="' + s.href + '">' + s.t + '</a>';
+          }).join("") + '</div>';
+      }).join("") +
       '<a class="btn solid" href="contact.html">Request a Quote</a>' +
     '</div>';
 
@@ -67,6 +114,43 @@
     var page = (a.getAttribute("href") || "").split("#")[0].split("?")[0].toLowerCase();
     if (page && page === here) a.classList.add("is-active");
   });
+
+  /* ---- desktop dropdowns ----
+     Hover opens; CSS handles the visual state so it works without JS. This
+     layer keeps aria-expanded honest, closes on Escape, and lets the keyboard
+     open a panel with ArrowDown (Enter still follows the section link). */
+  var closeTimer;
+  var items = [].slice.call(document.querySelectorAll(".nav-item"));
+
+  function setOpen(item, open) {
+    item.classList.toggle("open", open);
+    item.querySelector(".nav-link").setAttribute("aria-expanded", open ? "true" : "false");
+  }
+  function closeAll(except) {
+    items.forEach(function (i) { if (i !== except) setOpen(i, false); });
+  }
+
+  items.forEach(function (item) {
+    var link = item.querySelector(".nav-link");
+    item.addEventListener("mouseenter", function () { clearTimeout(closeTimer); closeAll(item); setOpen(item, true); });
+    item.addEventListener("mouseleave", function () {
+      closeTimer = setTimeout(function () { setOpen(item, false); }, 140);
+    });
+    link.addEventListener("keydown", function (e) {
+      if (e.key === "ArrowDown") {
+        e.preventDefault();
+        closeAll(item);
+        setOpen(item, true);
+        var first = item.querySelector(".m-link");
+        if (first) first.focus();
+      }
+    });
+    item.addEventListener("focusin", function () { closeAll(item); setOpen(item, true); });
+    item.addEventListener("focusout", function (e) {
+      if (!item.contains(e.relatedTarget)) setOpen(item, false);
+    });
+  });
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape") closeAll(); });
 
   /* mobile panel */
   var hamburger = document.getElementById("hamburger");

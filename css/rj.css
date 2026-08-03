@@ -30,6 +30,53 @@
 @media (max-width: 1180px) { .site-header .gm-lockup { display: none; } }
 .nav-link { white-space: nowrap; }
 
+/* ---- Section dropdowns: each nav item opens a panel of sub-links with a
+   line of subtext. Same language as the GrubMarket mega panels, sized for
+   a site with one product line rather than eight. ---- */
+.nav-item { position: relative; display: flex; align-items: center; }
+.nav-item .nav-link { display: inline-flex; align-items: center; gap: 7px; }
+.nav-link .chev {
+  width: 7px; height: 7px; margin-top: -3px; flex: none;
+  border-right: 2px solid currentColor; border-bottom: 2px solid currentColor;
+  transform: rotate(45deg); transition: transform .18s ease, margin .18s ease;
+  opacity: .55;
+}
+.nav-item.open .nav-link .chev { transform: rotate(-135deg); margin-top: 2px; opacity: 1; }
+
+.nav-panel {
+  position: absolute; top: 100%; left: -10px; z-index: 900;
+  padding-top: 10px;                       /* transparent bridge to the trigger */
+  opacity: 0; visibility: hidden; transform: translateY(-6px);
+  /* visibility flips instantly — transitioning a discrete property delays the
+     panel becoming hit-testable by half the duration */
+  transition: opacity .16s ease, transform .16s ease;
+}
+.nav-item:hover .nav-panel, .nav-item.open .nav-panel, .nav-item:focus-within .nav-panel {
+  opacity: 1; visibility: visible; transform: translateY(0);
+}
+.nav-panel-inner {
+  width: 320px; background: var(--surface); border: 1px solid var(--line);
+  border-radius: 14px; box-shadow: var(--shadow-lg); padding: 10px;
+}
+.m-link { display: block; padding: 10px 12px; border-radius: 10px; transition: background .14s ease; }
+.m-link:hover, .m-link:focus-visible { background: var(--mint-50); }
+.m-link .m-t { display: block; font-family: var(--head); font-weight: 700; font-size: 15px; color: var(--ink); }
+.m-link .m-d { display: block; margin-top: 2px; font-size: 12.5px; line-height: 1.45; color: var(--muted); }
+.m-link:hover .m-t, .m-link:focus-visible .m-t { color: var(--ink-green); }
+.m-link:hover .m-d { color: var(--body); }
+/* the last two panels would run past the viewport edge if left-aligned */
+.nav-item:nth-last-child(2) .nav-panel, .nav-item:nth-last-child(3) .nav-panel { left: auto; right: -10px; }
+
+/* mobile: sub-links sit indented under their section. The section divider
+   comes from the shared .mp-section rule — don't add a second hairline. */
+.mobile-panel .mp-section { padding-bottom: 6px; }
+.mobile-panel .mp-top { border-bottom: 0; padding: 10px 0 4px; font-size: 16px; }
+.mobile-panel .mp-sub {
+  border-bottom: 0; padding: 7px 0 7px 16px; font-weight: 500;
+  font-size: 14.5px; color: var(--body);
+}
+.mobile-panel .mp-sub:hover { color: var(--ink-green); }
+
 /* The shared `.mobile-panel a` rule wins on specificity and repaints the
    panel's CTA text dark — force the solid button's own colours back. */
 .mobile-panel .btn.solid { color: #fff; border-color: var(--green); padding: 14px 22px; justify-content: center; }
