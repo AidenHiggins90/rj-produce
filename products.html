@@ -25,8 +25,8 @@
   }
   </script>
   <link rel="canonical" href="https://rj-produce.vercel.app/products.html" />
-  <link rel="stylesheet" href="css/style.css?v=20260803f" />
-  <link rel="stylesheet" href="css/rj.css?v=20260803f" />
+  <link rel="stylesheet" href="css/style.css?v=20260803h" />
+  <link rel="stylesheet" href="css/rj.css?v=20260803h" />
 </head>
 <body>
   <div id="site-header-mount"></div>
@@ -49,9 +49,9 @@
         <div class="filters" id="filters" role="group" aria-label="Filter the line card by category"></div>
         <div class="line-card" id="lineCard"></div>
         <p class="proof-trust" style="margin-top:34px">
-          Pack sizes, counts and grades are quoted per program — <a href="contact.html">tell us what you need</a>
-          and we'll come back with specifications and pricing. Looking for something not listed? We source to order
-          across both countries.
+          Packs shown are the typical cartons for each commodity — your program's exact pack, count and grade
+          are confirmed on the written quote. <a href="contact.html">Tell us what you need</a> and we'll come back
+          with specifications and pricing. Looking for something not listed? We source to order across both countries.
         </p>
       </div>
     </section>
@@ -110,8 +110,8 @@
   </main>
 
   <div id="site-footer-mount"></div>
-  <script src="js/catalog.js?v=20260803f"></script>
-  <script src="js/layout.js?v=20260803f"></script>
+  <script src="js/catalog.js?v=20260803h"></script>
+  <script src="js/layout.js?v=20260803h"></script>
   <script>
     (function () {
       var data = window.RJ_CATALOG;
@@ -132,9 +132,10 @@
       }).join("");
 
       /* ---- line card ---- */
+      var typical = data.packTypical !== false;
       grid.innerHTML = data.items.map(function (it) {
         var meta = [];
-        if (it.pack) meta.push(it.pack);
+        if (it.pack) meta.push((typical ? "Typical pack: " : "") + it.pack);
         else meta.push("Pack sizes on request");
         if (it.origin) meta.push(it.origin);
         return '<article class="lc-item" data-cat="' + it.cat + '">' +

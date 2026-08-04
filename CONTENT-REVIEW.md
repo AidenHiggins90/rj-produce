@@ -33,7 +33,7 @@ Treat as previously published, but worth a re-check since they're now more promi
 | Quote requests answered within one business day | contact, purchasing, homepage CTA | Repeated in four places. If the real number is two days, change it — this one gets tested immediately. |
 | Documentation packet contents (certificates, insurance, W-9, food-safety records) | food safety CTA | Confirm what you actually send for vendor onboarding. |
 | Harvest volume committed before the season opens | capabilities, purchasing, team, products | Confirm this is how the grower contracts work. |
-| Line-card details | products page | Commodities come from your trade-show banner (Ataulfo mangoes, red mangoes, Persian limes, broccoli crowns, chile peppers), the Produce Market Guide listing, and your own photography. The one-line descriptions of each — "serrano, jalapeño and specialty chiles", "cut and bunched in the field" — are reasonable but unconfirmed. **Pack sizes and counts are deliberately blank**; fill `pack` in `js/catalog.js` and the cards show them automatically. |
+| Line-card details | products page | Commodities come from your trade-show banner (Ataulfo mangoes, red mangoes, Persian limes, broccoli crowns, chile peppers), the Produce Market Guide listing, and your own photography. The one-line descriptions of each — "serrano, jalapeño and specialty chiles", "cut and bunched in the field" — are reasonable but unconfirmed. **Pack sizes are industry-standard, not confirmed by RJ** — they render as "Typical pack:" with a note that the written quote governs. Replace each `pack` in `js/catalog.js` with your real one and set `packTypical: false` to drop the hedge everywhere. |
 | Three broccoli labels | products page, brands section | RJ Produce, TIGER and MONKEY all appear on your cartons in the recovered photos. Confirm which commodities each label covers and whether any are retailer-specific. |
 | What the Veracruz and Tijuana facilities actually do | network page, facilities section | Their existence is confirmed; the site now describes both as sourcing and grower-relationship sites, and ties Veracruz to tropical fruit and Tijuana to the western crossing and Baja calendar. That characterisation is inference from geography — correct it if either does packing, cold storage, or consolidation you'd rather lead with, and add street addresses if you want them listed. |
 
@@ -62,8 +62,10 @@ of Mon–Sat 7:00–6:00, and dated timeline milestones for 2012 and 2018.
 
 ## Still missing
 
-- **Pack sizes.** Every line-card item says "Pack sizes on request" because nothing
-  published states them. Fill them into `js/catalog.js` and they appear on the cards.
+- **Pack sizes — confirm these.** The line card shows the standard cartons for Mexican
+  product (40 lb limes, 20 lb broccoli crowns, 4 kg mangoes and so on), labelled "typical"
+  and caveated to the written quote. Get sales to check them, then set `packTypical: false`
+  in `js/catalog.js` so they read as definitive.
 - **Named people.** The team page describes four roles but names only the founder. The
   archived company site lists Rick Gorena (General Manager), Melissa Garcia (Office
   Manager / AP), Melissa Cruz (Sales & Procurement), Roy Salinas (Sales Manager) and

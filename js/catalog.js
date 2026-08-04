@@ -7,12 +7,16 @@
    Crowns, Chile Peppers"), the Produce Market Guide listing, and the
    company's own photography.
 
-   PACK SIZES AND COUNTS ARE DELIBERATELY ABSENT. Nothing published
-   states them, so every item says "on request" rather than carrying a
-   number a buyer could hold us to. Fill `pack` in as they're confirmed
-   and the cards will show them automatically.
+   PACK SIZES ARE INDUSTRY-STANDARD, NOT CONFIRMED BY RJ. They are the
+   usual packs for Mexican product crossing at Pharr, published as
+   "typical" so a buyer can orient — the written quote governs the sale.
+   Replace each `pack` string with the real one and delete `packTypical`
+   below to drop the hedge everywhere at once.
    ============================================================ */
 window.RJ_CATALOG = {
+  /* set to false once the packs above are confirmed by sales */
+  packTypical: true,
+
   categories: [
     { id: "citrus-tropical", label: "Citrus &amp; tropical" },
     { id: "vegetables",      label: "Vegetables" },
@@ -26,23 +30,15 @@ window.RJ_CATALOG = {
       img: "rj-limes",
       note: "A core commodity since the early years, shipped from Mexican groves through Pharr.",
       origin: "Mexico",
-      pack: ""
+      pack: "40 lb carton · sizes 110 / 150 / 175 / 200 / 230 / 250"
     },
     {
-      name: "Ataulfo mangoes",
+      name: "Mangoes",
       cat: "citrus-tropical",
       img: "rj-mangoes",
-      note: "The yellow, thin-skinned variety buyers ask for by name.",
+      note: "Ataulfo — the yellow, thin-skinned variety buyers ask for by name — alongside the red varieties.",
       origin: "Mexico",
-      pack: ""
-    },
-    {
-      name: "Red mangoes",
-      cat: "citrus-tropical",
-      img: "rj-limes-wide",
-      note: "Tommy Atkins and related red varieties, alongside the Ataulfo program.",
-      origin: "Mexico",
-      pack: ""
+      pack: "4 kg carton · counts 6–22 by variety"
     },
     {
       name: "Broccoli crowns",
@@ -51,7 +47,7 @@ window.RJ_CATALOG = {
       note: "Packed under three labels — RJ Produce, TIGER and MONKEY — for different buyers.",
       origin: "Mexico",
       brands: ["RJ Produce", "TIGER", "MONKEY"],
-      pack: ""
+      pack: "20 lb carton"
     },
     {
       name: "Cauliflower",
@@ -59,7 +55,7 @@ window.RJ_CATALOG = {
       img: "rj-pack-cauliflower",
       note: "Field-packed and wrapped, shipped in our own coliflor cartons.",
       origin: "Mexico",
-      pack: ""
+      pack: "12 ct film-wrapped carton"
     },
     {
       name: "Celery",
@@ -67,7 +63,7 @@ window.RJ_CATALOG = {
       img: "rj-celery",
       note: "Cut and packed to buyer specification.",
       origin: "Mexico",
-      pack: ""
+      pack: "24 ct or 30 ct carton"
     },
     {
       name: "Carrots",
@@ -75,7 +71,7 @@ window.RJ_CATALOG = {
       img: "rj-broccoli-carrots",
       note: "Shipped alongside the broccoli program for mixed loads.",
       origin: "Mexico",
-      pack: ""
+      pack: "50 lb sack · 48/1 lb cello"
     },
     {
       name: "Chile peppers",
@@ -83,7 +79,7 @@ window.RJ_CATALOG = {
       img: "rj-chile-peppers",
       note: "Serrano, jalapeño and specialty chiles across the season.",
       origin: "Mexico",
-      pack: ""
+      pack: "25 lb or 35 lb carton"
     },
     {
       name: "Bell peppers",
@@ -91,7 +87,7 @@ window.RJ_CATALOG = {
       img: "rj-peppers",
       note: "Red, green and mixed-colour loads.",
       origin: "Mexico &amp; U.S.",
-      pack: ""
+      pack: "25 lb carton · L / XL / JBO"
     },
     {
       name: "Cilantro",
@@ -99,7 +95,7 @@ window.RJ_CATALOG = {
       img: "rj-cilantro-bunch",
       note: "Cut and bunched in the field, straight into the cooler.",
       origin: "Mexico",
-      pack: ""
+      pack: "30 ct or 60 ct carton"
     },
     {
       name: "Tomatillos",
@@ -107,7 +103,7 @@ window.RJ_CATALOG = {
       img: "rj-tomatillos",
       note: "Husked tomatillos for the Hispanic and foodservice trade.",
       origin: "Mexico",
-      pack: ""
+      pack: "40 lb carton"
     }
   ],
 
