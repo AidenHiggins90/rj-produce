@@ -613,6 +613,11 @@ img { max-width: 100%; }
   /* buttons that were white-on-green stay legible */
   .btn.solid { color: #0F1512; }
   .btn.solid-light { background: #EDF4EF; color: #10331d; border-color: #EDF4EF; }
+  /* --green lifts to #3FCE84 in dark mode, so the CTA band and the dark page
+     hero ended on a bright green with white text over it — 2.02:1. Pin the
+     light end of both gradients to a mid green: white measures 5.65:1 there. */
+  .cta-band { background: linear-gradient(135deg, var(--green-dark), #14764A); }
+  .page-hero.dark { background: linear-gradient(135deg, var(--green-dark), #14764A); }
   /* the footer is already dark in light mode — keep it distinct from the page */
   .site-footer { background: #0A0F0C; }
 }
