@@ -55,6 +55,20 @@ listing — but that is a guess. **Decide which address the site should carry**,
 both belong on it. Everything currently says Pharr: the footer, the contact page, the map
 embed, the LocalBusiness schema, and the Network page.
 
+## Corrected in the audit
+
+- **"PrimusGFS-certified"** survived on the homepage cold-chain card after the earlier
+  sweep replaced it everywhere else. PrimusGFS is a specific GFSI scheme; the acquisition
+  release says "certified by Primus Labs". Now consistent across all six mentions.
+- **"A border-region edge no one else has"** (capabilities) — plainly false, since Pharr
+  hosts hundreds of produce shippers. Now "an edge inland shippers can't match", which is
+  the defensible version of the same point.
+- **"move product faster than any shipper working from a single country"** and **"a
+  logistical advantage no inland shipper can match"** (network) — unfalsifiable
+  competitor comparisons, reworded to state the geographic fact instead.
+- **Response time** on the contact page said "answered within one business day" while the
+  other six instances say "usually within". Now consistent.
+
 ## Removed as unverifiable
 
 These were in the first draft and have been taken out rather than left to be believed:
