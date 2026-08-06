@@ -170,7 +170,15 @@
       if (!item.contains(e.relatedTarget)) setOpen(item, false);
     });
   });
-  document.addEventListener("keydown", function (e) { if (e.key === "Escape") closeAll(); });
+  document.addEventListener("keydown", function (e) {
+    if (e.key !== "Escape") return;
+    // Return focus to the trigger first. The panel is also shown by :focus-within,
+    // so clearing .open while focus is still inside leaves it visible with
+    // aria-expanded="false" — state saying one thing and the screen another.
+    var open = document.activeElement && document.activeElement.closest(".nav-item");
+    if (open) { var t = open.querySelector(".nav-link"); if (t) t.focus(); }
+    closeAll();
+  });
   // tapping anywhere else dismisses an open panel on touch
   document.addEventListener("click", function (e) { if (!e.target.closest(".nav-item")) closeAll(); });
 
