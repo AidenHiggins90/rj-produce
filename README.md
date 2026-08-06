@@ -80,6 +80,22 @@ A hidden `website` field is a honeypot: anything that fills it gets a 200 and is
 so bots don't retry. If real spam gets through later, add a rate limit or Turnstile —
 neither is worth the friction until it's actually a problem.
 
+## Site gate
+
+The whole site sits behind HTTP Basic auth, enforced by `middleware.js` at
+Vercel's edge — before any file is served, so direct requests for `products.html`,
+an image or `/api/quote` are covered too. That is the part a login screen drawn in
+the page cannot do.
+
+The repo holds a SHA-256 hash of the password, never the password itself.
+
+To change the credentials, set `SITE_USER` and `SITE_PASSWORD` in Vercel →
+Settings → Environment Variables and redeploy; they override the values compiled
+in. To remove the gate, delete `middleware.js` and redeploy.
+
+**While the gate is on, search engines cannot crawl the site** — every request
+returns 401. Remove it before you want the site indexed.
+
 ## Analytics
 
 Not enabled. The Vercel Web Analytics tag was removed after the audit: the project
