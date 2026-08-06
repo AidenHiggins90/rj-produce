@@ -106,7 +106,7 @@
 .bg-rj-warehouse::before { background-image: image-set(url("../assets/img/rj-lettuce-rows.webp") type("image/webp"), url("../assets/img/rj-lettuce-rows.jpg") type("image/jpeg")); }
 .bg-rj-crates::before    { background-image: image-set(url("../assets/img/rj-branded-cartons.webp") type("image/webp"), url("../assets/img/rj-branded-cartons.jpg") type("image/jpeg")); }
 .bg-rj-boxes::before     { background-image: image-set(url("../assets/img/rj-cilantro-rows.webp") type("image/webp"), url("../assets/img/rj-cilantro-rows.jpg") type("image/jpeg")); }
-.bg-rj-tablet::before    { background-image: image-set(url("../assets/img/gm-warehousetablet.webp") type("image/webp"), url("../assets/img/gm-warehousetablet.jpg") type("image/jpeg")); }
+.bg-rj-tablet::before    { background-image: image-set(url("../assets/img/rj-inspection.webp") type("image/webp"), url("../assets/img/rj-inspection.jpg") type("image/jpeg")); }
 .bg-rj-market::before    { background-image: image-set(url("../assets/img/rj-booth.webp") type("image/webp"), url("../assets/img/rj-booth.jpg") type("image/jpeg")); }
 .bg-rj-team::before      { background-image: image-set(url("../assets/img/rj-cilantro-hands.webp") type("image/webp"), url("../assets/img/rj-cilantro-hands.jpg") type("image/jpeg")); }
 
