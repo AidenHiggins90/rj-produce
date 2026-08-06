@@ -79,3 +79,18 @@ inbox left unset falls back to `INBOX_SALES`.
 A hidden `website` field is a honeypot: anything that fills it gets a 200 and is dropped,
 so bots don't retry. If real spam gets through later, add a rate limit or Turnstile —
 neither is worth the friction until it's actually a problem.
+
+## Analytics
+
+Not enabled. The Vercel Web Analytics tag was removed after the audit: the project
+doesn't have Web Analytics switched on, so `/_vercel/insights/script.js` 404s and every
+page logged two console errors for a feature that wasn't recording anything.
+
+To turn it on: Vercel → Project → Analytics → enable Web Analytics, then add this before
+`</body>` on each page (it's cookieless, so it needs no consent banner):
+
+```html
+<script defer src="/_vercel/insights/script.js"></script>
+```
+
+Check the network tab afterwards — the script should return 200, not 404.
