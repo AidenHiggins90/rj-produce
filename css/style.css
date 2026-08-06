@@ -294,7 +294,8 @@ img { max-width: 100%; }
 .page-hero { background: linear-gradient(346.69deg, rgba(43,196,108,.30) -10%, rgba(43,196,108,0) 72%), var(--mint-50); border-bottom: 1px solid var(--line); padding: 64px 0 60px; }
 .page-hero.dark { background: linear-gradient(135deg, var(--green-dark), var(--green)); border: 0; }
 .page-hero.dark h1, .page-hero.dark .crumb, .page-hero.dark .crumb a, .page-hero.dark .lead { color: #fff; }
-.page-hero.dark .lead { color: rgba(255,255,255,.88); }
+/* same reason: .88 measured 3.95:1 on #14864F */
+.page-hero.dark .lead { color: #fff; }
 .crumb { font-size: 13px; color: var(--muted); margin-bottom: 16px; }
 .crumb a { color: var(--green-mid); }
 .crumb .sep { margin: 0 8px; opacity: .6; }
@@ -382,7 +383,9 @@ img { max-width: 100%; }
 .cta-band { background: linear-gradient(135deg, var(--green-dark), var(--green)); color: #fff; }
 .cta-band .wrap { padding: 72px 24px; text-align: center; }
 .cta-band h2 { color: #fff; }
-.cta-band p { color: rgba(255,255,255,.9); max-width: 52ch; margin: 0 auto 28px; font-size: 19px; }
+/* solid white, not 90% — at .9 this measures 4.05:1 on the light end of the
+   gradient (#14864F), under the 4.5 body text needs. Solid gives 4.61. */
+.cta-band p { color: #fff; max-width: 52ch; margin: 0 auto 28px; font-size: 19px; }
 .cta-band .hero-cta { justify-content: center; }
 .post .cat { font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--green); margin-bottom: 8px; }
 .post .meta { font-size: 13px; color: var(--muted); margin-top: 12px; }
