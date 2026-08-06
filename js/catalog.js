@@ -1,7 +1,7 @@
 /* ============================================================
    RJ Produce line card.
 
-   One place to edit the catalogue — products.html renders from this.
+   One place to edit the line card — products.html renders from this.
    Everything here is drawn from RJ's own materials: the trade-show
    banner ("Ataulfo Mangoes, Red Mangoes, Persian Limes, Broccoli
    Crowns, Chile Peppers"), the Produce Market Guide listing, and the
@@ -85,7 +85,7 @@ window.RJ_CATALOG = {
       name: "Bell peppers",
       cat: "chiles-herbs",
       img: "rj-peppers",
-      note: "Red, green and mixed-colour loads.",
+      note: "Red, green and mixed-color loads.",
       origin: "Mexico &amp; U.S.",
       pack: "25 lb carton · L / XL / JBO"
     },
