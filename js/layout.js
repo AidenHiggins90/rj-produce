@@ -5,6 +5,9 @@
    line of subtext, so a buyer can see what's inside before clicking.
    ============================================================ */
 (function () {
+  // Tells the stylesheet it is safe to hide reveal elements — see html.js .reveal
+  document.documentElement.classList.add("js");
+
   var GM_W = "assets/icons/gm-logo-white.svg";
   var GM_B = "assets/icons/gm-logo-black.svg";
 
@@ -199,8 +202,9 @@
 
   /* reveal-on-scroll — elements stay visible if JS or IO is unavailable */
   var revealables = [].slice.call(document.querySelectorAll(".reveal"));
+  function revealAll() { revealables.forEach(function (el) { el.classList.add("in"); }); }
   if (!("IntersectionObserver" in window)) {
-    revealables.forEach(function (el) { el.classList.add("in"); });
+    revealAll();
   } else {
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (e) {
@@ -208,6 +212,9 @@
       });
     }, { threshold: .12, rootMargin: "0px 0px -40px 0px" });
     revealables.forEach(function (el) { io.observe(el); });
+    // Failsafe: some contexts (a backgrounded tab, throttled observers) never
+    // deliver an entry. Show everything after a beat rather than risk a blank page.
+    setTimeout(revealAll, 2500);
   }
 
   /* count-up on stat bands, matching the GrubMarket proof section */
