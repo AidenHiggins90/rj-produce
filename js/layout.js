@@ -57,7 +57,10 @@
       '<img class="brand-logo" src="assets/icons/rj-logo.png" alt="RJ Produce" width="160" height="50" />' +
       '</a>' +
     '<a class="gm-lockup" href="https://www.grubmarket.com" target="_blank" rel="noopener" ' +
-      'aria-label="A GrubMarket company"><img src="' + GM_B + '" alt="GrubMarket" /></a>';
+      'aria-label="A GrubMarket company">' +
+      // the dark wordmark disappears on the dark-mode header — serve the white one there
+      '<picture><source media="(prefers-color-scheme: dark)" srcset="' + GM_W + '" />' +
+      '<img src="' + GM_B + '" alt="GrubMarket" /></picture></a>';
 
   var navLinks = LINKS.map(function (l, i) {
     var panel = l.sub.map(function (s) {

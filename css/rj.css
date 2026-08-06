@@ -19,6 +19,7 @@
 
 /* "A GrubMarket company" — the logo alone in the header, spelled out in the footer */
 .gm-lockup { display: inline-flex; align-items: center; gap: 8px; }
+.gm-lockup picture { display: block; }
 .gm-lockup img { height: 14px; width: auto; display: block; }
 .site-header .gm-lockup {
   flex: none; margin-left: 16px; padding-left: 16px; border-left: 1px solid var(--line);
