@@ -290,3 +290,31 @@ table.season td.peak > span:first-child { background: var(--green-dark); }
 html.js .reveal { opacity: 0; transform: translateY(22px); transition: opacity .6s ease, transform .6s ease; }
 html.js .reveal.in { opacity: 1; transform: none; }
 @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } }
+
+/* ---- Images that used to be CSS backgrounds ----------------------------------
+   Photo cards, audience tiles, line-card rows and brand labels now ship real
+   <img> elements so they lazy-load, decode off the main thread and let the
+   browser pick the format. object-fit reproduces what background-size did. */
+.card.photo picture { position: absolute; inset: 0; z-index: 0; display: block; }
+.card.photo .p-img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; }
+
+.aud-tile picture { display: block; }
+img.aud-img { width: 100%; height: 220px; object-fit: cover; display: block; background: var(--mint-100); }
+
+.lc-item picture { display: block; }
+img.lc-img { width: 100%; height: 190px; object-fit: cover; display: block; background: var(--mint-100); }
+
+.brand-card picture { display: block; }
+img.brand-label { width: 100%; height: 150px; object-fit: contain; background: #fff;
+  border-bottom: 1px solid var(--line); display: block; }
+
+/* the section wrappers no longer paint anything themselves */
+.aud-tile span.aud-img, .lc-item span.lc-img, .brand-card span.brand-label { display: none; }
+
+/* ---- Small layout utilities -------------------------------------------------
+   These replace the last inline style attributes, which is what lets the CSP
+   drop 'unsafe-inline' from style-src. */
+.stack-lg { margin-top: 34px; }
+.stack-md { margin-top: 30px; }
+.measure-centered { max-width: 64ch; margin: 0 auto 44px; }
+.measure-centered.narrow { max-width: 60ch; margin-bottom: 40px; }

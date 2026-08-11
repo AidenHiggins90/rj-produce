@@ -6,9 +6,12 @@
   var grid = document.getElementById("lineCard");
   var filters = document.getElementById("filters");
 
-  function img(slug) {
-    return "image-set(url('assets/img/" + slug + ".webp') type('image/webp'), " +
-           "url('assets/img/" + slug + ".jpg') type('image/jpeg'))";
+  /* real <picture> markup rather than a CSS background, so the browser can
+     lazy-load it, reserve its box, and choose the format itself */
+  function picture(slug, cls, label) {
+    return '<picture><source srcset="assets/img/' + slug + '.webp" type="image/webp" />' +
+           '<img class="' + cls + '" src="assets/img/' + slug + '.jpg" alt="' + label + '" ' +
+           'loading="lazy" decoding="async" /></picture>';
   }
 
   /* ---- filter buttons, built from the categories in the data ---- */
@@ -26,7 +29,7 @@
     else meta.push("Pack sizes on request");
     if (it.origin) meta.push(it.origin);
     return '<article class="lc-item" data-cat="' + it.cat + '">' +
-             '<span class="lc-img" style="background-image:' + img(it.img) + '" role="img" aria-label="' + it.name + '"></span>' +
+             picture(it.img, 'lc-img', it.name) +
              '<div class="lc-body">' +
                '<h3>' + it.name + '</h3>' +
                '<p>' + it.note + '</p>' +
@@ -63,7 +66,7 @@
   /* ---- brand labels ---- */
   document.getElementById("brandGrid").innerHTML = data.brands.map(function (b) {
     return '<div class="brand-card reveal">' +
-             '<span class="brand-label" style="background-image:' + img(b.img) + '" role="img" aria-label="' + b.name + ' label"></span>' +
+             picture(b.img, 'brand-label', b.name + ' label') +
              '<h3>' + b.name + '</h3><p>' + b.note + '</p>' +
            '</div>';
   }).join("");
