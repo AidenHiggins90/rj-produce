@@ -82,19 +82,21 @@ neither is worth the friction until it's actually a problem.
 
 ## Site gate
 
-The whole site sits behind HTTP Basic auth, enforced by `middleware.js` at
-Vercel's edge — before any file is served, so direct requests for `products.html`,
-an image or `/api/quote` are covered too. That is the part a login screen drawn in
-the page cannot do.
+**Removed — the site is public and crawlable.** It previously sat behind HTTP Basic
+auth enforced by `middleware.js` at Vercel's edge; that file was deleted so search
+engines get a 200 instead of a 401. `robots.txt` allows everything and points at
+the sitemap; only `404.html` carries `noindex`.
 
-The repo holds a SHA-256 hash of the password, never the password itself.
+To put the gate back, restore `middleware.js` from git history:
 
-To change the credentials, set `SITE_USER` and `SITE_PASSWORD` in Vercel →
-Settings → Environment Variables and redeploy; they override the values compiled
-in. To remove the gate, delete `middleware.js` and redeploy.
+```bash
+git log --oneline --diff-filter=D -- middleware.js
+git checkout <that-commit>^ -- middleware.js
+```
 
-**While the gate is on, search engines cannot crawl the site** — every request
-returns 401. Remove it before you want the site indexed.
+It reads `SITE_USER` and `SITE_PASSWORD` from Vercel → Settings → Environment
+Variables, falling back to a SHA-256 hash compiled into the file. While it is in
+place nothing is indexable.
 
 ## Analytics
 
